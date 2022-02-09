@@ -5,4 +5,4 @@ The first web application made by myself from the very beginning. The main idea 
 
 Used technologies: HTML 5, CSS 3, JavaScript.
 
-Demo:
+Demo: 🔗 Wymowka](https://sebastiannowak91.github.io/Wymowka/
