@@ -36,7 +36,8 @@ header {
     position: fixed;
 }
 
-.menu dt {
+.menu dt,
+.menu button {
     height: 3.5vw;
     width: 3.5vw;
     border-radius: 50%;
@@ -44,7 +45,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.menu dt {
     margin-top: 1.2vw;
+}
+
+.menu button {
+    padding: 0;
+    margin: 0;
 }
 
 .menu i {
@@ -53,7 +62,8 @@ header {
     color: black;
 }
 
-.menu dt:hover {
+.menu dt:hover,
+.menu button:hover {
     cursor: pointer;
     transform: scale(1.2);
     filter: brightness(110%);
@@ -435,7 +445,7 @@ article img {
 .how-much-img {
     width: 18%;
     float: right;
-    margin: 0 1vw 0 0;
+    margin: 0 1vw 0 2vw;
     border-bottom: .15vw solid black;
 }
 
