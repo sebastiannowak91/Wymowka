@@ -465,6 +465,10 @@ footer h4 {
     width: 28%;
 }
 
+.contact dl {
+    padding-bottom: 1.5vw;
+}
+
 .contact a,
 .location a {
     text-decoration: none;
@@ -496,6 +500,10 @@ footer dt button {
 .location {
     width: 38%;
     margin: 0 2% 0 2%;
+}
+
+.location dl {
+    padding-bottom: 3vw;
 }
 
 .fa-map-marker-alt {
