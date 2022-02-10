@@ -15,10 +15,12 @@ button {
     border: none;
     font-family: 'Comfortaa', 'Arial', sans-serif;
     cursor: pointer;
+    text-decoration: none;
 }
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 /*HEADER*/
@@ -30,7 +32,7 @@ header {
 
 .menu {
     margin: 0 0 0 0;
-    padding-right: 1%;
+    padding-right: 2%;
     position: fixed;
 }
 
@@ -124,6 +126,7 @@ nav button img {
 nav button h2 {
     margin: 3vw 0px 0px 0px;
     font-size: 1.75vw;
+    color: black;
 }
 
 nav button:hover {
@@ -503,7 +506,7 @@ footer dt button {
 }
 
 .location dl {
-    padding-bottom: 4.8vw;
+    padding-bottom: 4.7vw;
 }
 
 .fa-map-marker-alt {
