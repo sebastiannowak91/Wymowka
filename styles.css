@@ -108,23 +108,23 @@ nav button img {
 }
 
 #who-img {
-    border-left: 2px solid black;
+    border-left: .2vw solid black;
 }
 
 #what-img {
-    border-top: 2px outset black;
+    border-top: .2vw outset black;
 }
 
 #for-who-img {
-    border-right: 2px outset black;
+    border-right: .2vw outset black;
 }
 
 #how-much-img {
-    border-bottom: 2px outset black;
+    border-bottom: .2vw outset black;
 }
 
 nav button h2 {
-    margin: 3vw 0px 0px 0px;
+    margin: 3vw 0 0 0;
     font-size: 1.75vw;
     color: black;
 }
@@ -146,7 +146,7 @@ nav button:hover {
     opacity: 0;
     width: 0;
     margin-left: 12.5vw;
-    border-bottom: 3px;
+    border-bottom: .3vw;
     border-bottom-style: solid;
     filter: brightness(100%);
     transition-property: opacity, filter, width;
@@ -171,22 +171,22 @@ nav button:hover {
 
 #who-overline {
     border-color: #ff96e3;
-    top: 0px;
+    top: 0vw;
 }
 
 #what-overline {
     border-color: #62d2f5;
-    top: -3px;
+    top: -0.3vw;
 }
 
 #for-who-overline {
     border-color: #ffe138;
-    top: -6px;
+    top: -0.6vw;
 }
 
 #how-much-overline {
     border-color: #79fd92;
-    top: -9px;
+    top: -0.9vw;
 }
 
 /*ARTICLE*/
@@ -257,6 +257,7 @@ article img {
     font-size: 1vw;
     align-items: center;
     font-weight: 600;
+    color: black;
 }
 
 .go-right i,
@@ -278,7 +279,7 @@ article img {
 #who img {
     float: left;
     width: 30%;
-    border-left: 2px solid black;
+    border-left: .15vw solid black;
     margin: 0 2vw 2vw 0;
 }
 
@@ -395,14 +396,14 @@ article img {
     float: right;
     width: 30%;
     margin: 2vw 1vw 1vw 0;
-    border-top: 2px solid black;
+    border-top: .15vw solid black;
 }
 
 .what-photo2 {
     float: right;
     width: 20%;
     margin: 2.5vw 2vw 0 1vw;
-    border-top: 2px solid black;
+    border-top: .15vw solid black;
 }
 
 /*ARTICLE FOR-WHO*/
@@ -419,15 +420,15 @@ article img {
     width: 27%;
     float: right;
     margin: 0 0 0 3vw;
-    border-right: 2px solid black;
+    border-right: .15vw solid black;
     
 }
 
 .for-who-img2 {
     width: 25%;
     float: right;
-    margin: 0vw 5vw 0 5vw;
-    border-right: 2px solid black;
+    margin: 1vw 5vw 0 7vw;
+    border-right: .15vw solid black;
 }
 
 /*ARTICLE HOW-MUCH*/
@@ -435,7 +436,7 @@ article img {
     width: 18%;
     float: right;
     margin: 0 1vw 0 0;
-    border-bottom: 2px solid black;
+    border-bottom: .15vw solid black;
 }
 
 .how-much-details {
@@ -498,6 +499,7 @@ footer dt button {
     display: flex;
     align-items: flex-start;
     line-height: 1.5;
+    color: black;
 }
 
 .location {
