@@ -466,7 +466,7 @@ footer h4 {
 }
 
 .contact dl {
-    padding-bottom: 0;
+    padding-bottom: 1.5vw;
 }
 
 .contact a,
@@ -503,7 +503,7 @@ footer dt button {
 }
 
 .location dl {
-    padding-bottom: 0;
+    padding-bottom: 3vw;
 }
 
 .fa-map-marker-alt {
@@ -543,7 +543,6 @@ footer .fa-search-plus {
 
 footer dl {
     margin: 0;
-    padding-bottom: 3vw;
 }
 
 footer i {
