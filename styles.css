@@ -92,7 +92,7 @@ header {
 nav {
     width: inherit;
     display: flex;
-    padding: 15vh 0 12vh 0;
+    padding: 10vw 0 7.5vw 0;
 }
 
 nav button {
