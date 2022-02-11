@@ -60,6 +60,8 @@ header {
     font-size: 2vw;
     font-weight: 500;
     color: black;
+    text-align: center;
+    justify-content: center;
 }
 
 .menu dt:hover,
