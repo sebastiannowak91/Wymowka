@@ -10,6 +10,10 @@ body {
     scroll-behavior: smooth;
 }
 
+li {
+    list-style: none;
+}
+
 button {
     background-color: inherit;
     border: none;
@@ -40,7 +44,7 @@ header {
 
 .cover-photo img {
     width: 75%;
-    height: inherit;
+    height: 100%;
     max-width: 100%;
 }
 
@@ -221,7 +225,7 @@ article {
 }
 
 article p {
-    margin: 0;
+    margin: 1em 0 0 0;
     font-size: 1.1vw;
 }
 
@@ -231,9 +235,10 @@ article h3 {
     margin: 0;
 }
 
-article dl {
+article li {
     font-size: 1.1vw;
     margin: 0;
+    display: flex;
 }
 
 article i {
@@ -475,7 +480,7 @@ footer h4 {
     width: 28%;
 }
 
-.contact dl {
+.contact ul {
     padding-bottom: 3vw;
 }
 
@@ -499,8 +504,8 @@ footer h4 {
     margin: 0;
 }
 
-footer dt,
-footer dt button {
+footer li,
+footer li button {
     font-size: 1.1vw;
     display: flex;
     align-items: flex-start;
@@ -513,7 +518,7 @@ footer dt button {
     margin: 0 2% 0 2%;
 }
 
-.location dl {
+.location ul {
     padding-bottom: 4.7vw;
 }
 
@@ -552,7 +557,7 @@ footer .fa-search-plus {
     transition: .7s;
 }
 
-footer dl {
+footer ul {
     margin: 0;
 }
 
