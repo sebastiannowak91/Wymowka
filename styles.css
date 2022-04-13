@@ -482,12 +482,14 @@ footer h4 {
 
 .contact ul {
     padding-bottom: 3vw;
+    padding-left: 0;
 }
 
 .contact a,
 .location a {
     text-decoration: none;
     color: black;
+    font-style: normal;
 }
 
 .fa-phone {
@@ -520,6 +522,7 @@ footer li button {
 
 .location ul {
     padding-bottom: 4.7vw;
+    padding-left: 0;
 }
 
 .fa-map-marker-alt {
