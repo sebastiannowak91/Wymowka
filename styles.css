@@ -30,49 +30,6 @@ header {
     justify-content: flex-end;
 }
 
-.menu {
-    margin: 0 0 0 0;
-    padding-right: 2%;
-    position: fixed;
-}
-
-.menu dt,
-.menu button {
-    height: 3.5vw;
-    width: 3.5vw;
-    border-radius: 50%;
-    background-color: #9df6dc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-}
-
-.menu dt {
-    margin-top: 1.2vw;
-}
-
-.menu button {
-    margin: 0;
-}
-
-.menu i {
-    font-size: 2vw;
-    font-weight: 500;
-    color: black;
-    margin: 0;
-    padding: 0;
-}
-
-.menu dt:hover,
-.menu button:hover {
-    cursor: pointer;
-    transform: scale(1.2);
-    filter: brightness(110%);
-    transition: 1s;
-    box-shadow: 0 0 7px #75b2a0;
-}
-
 .cover-photo {
     width: inherit;
     background-color: #9df6dc;
@@ -83,8 +40,45 @@ header {
 
 .cover-photo img {
     width: 75%;
-    height: 75%;
+    height: inherit;
     max-width: 100%;
+}
+
+.menu {
+    margin: 0 0 0 0;
+    padding-right: 2%;
+    position: fixed;
+}
+
+.menu li {
+    height: 3.5vw;
+    width: 3.5vw;
+    border-radius: 50%;
+    background-color: #9df6dc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.menu li {
+    margin-top: 1.2vw;
+}
+
+.menu i {
+    font-size: 2vw;
+    font-weight: 500;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    filter: brightness(110%);
+    transition: 1s;
+    box-shadow: 0 0 7px #75b2a0;
 }
 
 
