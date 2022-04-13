@@ -676,3 +676,25 @@ footer i {
     justify-content: flex-end;
     margin-right: 3.2vw;
 }
+
+
+
+@media only screen and (max-width: 680px) {
+
+    header {
+        /* position: fixed; */
+    }
+
+    .cover-photo img {
+        /* width: 98%;
+        height: 100%;
+    }
+
+    .nav {
+        width: 80%;
+        flex-direction: column;
+    } */
+
+
+
+}
