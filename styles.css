@@ -91,6 +91,7 @@ nav {
     width: inherit;
     display: flex;
     padding: 5em 0 5em 0;
+    overflow-x: scroll;
 }
 
 nav button {
@@ -100,6 +101,7 @@ nav button {
     align-items: center;
     justify-content: space-between;
     transition: 1.5s;
+    flex-shrink: 0;
 }
 
 nav button:first-child {
@@ -208,6 +210,7 @@ article {
     opacity: 0;
     transition-property: opacity;
     transition-timing-function: ease-in;
+    flex-shrink: 0;
 }
 
 .show-article {
@@ -676,3 +679,61 @@ footer i {
     justify-content: flex-end;
     margin-right: 3.2em;
 }
+
+
+@media only screen and (max-width: 680px) {
+
+    body {
+        min-height: 100vh;
+    }
+    
+    header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .menu {
+        padding-right: 1em;
+    }
+
+    .menu li {
+        margin-top: .1em;
+    }
+    
+    .cover-photo img {
+        width: 96%;
+    }
+
+    nav button {
+        width: 35%;
+    }
+
+    nav button h2 {
+        font-size: 1.2rem;
+    }
+
+    .article {
+        margin: 2em 1.5em 1.5em 1em;
+        block-size: 100%;
+   
+    }
+
+    footer {
+        flex-direction: column;
+        margin: 0;
+
+    }
+
+    footer p,
+    .map {
+        display: none;
+    }
+
+    .location,
+    .contact {
+        margin: 0;
+        width: 100%;
+    }
+}    
