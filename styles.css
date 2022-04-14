@@ -682,18 +682,51 @@ footer i {
 @media only screen and (max-width: 680px) {
 
     header {
-        /* position: fixed; */
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1;
     }
-
+    
     .cover-photo img {
-        /* width: 98%;
-        height: 100%;
+        width: 98%;
+    }
+    
+    nav {
+        padding: 3em 0 3em 0;
+        flex-direction: column;
+    
     }
 
-    .nav {
-        width: 80%;
+    nav button {
+        margin-bottom: 2.5em;
+        display: flex;
         flex-direction: column;
-    } */
+        transition: 1.5s;
+        border: 1px solid red;
+    }
+    
+    nav button:first-child {
+        margin-left: 0;
+    }
+    
+    /* nav button:nth-child(2) {
+        margin-left: 10em;
+    }  */
+
+
+    nav button:last-child {
+        margin-right: 0;
+    }
+    nav button img {
+        width: 30%;
+    }
+
+    nav button h2 {
+        font-size: 1.5rem;
+    }    
+    
+
 
 
 
