@@ -151,7 +151,7 @@ nav button:hover {
 }
 
 /*OVERLINES*/
-.overlines {
+.overline {
     display: flex;
     opacity: 0;
     width: 0;
@@ -311,7 +311,7 @@ article img {
     justify-content: flex-start;
 }
 
-.crtf-btns {
+.crtf-btn {
     background-color: #F5FEFC;
     color: #ff96e3;
     border: none;
