@@ -91,12 +91,14 @@ nav {
     width: inherit;
     display: flex;
     padding: 10vw 0 7.5vw 0;
+    overflow-x: scroll;
 }
 
 nav button {
     margin: 0px;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     align-items: center;
     justify-content: space-between;
     transition: 1.5s;
@@ -205,6 +207,8 @@ article {
     padding: 0 0 0 0;
     line-height: 1.5;
     display: none;
+    /* flex-wrap: wrap; */
+    /* flex-shrink: 0; */
     opacity: 0;
     transition-property: opacity;
     transition-timing-function: ease-in;
@@ -226,7 +230,7 @@ article {
 
 article p {
     margin: 1em 0 0 0;
-    font-size: 1.1vw;
+    font-size: 1.2vw;
 }
 
 article h3 {
@@ -681,6 +685,10 @@ footer i {
 
 @media only screen and (max-width: 680px) {
 
+    body {
+        min-height: 100vh;
+    }
+    
     header {
         position: sticky;
         top: 0;
@@ -691,40 +699,28 @@ footer i {
     .cover-photo img {
         width: 98%;
     }
-    
-    nav {
-        padding: 3em 0 3em 0;
-        flex-direction: column;
-    
-    }
 
     nav button {
-        margin-bottom: 2.5em;
-        display: flex;
+        width: 35%;
+    }
+
+    footer {
         flex-direction: column;
-        transition: 1.5s;
-        border: 1px solid red;
-    }
-    
-    nav button:first-child {
-        margin-left: 0;
-    }
-    
-    /* nav button:nth-child(2) {
-        margin-left: 10em;
-    }  */
+        margin: 0;
 
-
-    nav button:last-child {
-        margin-right: 0;
-    }
-    nav button img {
-        width: 30%;
     }
 
-    nav button h2 {
-        font-size: 1.5rem;
-    }    
+    footer p,
+    .map {
+        display: none;
+    }
+
+    .location,
+    .contact {
+        margin: 0;
+        width: 100%;
+    }
+
     
 
 
