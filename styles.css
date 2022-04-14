@@ -101,7 +101,6 @@ nav button {
     align-items: center;
     justify-content: space-between;
     transition: 1.5s;
-    flex-shrink: 0;
 }
 
 nav button:first-child {
@@ -111,6 +110,7 @@ nav button:first-child {
 nav button:last-child {
     margin-right: 9em;
 }
+
 nav button img {
     width: 75%;
     max-width: 100%;
@@ -157,7 +157,8 @@ nav button:hover {
     display: flex;
     opacity: 0;
     width: 0;
-    margin-left: 9em;
+    margin: 0 0 0 9em;
+    padding: 0;
     border-bottom: .2rem;
     border-bottom-style: solid;
     filter: brightness(100%);
@@ -680,6 +681,10 @@ footer i {
     margin-right: 3.2em;
 }
 
+.swip {
+    display: none;
+}
+
 
 @media only screen and (max-width: 680px) {
 
@@ -688,10 +693,10 @@ footer i {
     }
     
     header {
-        position: sticky;
+        /* position: sticky;
         top: 0;
         left: 0;
-        z-index: 1;
+        z-index: 1; */
     }
 
     .menu {
@@ -706,24 +711,71 @@ footer i {
         width: 96%;
     }
 
+    nav {
+        align-items: flex-start;
+        padding-bottom: 0;
+    }
+
     nav button {
         width: 35%;
+        flex-shrink: 0;
     }
 
     nav button h2 {
         font-size: 1.2rem;
     }
 
+    nav button:first-child {
+        margin-left: 0;
+    }
+    
+    nav button:last-child {
+        margin-right: 0;
+    }
+
+    .swip {
+        display: flex;
+        margin: 5em 0 1.5em 2em;
+        width: 5rem;
+        animation: swipRight 1s alternate-reverse infinite;
+    }
+
+    .overline {
+        width: 90%;
+        margin: 0 2em 0 2em; 
+    }
+
     .article {
-        margin: 2em 1.5em 1.5em 1em;
+        margin: 2em;
         block-size: 100%;
-   
+    }
+
+    .how-much-details ul {
+        margin-right: 0;
+    }
+
+    .how-much-details li {
+        line-height: 1.8;
+    }
+
+    #for-who img,
+    #how-much img,
+    #what img {
+        display: none;
+    }
+
+    #who img {
+        width: 40%;
     }
 
     footer {
         flex-direction: column;
         margin: 0;
 
+    }
+
+    .footer-img {
+        margin-bottom: -2em;
     }
 
     footer p,
@@ -735,5 +787,24 @@ footer i {
     .contact {
         margin: 0;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+
+    @keyframes swipRight {
+        from {
+            transform: translateX(-2em);
+        }
+        to {
+            transform: translateX(5em);
+            opacity: 1;
+        }
+    };
+ 
+ 
+ 
+ 
+
 }    
