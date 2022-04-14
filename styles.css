@@ -50,13 +50,13 @@ header {
 
 .menu {
     margin: 0 0 0 0;
-    padding-right: 2%;
+    padding-right: 1.5em;
     position: fixed;
 }
 
 .menu li {
-    height: 3.5vw;
-    width: 3.5vw;
+    height: 2.5rem;
+    width: 2.5rem;
     border-radius: 50%;
     background-color: #9df6dc;
     display: flex;
@@ -66,11 +66,11 @@ header {
 }
 
 .menu li {
-    margin-top: 1.2vw;
+    margin-top: 1em;
 }
 
 .menu i {
-    font-size: 2vw;
+    font-size: 1.5rem;
     font-weight: 500;
     color: black;
     margin: 0;
@@ -90,7 +90,7 @@ header {
 nav {
     width: inherit;
     display: flex;
-    padding: 10vw 0 7.5vw 0;
+    padding: 5em 0 5em 0;
 }
 
 nav button {
@@ -103,11 +103,11 @@ nav button {
 }
 
 nav button:first-child {
-    margin-left: 12.5vw;
+    margin-left: 9em;
 }
 
 nav button:last-child {
-    margin-right: 12.5vw;
+    margin-right: 9em;
 }
 nav button img {
     width: 75%;
@@ -118,24 +118,24 @@ nav button img {
 }
 
 #who-img {
-    border-left: .2vw solid black;
+    border-left: .1rem solid black;
 }
 
 #what-img {
-    border-top: .2vw outset black;
+    border-top: .1rem outset black;
 }
 
 #for-who-img {
-    border-right: .2vw outset black;
+    border-right: .1rem outset black;
 }
 
 #how-much-img {
-    border-bottom: .2vw outset black;
+    border-bottom: .1rem outset black;
 }
 
 nav button h2 {
-    margin: 3vw 0 0 0;
-    font-size: 1.75vw;
+    margin: 1.2em 0 0 0;
+    font-size: 1.5rem;
     color: black;
 }
 
@@ -151,12 +151,12 @@ nav button:hover {
 }
 
 /*OVERLINES*/
-.overlines {
+.overline {
     display: flex;
     opacity: 0;
     width: 0;
-    margin-left: 12.5vw;
-    border-bottom: .3vw;
+    margin-left: 9em;
+    border-bottom: .2rem;
     border-bottom-style: solid;
     filter: brightness(100%);
     transition-property: opacity, filter, width;
@@ -181,27 +181,27 @@ nav button:hover {
 
 #who-overline {
     border-color: #ff96e3;
-    top: 0vw;
+    top: 0;
 }
 
 #what-overline {
     border-color: #62d2f5;
-    top: -0.3vw;
+    top: -0.2rem;
 }
 
 #for-who-overline {
     border-color: #ffe138;
-    top: -0.6vw;
+    top: -0.4rem;
 }
 
 #how-much-overline {
     border-color: #79fd92;
-    top: -0.9vw;
+    top: -0.6rem;
 }
 
 /*ARTICLE*/
 article {
-    margin: 3vw 12.5vw 3vw 12.5vw;
+    margin: 2em 9em 2em 9em;
     padding: 0 0 0 0;
     line-height: 1.5;
     display: none;
@@ -226,24 +226,24 @@ article {
 
 article p {
     margin: 1em 0 0 0;
-    font-size: 1.1vw;
+    font-size: .8rem;
 }
 
 article h3 {
-    font-size: 1.5vw;
-    padding: 2vw 0 .5vw 0;
+    font-size: 1.2rem;
+    padding: 1.5em 0 .7em 0;
     margin: 0;
 }
 
 article li {
-    font-size: 1.1vw;
+    font-size: .8rem;
     margin: 0;
     display: flex;
 }
 
 article i {
-    margin: .3vw 1.3vw 0 0;
-    font-size: 1.2vw;
+    margin: .1em 1em 0 0;
+    font-size: 1rem;
 }
 
 article img {
@@ -258,14 +258,14 @@ article img {
     display: flex;
 }
 .go-right-go-up {
-    margin: 3vw 0 0 0;
+    margin: 2em 0 0 0;
     align-items: flex-end;
     flex-direction: column;
 }
 
 .go-right-go-up button {
-    padding: 1vw 0 0 0;
-    font-size: 1vw;
+    padding: 1em 0 0 0;
+    font-size: 1rem;
     align-items: center;
     font-weight: 600;
     color: black;
@@ -273,8 +273,8 @@ article img {
 
 .go-right i,
 .go-up i {
-    margin: 0 0 0 .5vw;
-    font-size: 2.5vw;
+    margin: 0 0 0 .3em;
+    font-size: 1.5rem;
 }
 
 .go-right:hover,
@@ -290,8 +290,8 @@ article img {
 #who img {
     float: left;
     width: 30%;
-    border-left: .15vw solid black;
-    margin: 0 2vw 2vw 0;
+    border-left: .1rem solid black;
+    margin: 0 1.3em 1.3em 0;
 }
 
 #who i {
@@ -303,7 +303,7 @@ article img {
 }
 
 #who .fa-search-plus {
-    margin: 0 .5vw 0 0;
+    margin: 0 .3em 0 0;
 }
 
 #who dt {
@@ -311,13 +311,13 @@ article img {
     justify-content: flex-start;
 }
 
-.crtf-btns {
+.crtf-btn {
     background-color: #F5FEFC;
     color: #ff96e3;
     border: none;
     margin: 0;
     cursor: pointer;
-    font-size: 1.1vw;
+    font-size: .8rem;
 }
 
 .certificates-collection {
@@ -339,7 +339,7 @@ article img {
     width: auto;
     border-radius: 5%;
     border: 1px solid #ff96e3;
-    padding: 3px;
+    padding: .5em;
     position: absolute;
     display: none;
 }
@@ -349,8 +349,8 @@ article img {
 .close-crtf,
 .close-contact-form {
     position: fixed;
-    height: 3vw;
-    width: 3vw;
+    height: 2rem;
+    width: 2rem;
     border-radius: 50%;
     color: #F5FEFC;
     border: none;
@@ -358,7 +358,7 @@ article img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1vw;
+    font-size: 1rem;
 }
 
 .prev-crtf,
@@ -406,15 +406,15 @@ article img {
 .what-photo1 {
     float: right;
     width: 30%;
-    margin: 2vw 1vw 1vw 0;
+    margin: 2em 1em 1em 0;
     border-top: .15vw solid black;
 }
 
 .what-photo2 {
     float: right;
     width: 20%;
-    margin: 2.5vw 2vw 0 1vw;
-    border-top: .15vw solid black;
+    margin: 2em 2em 0 1em;
+    border-top: .1rem solid black;
 }
 
 /*ARTICLE FOR-WHO*/
@@ -430,32 +430,32 @@ article img {
 .for-who-img1 {
     width: 27%;
     float: right;
-    margin: 0 0 0 3vw;
-    border-right: .15vw solid black;
+    margin: 0 0 0 3em;
+    border-right: .1rem solid black;
     
 }
 
 .for-who-img2 {
     width: 25%;
     float: right;
-    margin: 1vw 5vw 0 7vw;
-    border-right: .15vw solid black;
+    margin: 1em 5em 0 7em;
+    border-right: .1rem solid black;
 }
 
 /*ARTICLE HOW-MUCH*/
 .how-much-img {
     width: 18%;
     float: right;
-    margin: 0 1vw 0 2vw;
-    border-bottom: .15vw solid black;
+    margin: 0 1em 0 2em;
+    border-bottom: .1rem solid black;
 }
 
 .how-much-details {
     display: flex;
 }
 
-.how-much-details dl {
-    margin-right: 5vw;
+.how-much-details ul {
+    margin-right: 5em;
 }
 
 #how-much i {
@@ -472,8 +472,8 @@ box-shadow: 0 0 7px #75b2a0;
 }
 
 footer h4 {
-    margin: 0 0 3vw 0;
-    font-size: 1.35vw;
+    margin: 0 0 1.5em 0;
+    font-size: 1rem;
 }
 
 .contact {
@@ -481,13 +481,15 @@ footer h4 {
 }
 
 .contact ul {
-    padding-bottom: 3vw;
+    padding-bottom: 1.5em;
+    padding-left: 0;
 }
 
 .contact a,
 .location a {
     text-decoration: none;
     color: black;
+    font-style: normal;
 }
 
 .fa-phone {
@@ -499,14 +501,14 @@ footer h4 {
 
 .contact p,
 .location p {
-    font-size: 0.84vw;
+    font-size: 0.6rem;
     line-height: 1.5;
     margin: 0;
 }
 
 footer li,
 footer li button {
-    font-size: 1.1vw;
+    font-size: .8rem;
     display: flex;
     align-items: flex-start;
     line-height: 1.5;
@@ -519,7 +521,8 @@ footer li button {
 }
 
 .location ul {
-    padding-bottom: 4.7vw;
+    padding-bottom: 2.5em;
+    padding-left: 0;
 }
 
 .fa-map-marker-alt {
@@ -540,16 +543,16 @@ footer li button {
 
 footer .fa-search-plus {
     color: #fc4273;
-    padding-bottom: 1vw;
+    padding-bottom: 1em;
 }
 
 #gmap_canvas {
-    width: 27vw;
-    height: 14vw;
+    width: 20rem;
+    height: 10rem;
     opacity: .7;
     border: 1px solid black;
     border-radius: 5px;
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 .08rem black;
 }
 
 #gmap_canvas:hover {
@@ -562,7 +565,7 @@ footer ul {
 }
 
 footer i {
-    margin-right: .5vw;
+    margin-right: .5em;
 }
 
 .footer-cover {
@@ -575,7 +578,7 @@ footer i {
     width: 12%;
     height: 12%;
     border-radius: 50%;
-    margin-bottom: -5.5vw;
+    margin-bottom: -4.5em;
     border-top: 1px outset #75b2a0;
 }
 
@@ -602,14 +605,14 @@ footer i {
     flex-direction: column;
     border-radius: 5%;
     background-color: #F5FEFC;
-    border: 3px solid #9df6dc;
+    border: .3rem solid #9df6dc;
     height: auto;
     width: 50%;
-    padding: 2vw 0 0 2vw;
+    padding: 2em 0 0 2em;
 }
 
 .leave-a-message h5 {
-    margin: 0 0 .5vw 0;
+    margin: 0 0 .5em 0;
 }
 
 .leave-a-message input {
@@ -621,12 +624,12 @@ footer i {
     border: 1px solid #9df6dc;
     background-color: #F5FEFC;
     border-radius: 5px;
-    margin: 0 0 2vw 0;
-    padding: 1vw 1vw 1.5vw .5vw;
+    margin: 0 0 2em 0;
+    padding: 1em 1em 1.5em .5em;
 }
 
 .contact-me {
-    width: 20vw;
+    width: 20em;
 }
 
 .send-btn {
@@ -634,11 +637,11 @@ footer i {
     border: none;
     box-shadow: 0 0 7px #75b2a0;
     border-radius: 5px;
-    padding: .75vw;
-    margin: 0 0 2vw 36.5vw;
-    width: 10vw;
+    padding: .75em;
+    margin: 0 0 2em 36.5em;
+    width: 7rem;
     cursor: pointer;
-    font-size: 1vw;
+    font-size: .72rem;
     justify-content: flex-end;
 
 }
@@ -650,8 +653,8 @@ footer i {
 }
 
 .message {
-    width: 45vw;
-    height: 10vw;
+    width: 32rem;
+    height: 12rem;
 }
 
 .close-contact-form {
@@ -663,13 +666,13 @@ footer i {
 
 .form-feedback {
     display: flex;
-    margin: 0 0 2vw 0;
+    margin: 0 0 2em 0;
     padding: 0;
-    font-size: 1.2vw;
+    font-size: .6rem;
     color: red;
 }
 
 .confirmation {
     justify-content: flex-end;
-    margin-right: 3.2vw;
+    margin-right: 3.2em;
 }

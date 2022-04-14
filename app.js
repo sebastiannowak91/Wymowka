@@ -12,9 +12,9 @@
 
 //ARTICLES//
 
-const articles = document.querySelectorAll(".articles");
-const figures = document.querySelectorAll(".figures");
-const overlines = document.querySelectorAll(".overlines");
+const articles = document.querySelectorAll(".article");
+const figures = document.querySelectorAll(".figure");
+const overlines = document.querySelectorAll(".overline");
 
 
 for (let i = 0; i < figures.length; i++) {
@@ -110,9 +110,9 @@ function goRight() {
 };
 
 //CERTIFICATES//
-const crtfBtns = document.querySelectorAll(".crtf-btns");
+const crtfBtns = document.querySelectorAll(".crtf-btn");
 const crtfCollection = document.querySelector(".certificates-collection");
-const certificates = document.querySelectorAll(".certificates");
+const certificates = document.querySelectorAll(".certificate");
 const closeCrtf = document.querySelector(".close-crtf");
 const nextCrtf = document.querySelector(".next-crtf");
 const prevCrtf = document.querySelector(".prev-crtf");
