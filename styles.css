@@ -310,7 +310,7 @@ article img {
     margin: 0 .3em 0 0;
 }
 
-#who dt {
+#who li {
     display: flex;
     justify-content: flex-start;
 }
@@ -723,7 +723,7 @@ footer i {
 
     nav {
         align-items: flex-end;
-        padding: 3em 0 5em 4em;
+        padding: 3em 0 5em 0em;
     }
 
     nav button {
@@ -742,7 +742,7 @@ footer i {
 
     
     nav button:first-child {
-        margin-left: 0;
+        margin-left: 4em;
     }
     
     nav button:last-child {
@@ -757,14 +757,18 @@ footer i {
     }
 
     .overline {
-        width: 90%;
-        margin: 0 2em 0 2em; 
+        width: 80%;
+        margin: 0 2em 0 4em; 
+    }
+
+    h2,
+    h4 {
+        display: flex;
+        flex-wrap: nowrap;
     }
 
     .article {
         margin: 2em 2em 2em 4em;
-
-        
     }
 
     .article ul {
@@ -783,6 +787,23 @@ footer i {
 
     #who img {
         width: 40%;
+    }
+    
+    .certificates-collection img {
+        height: 75%;
+    }
+
+    .next-crtf {
+        left: 90%;
+    }
+    
+    .prev-crtf {
+        right: 90%;
+    }
+    
+    .close-crtf {
+        top: 3%;
+        left: 90%;
     }
 
     footer {
