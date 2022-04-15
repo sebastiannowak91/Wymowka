@@ -48,6 +48,18 @@ header {
     max-width: 100%;
 }
 
+.main-arrow {
+    height: 15rem;
+    width: auto;
+    position: absolute;
+    /* top: 0; */
+    left: 3em;
+    bottom: 18em;
+    animation: downArrow 1s ease-in-out forwards;
+    opacity: 1;
+
+}
+
 .menu {
     margin: 0 0 0 0;
     padding-right: 1.5em;
@@ -135,9 +147,10 @@ nav button img {
     border-bottom: .1rem outset black;
 }
 
-nav button h2 {
+nav button p {
     margin: 1.2em 0 0 0;
     font-size: 1.5rem;
+    font-weight: bold;
     color: black;
 }
 
@@ -685,6 +698,16 @@ footer i {
     display: none;
 }
 
+@keyframes downArrow {
+    from {
+        transform: translateY(-50em);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+};
+
 
 @media only screen and (max-width: 680px) {
 
@@ -761,7 +784,7 @@ footer i {
         margin: 0 2em 0 4em; 
     }
 
-    h2,
+    nav button p,
     h4 {
         display: flex;
         flex-wrap: nowrap;
