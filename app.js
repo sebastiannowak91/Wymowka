@@ -1,14 +1,3 @@
-//HEADER//
-// const contactDetails = document.querySelector(".contact-details");
-
-//     contactDetails.addEventListener("click", function() {
-//     window.scroll ({
-//         top: 3000,
-//         left: 0,
-//         behavior: "smooth"
-//     });
-// });
-
 
 //ARTICLES//
 
