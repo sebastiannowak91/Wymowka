@@ -698,15 +698,6 @@ footer i {
     display: none;
 }
 
-@keyframes downArrow {
-    from {
-        transform: translateY(-50em);
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-};
 
 
 @media only screen and (max-width: 680px) {
@@ -715,7 +706,6 @@ footer i {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        flex-shrink: 0;
     }
 
     header {
@@ -758,7 +748,7 @@ footer i {
         transform: none;
     }
 
-    nav button h2 {
+    nav button p {
         font-size: 1.2rem;
         font-weight: bold;
     }
@@ -842,7 +832,10 @@ footer i {
     }
 
     footer p,
-    .map {
+    .map,
+    .contact-form,
+    .fa-paste,
+    .open-form {
         display: none;
     }
 
@@ -875,4 +868,14 @@ footer i {
  
  
 
-}    
+}   
+
+/* @keyframes downArrow {
+    from {
+        transform: translateY(-50em);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}; */
