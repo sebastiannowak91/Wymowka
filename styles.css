@@ -690,30 +690,40 @@ footer i {
 
     body {
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
     }
-    
+
     header {
-        /* position: sticky;
-        top: 0;
-        left: 0;
-        z-index: 1; */
+        justify-content: flex-start;
     }
 
     .menu {
-        padding-right: 1em;
+        padding-left: 1em;
     }
 
     .menu li {
-        margin-top: .1em;
+        background-color: #9df6dc;
+        margin-top: .75em;
+    }
+
+    .menu li:hover {
+        transform: none;
+    }
+    
+    .menu i {
+        color: black;
     }
     
     .cover-photo img {
-        width: 96%;
+        width: 90%;
+        margin-left: 4em;
     }
 
     nav {
-        align-items: flex-start;
-        padding-bottom: 0;
+        align-items: flex-end;
+        padding: 3em 0 5em 4em;
     }
 
     nav button {
@@ -721,10 +731,16 @@ footer i {
         flex-shrink: 0;
     }
 
-    nav button h2 {
-        font-size: 1.2rem;
+    nav button:hover {
+        transform: none;
     }
 
+    nav button h2 {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    
     nav button:first-child {
         margin-left: 0;
     }
@@ -735,7 +751,7 @@ footer i {
 
     .swip {
         display: flex;
-        margin: 5em 0 1.5em 2em;
+        margin: 0 0 3em 0;
         width: 5rem;
         animation: swipRight 1s alternate-reverse infinite;
     }
@@ -746,16 +762,17 @@ footer i {
     }
 
     .article {
-        margin: 2em;
-        block-size: 100%;
+        margin: 2em 2em 2em 4em;
+
+        
+    }
+
+    .article ul {
+        padding: 0;
     }
 
     .how-much-details ul {
-        margin-right: 0;
-    }
-
-    .how-much-details li {
-        line-height: 1.8;
+        margin-right: 2em;
     }
 
     #for-who img,
@@ -771,11 +788,13 @@ footer i {
     footer {
         flex-direction: column;
         margin: 0;
+        padding-top: 2em;
 
     }
 
     .footer-img {
         margin-bottom: -2em;
+        z-index: 1;
     }
 
     footer p,
@@ -793,9 +812,14 @@ footer i {
         align-items: center;
     }
 
+    .location h4 {
+        align-items: center;
+        justify-content: center;
+    }
+
     @keyframes swipRight {
         from {
-            transform: translateX(-2em);
+            transform: translateX(-8em);
         }
         to {
             transform: translateX(5em);
