@@ -102,15 +102,15 @@ header {
 nav {
     width: 80%;
     max-width: 100%;
-    margin-right: 10%;
-    margin-left: 10%;
+    margin: 0 10% 0 10%;
+    padding: 5em 0 5em 0;
     display: flex;
-    /* padding: 5em 0 5em 0; */
     overflow-x: scroll;
     border: 1px solid red;
 }
 
 nav button {
+    width: 25%;
     margin: 0px;
     display: flex;
     flex-direction: column;
@@ -243,7 +243,7 @@ article {
 
 article p {
     margin: 1em 0 0 0;
-    font-size: .8rem;
+    font-size: 1rem;
 }
 
 article h3 {
@@ -253,7 +253,7 @@ article h3 {
 }
 
 article li {
-    font-size: .8rem;
+    font-size: 1rem;
     margin: 0;
     display: flex;
 }
@@ -423,14 +423,14 @@ article img {
 .what-photo1 {
     float: right;
     width: 30%;
-    margin: 2em 1em 1em 0;
+    margin: 2em 0 2em 0;
     border-top: .15vw solid black;
 }
 
 .what-photo2 {
     float: right;
     width: 20%;
-    margin: 2em 2em 0 1em;
+    margin: 2em .5em 1em 2em;
     border-top: .1rem solid black;
 }
 
@@ -708,25 +708,159 @@ footer i {
     }
 }; */
 
-/* @media only screen and (max-width: 920px) {
-    .nav {
-        width: 100%;
-        margin-right: 0;
-        margin-left: 0;
+
+
+@media only screen and (max-width: 920px) {
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
-    .nav button:first-child {
-        margin-left: 0;
+    header {
+        justify-content: flex-end;
+    }
+
+    .menu {
+        padding-right: 1em;
+    }
+
+    .menu li {
+        background-color: #9df6dc;
+        margin-top: .75em;
+    }
+
+    .menu li:hover {
+        transform: none;
+    }
+    
+    .menu i {
+        color: black;
+    }
+    
+    .cover-photo img {
+        width: 100%;
+    }
+
+    nav {
+        width: 98%;
+        margin: 0 1.5% 0 .5%;
+    }
+
+    nav button {
+        width: 24.5%;
+        flex-shrink: 0;
+    }
+
+    nav button:hover {
+        transform: none;
+    }
+
+    nav button p {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .overline {
+        width: 90%;
+        margin: 0 2em 0 4em; 
+    }
+
+    nav button p,
+    h4 {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .article {
+        width: 90%;
+        margin: 2em 7% 2em 3%;
+    }
+
+    .article ul {
+        padding: 0;
+    }
+
+    .how-much-details ul {
+        margin-right: 2em;
+    }
+
+    #for-who img,
+    #how-much img,
+    #what img {
+        display: none;
+    }
+
+    #who img {
+        width: 40%;
+    }
+    
+    .certificates-collection img {
+        height: 75%;
+    }
+
+    .next-crtf {
+        left: 90%;
+    }
+    
+    .prev-crtf {
+        right: 90%;
+    }
+    
+    .close-crtf {
+        top: 3%;
+        left: 90%;
     }
 
     footer {
+        flex-direction: column;
+        margin: 0;
+        padding-top: 2em;
+
+    }
+
+    .footer-img {
+        margin-bottom: -2em;
+        z-index: 1;
+    }
+
+    footer p,
+    .map,
+    .contact-form,
+    .fa-paste,
+    .open-form {
         display: none;
     }
-} */
+
+    .location,
+    .contact {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .location h4 {
+        align-items: center;
+        justify-content: center;
+    }
+
+    @keyframes swipRight {
+        from {
+            transform: translateX(-8em);
+        }
+        to {
+            transform: translateX(5em);
+            opacity: 1;
+        }
+    };
+};
 
 
-
-@media only screen and (max-width: 680px) {
+/* @media only screen and (max-width: 680px) {
 
     body {
         min-height: 100vh;
@@ -777,15 +911,6 @@ footer i {
     nav button p {
         font-size: 1.2rem;
         font-weight: bold;
-    }
-
-    
-    /* nav button:first-child {
-        margin-left: 4em;
-    } */
-    
-    nav button:last-child {
-        margin-right: 0;
     }
 
     .swip {
@@ -889,12 +1014,8 @@ footer i {
             opacity: 1;
         }
     };
- 
- 
- 
- 
+}; */
 
-}   
 
 /* @keyframes downArrow {
     from {
