@@ -43,7 +43,7 @@ header {
 }
 
 .cover-photo img {
-    width: 75%;
+    width: 80%;
     height: 100%;
     max-width: 100%;
 }
@@ -100,10 +100,14 @@ header {
 
 /* NAV*/
 nav {
-    width: inherit;
+    width: 80%;
+    max-width: 100%;
+    margin-right: 10%;
+    margin-left: 10%;
     display: flex;
-    padding: 5em 0 5em 0;
+    /* padding: 5em 0 5em 0; */
     overflow-x: scroll;
+    border: 1px solid red;
 }
 
 nav button {
@@ -113,14 +117,7 @@ nav button {
     align-items: center;
     justify-content: space-between;
     transition: 1.5s;
-}
-
-nav button:first-child {
-    margin-left: 9em;
-}
-
-nav button:last-child {
-    margin-right: 9em;
+    border: 1px solid green;
 }
 
 nav button img {
@@ -170,7 +167,7 @@ nav button:hover {
     display: flex;
     opacity: 0;
     width: 0;
-    margin: 0 0 0 9em;
+    margin: 0 0 0 10%;
     padding: 0;
     border-bottom: .2rem;
     border-bottom-style: solid;
@@ -184,7 +181,7 @@ nav button:hover {
     transition-property: opacity, filter, width;
     filter: brightness(100%);
     opacity: 1;
-    width: 75vw;
+    width: 80%;
     transition-duration: 1s;
 }
 
@@ -217,8 +214,11 @@ nav button:hover {
 
 /*ARTICLE*/
 article {
-    margin: 2em 9em 2em 9em;
-    padding: 0 0 0 0;
+    border: 1px solid blue;
+    width: 80%;
+    margin: 2em 10% 2em 10%;
+    display: flex;
+    justify-content: center;
     line-height: 1.5;
     display: none;
     opacity: 0;
@@ -700,6 +700,32 @@ footer i {
 
 
 
+/* @media only screen and (max-width: 1200px) {
+    .nav,
+    .article {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}; */
+
+/* @media only screen and (max-width: 920px) {
+    .nav {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .nav button:first-child {
+        margin-left: 0;
+    }
+
+    footer {
+        display: none;
+    }
+} */
+
+
+
 @media only screen and (max-width: 680px) {
 
     body {
@@ -754,9 +780,9 @@ footer i {
     }
 
     
-    nav button:first-child {
+    /* nav button:first-child {
         margin-left: 4em;
-    }
+    } */
     
     nav button:last-child {
         margin-right: 0;
