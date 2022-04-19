@@ -43,7 +43,7 @@ header {
 }
 
 .cover-photo img {
-    width: 90%;
+    width: 80%;
     height: 100%;
     max-width: 100%;
 }
@@ -51,13 +51,13 @@ header {
 .main-arrow {
     width: 1.5em;
     position: absolute;
-    left: 1.5em;
+    left: 2em;
     bottom: 3em;
     animation: downArrow 1s alternate-reverse infinite;
 }
 
 .main-arrow path {
-    fill: red;
+    fill: black;
 }
 
 .menu {
@@ -980,9 +980,9 @@ footer i {
     }
 }
 
-@media only screen and (max-width: 445px) {
+@media only screen and (max-width: 450px) {
     body {
-        width: 445px;
+        width: 450px;
         display: flex;
         flex-direction: column;
         flex-shrink: 0;
