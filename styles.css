@@ -705,13 +705,10 @@ footer i {
 
     nav,
     .overline,
+    .overline-on,
     article {
         width: 1100px;
         margin: 0 auto;
-    }
-
-    .overline-on {
-        width: 880px;
     }
 }
 
