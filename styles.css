@@ -33,10 +33,12 @@ header {
     display: flex;
     justify-content: flex-end;
     border: 3px solid red;
+    height: 100vh;
 }
 
 .cover-photo {
     width: inherit;
+    height: 80vh;
     background-color: #9df6dc;
     display: flex;
     justify-content: center;
@@ -47,6 +49,7 @@ header {
     width: 80%;
     height: 100%;
     max-width: 100%;
+    border: 2px solid pink;
 }
 
 .main-arrow {
@@ -218,7 +221,7 @@ article {
     justify-content: center;
     line-height: 1.5;
     display: none;
-    opacity: 0;
+    opacity: 1;
     transition-property: opacity;
     transition-timing-function: ease-in;
     flex-shrink: 0;

@@ -1,102 +1,123 @@
 
 //ARTICLES//
 
-const articles = document.querySelectorAll(".article");
-const figures = document.querySelectorAll(".figure");
-const overlines = document.querySelectorAll(".overline");
+// const articles = document.querySelectorAll(".article");
+// const figures = document.querySelectorAll(".figure");
+// const overlines = document.querySelectorAll(".overline");
 
 
-for (let i = 0; i < figures.length; i++) {
-    figures[i].addEventListener("click", showHideArticle);
-};
+// for (let i = 0; i < figures.length; i++) {
+//     figures[i].addEventListener("click", showHideArticle);
+// };
 
-let currentArticleIndex = 0;
+// let currentArticleIndex = 0;
 
-function showHideArticle() {
-    let id = this.id;
-    id = id.replace("-figure", "");
-    for (let i = 0; i < articles.length; i++) {
-        if (id === articles[i].id) {
-            if (articles[i].style.display === "none" || articles[i].style.display === "") {
-                currentArticleIndex = i;
-                showArticle(i);
-                window.scroll ({
-                    top: 600,
-                    left: 0,
-                    behavior: "smooth"
-                });
-            } else if (articles[i].style.display === "block") {
-                hideArticle(i);
-            }
-        } else {
-            overlines[i].classList.remove("overline-on");
-            articles[i].classList.remove("show-article");
-            articles[i].style.display = "none";
-            figures[i].classList.remove("highlight");
-        }
-    }
-};
+// function showHideArticle() {
+//     let id = this.id;
+//     id = id.replace("-figure", "");
+//     for (let i = 0; i < articles.length; i++) {
+//         if (id === articles[i].id) {
+//             if (articles[i].style.display === "none" || articles[i].style.display === "") {
+//                 currentArticleIndex = i;
+//                 showArticle(i);
+//                 window.scroll ({
+//                     top: 600,
+//                     left: 0,
+//                     behavior: "smooth"
+//                 });
+//             } else if (articles[i].style.display === "block") {
+//                 hideArticle(i);
+//             }
+//         } else {
+//             overlines[i].classList.remove("overline-on");
+//             articles[i].classList.remove("show-article");
+//             articles[i].style.display = "none";
+//             figures[i].classList.remove("highlight");
+//         }
+//     }
+// };
 
-function showArticle(i) {
-    figures[i].classList.add("highlight");
-    overlines[i].classList.remove("overline-off");
-    overlines[i].classList.add("overline-on");
-    articles[i].style.display = "block";
-    articles[i].classList.remove("hide-article");
-    setTimeout (function () {
-        articles[i].classList.add("show-article")}, 500);
-};
+// function showArticle(i) {
+//     figures[i].classList.add("highlight");
+//     overlines[i].classList.remove("overline-off");
+//     overlines[i].classList.add("overline-on");
+//     articles[i].style.display = "block";
+//     articles[i].classList.remove("hide-article");
+//     setTimeout (function () {
+//         articles[i].classList.add("show-article")}, 500);
+// };
 
-function hideArticle(i) {
-    articles[i].classList.add("hide-article");
-    articles[i].classList.remove("show-article");
-    overlines[i].classList.add("overline-off");
-    setTimeout (function() {
-        articles[i].style.display = "none"}, 700);
-    figures[i].classList.remove("highlight");
-    setTimeout (function() {
-        overlines[i].classList.remove("overline-on")}, 700);    
-};
+// function hideArticle(i) {
+//     articles[i].classList.add("hide-article");
+//     articles[i].classList.remove("show-article");
+//     overlines[i].classList.add("overline-off");
+//     setTimeout (function() {
+//         articles[i].style.display = "none"}, 700);
+//     figures[i].classList.remove("highlight");
+//     setTimeout (function() {
+//         overlines[i].classList.remove("overline-on")}, 700);    
+// };
 
+const tabs = document.querySelector('.tabs');
+const tabButtons = tabs.querySelectorAll('[role="tab"]');
+const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 
-//BACK UP//
-const backUp = document.querySelectorAll(".go-up");
-
-backUp.forEach(function (button) {
-    button.addEventListener("click", goUp);
-});
-
-function goUp() {
-        window.scroll ({
-            top: 600,
-            left: 0,
-            behavior: "smooth"
-        });
-        for (let i = 0; i < articles.length; i++) { 
-            setTimeout (function() {
-                hideArticle(i)}, 300);
-        }
-};
-
-
-//GO RIGHT//
-const goRightBtns = document.querySelectorAll(".go-right");
-
-goRightBtns.forEach(function (button) {
-    button.addEventListener("click", goRight);
-});
-
-function goRight() {
-    window.scroll ({
-        top: 600,
-        left: 0,
-        behavior: "smooth"
+function handleTabClick(event) {
+    tabPanels.forEach(tabPanel => {
+        tabPanel.hidden = true
     });
-    hideArticle(currentArticleIndex);
-    currentArticleIndex += 1;
-    setTimeout (function() {
-        showArticle(currentArticleIndex)}, 300);
+    tabButtons.forEach(tabButton => {
+        tabButton.setAttribute('aria-selected', false);
+    });
+    event.currentTarget.setAttribute('aria-selected', true);
+    const {id} = event.currentTarget;
+
+    const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
+    tabPanel.hidden = false;
 };
+
+tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
+
+
+
+// //BACK UP//
+// const backUp = document.querySelectorAll(".go-up");
+
+// backUp.forEach(function (button) {
+//     button.addEventListener("click", goUp);
+// });
+
+// function goUp() {
+//         window.scroll ({
+//             top: 600,
+//             left: 0,
+//             behavior: "smooth"
+//         });
+//         for (let i = 0; i < articles.length; i++) { 
+//             setTimeout (function() {
+//                 hideArticle(i)}, 300);
+//         }
+// };
+
+
+// //GO RIGHT//
+// const goRightBtns = document.querySelectorAll(".go-right");
+
+// goRightBtns.forEach(function (button) {
+//     button.addEventListener("click", goRight);
+// });
+
+// function goRight() {
+//     window.scroll ({
+//         top: 600,
+//         left: 0,
+//         behavior: "smooth"
+//     });
+//     hideArticle(currentArticleIndex);
+//     currentArticleIndex += 1;
+//     setTimeout (function() {
+//         showArticle(currentArticleIndex)}, 300);
+// };
 
 //CERTIFICATES//
 const crtfBtns = document.querySelectorAll(".crtf-btn");
