@@ -32,6 +32,7 @@ header {
     width: inherit;
     display: flex;
     justify-content: flex-end;
+    border: 3px solid red;
 }
 
 .cover-photo {
