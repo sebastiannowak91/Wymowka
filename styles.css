@@ -108,17 +108,23 @@ nav {
     max-width: 100%;
     margin: 0 10% 0 10%;
     padding: 7em 0 5em 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(2, 50%);
+    grid-column-gap: 5%;
+    grid-row-gap: 10%;
+    border: 2px solid green;
 }
 
 nav button {
-    width: 25%;
+    width: 80%;
     margin: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     transition: 1.5s;
+    border: 2px solid red;
 }
 
 nav button img {
@@ -229,6 +235,7 @@ article {
     transition-property: opacity;
     transition-timing-function: ease-in;
     flex-shrink: 0;
+    border: 2px solid red;
 }
 
 .show-article {

@@ -74,6 +74,7 @@ function handleTabClick(event) {
 
     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
     tabPanel.hidden = false;
+
 };
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
@@ -100,6 +101,13 @@ tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabCli
 // };
 
 
+const backUp = tabs.querySelectorAll(".go-up");
+
+backUp.forEach(backUp => backUp.addEventListener("click", function() {
+    tabPanels.forEach(tabPanel => tabPanel.setAttribute("hidden", true));
+}));
+
+
 // //GO RIGHT//
 // const goRightBtns = document.querySelectorAll(".go-right");
 
@@ -118,6 +126,19 @@ tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabCli
 //     setTimeout (function() {
 //         showArticle(currentArticleIndex)}, 300);
 // };
+const goRightBtn = tabs.querySelectorAll(".go-right");
+
+
+goRightBtn.forEach(goRightBtn => goRightBtn.addEventListener("click", function() {
+    console.log('you did it again!');
+    console.log(tabPanels);
+}));
+
+function logTabPanel(tabPanel)
+
+
+
+
 
 //CERTIFICATES//
 const crtfBtns = document.querySelectorAll(".crtf-btn");
