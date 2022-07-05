@@ -214,13 +214,19 @@ nav button:hover {
 }
 
 /*ARTICLE*/
+
+/* [role="tabpanel"] {
+    background: red;
+} */
+
+
 article {
     width: 80%;
     margin: 2em 10% 2em 10%;
     display: flex;
     justify-content: center;
     line-height: 1.5;
-    display: none;
+    display: block;
     opacity: 1;
     transition-property: opacity;
     transition-timing-function: ease-in;
@@ -305,26 +311,26 @@ article img {
 
 
 /*ARTICLE WHO*/
-#who img {
+.who img {
     float: left;
     width: 30%;
     border-left: .1rem solid black;
     margin: 0 1.3em 1.3em 0;
 }
 
-#who i {
+.who i {
     color: #ff96e3;
 }
 
-#who .fa-chevron-circle-right {
+.who .fa-chevron-circle-right {
     color:#62d2f5;
 }
 
-#who .fa-search-plus {
+.who .fa-search-plus {
     margin: 0 .3em 0 0;
 }
 
-#who li {
+.who li {
     display: flex;
     justify-content: flex-start;
 }
@@ -412,11 +418,11 @@ article img {
 }
 
 /*ARTICLE WHAT*/
-#what i {
+.what i {
     color: #62d2f5;
 }
 
-#what .fa-chevron-circle-right {
+.what .fa-chevron-circle-right {
     color: #fff993;
 }
 
@@ -435,11 +441,11 @@ article img {
 }
 
 /*ARTICLE FOR-WHO*/
-#for-who i {
+.for-who i {
     color: #fff993;
 }
 
-#for-who .fa-chevron-circle-right {
+.for-who .fa-chevron-circle-right {
     color: #79fd92;
 }
 
@@ -473,7 +479,7 @@ article img {
     margin-right: 5em;
 }
 
-#how-much i {
+.how-much i {
     color: #79fd92;
 }
 
