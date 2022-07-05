@@ -128,13 +128,13 @@ backUp.forEach(backUp => backUp.addEventListener("click", function() {
 // };
 const goRightBtn = tabs.querySelectorAll(".go-right");
 
+goRightBtn.forEach(goRightBtn => goRightBtn.addEventListener("click", goToNextTabPanel));
 
-goRightBtn.forEach(goRightBtn => goRightBtn.addEventListener("click", function() {
-    console.log('you did it again!');
-    console.log(tabPanels);
-}));
-
-function logTabPanel(tabPanel)
+function goToNextTabPanel(tabPanel, index, originalArray) {
+    const nextTabPanel = originalArray [index + 1];
+    nextTabPanel ? console.log('there is a next tabPanel after that one') : null;
+}
+tabPanels.forEach(goToNextTabPanel);
 
 
 
