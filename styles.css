@@ -215,18 +215,16 @@ nav button:hover {
 
 /*ARTICLE*/
 
-/* [role="tabpanel"] {
-    background: red;
+/* article[hidden="false"] {
+    opacity: 1;
+    display: flex;
 } */
-
 
 article {
     width: 80%;
     margin: 2em 10% 2em 10%;
-    display: flex;
     justify-content: center;
     line-height: 1.5;
-    display: block;
     opacity: 1;
     transition-property: opacity;
     transition-timing-function: ease-in;
