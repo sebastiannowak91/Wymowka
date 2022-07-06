@@ -61,21 +61,55 @@
 const tabs = document.querySelector('.tabs');
 const tabButtons = tabs.querySelectorAll('[role="tab"]');
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
+const overlines = Array.from(tabs.querySelectorAll(".overline"));
 
-function handleTabClick(event) {
+
+function showArticle(event) {
+    event.currentTarget.setAttribute('aria-selected', true);
+    const {id} = event.currentTarget;
+
+    const overline = overlines.find(overline => overline.getAttribute('aria-labelledby') === id);
+    overline.classList.add('overline-on');
+    const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
+    tabPanel.hidden = false;
+};
+
+function hideArticle(event) {
+    overlines.forEach(overline => {
+        overline.classList.remove('overline-on');
+    });
     tabPanels.forEach(tabPanel => {
         tabPanel.hidden = true
     });
     tabButtons.forEach(tabButton => {
         tabButton.setAttribute('aria-selected', false);
     });
-    event.currentTarget.setAttribute('aria-selected', true);
-    const {id} = event.currentTarget;
-
-    const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
-    tabPanel.hidden = false;
-
 };
+
+function handleTabClick(event) {
+    hideArticle();
+    showArticle();
+};
+
+// function handleTabClick(event) {
+//     overlines.forEach(overline => {
+//         overline.classList.remove('overline-on');
+//     });
+//     tabPanels.forEach(tabPanel => {
+//         tabPanel.hidden = true
+//     });
+//     tabButtons.forEach(tabButton => {
+//         tabButton.setAttribute('aria-selected', false);
+//     });
+//     event.currentTarget.setAttribute('aria-selected', true);
+//     const {id} = event.currentTarget;
+
+//     const overline = overlines.find(overline => overline.getAttribute('aria-labelledby') === id);
+//     overline.classList.add('overline-on');
+//     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
+//     tabPanel.hidden = false;
+
+// };
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
 
@@ -103,9 +137,14 @@ tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabCli
 
 const backUp = tabs.querySelectorAll(".go-up");
 
-backUp.forEach(backUp => backUp.addEventListener("click", function() {
-    tabPanels.forEach(tabPanel => tabPanel.setAttribute("hidden", true));
-}));
+backUp.forEach(backUp => backUp.addEventListener("click", hideArticle));
+
+// backUp.forEach(backUp => backUp.addEventListener("click", function() {
+//     tabPanels.forEach(tabPanel => tabPanel.setAttribute("hidden", true));
+//     overlines.forEach(overline => {
+//         overline.classList.remove('overline-on');
+//     });
+// }));
 
 
 // //GO RIGHT//
@@ -130,11 +169,27 @@ const goRightBtn = tabs.querySelectorAll(".go-right");
 
 goRightBtn.forEach(goRightBtn => goRightBtn.addEventListener("click", goToNextTabPanel));
 
-function goToNextTabPanel(tabPanel, index, originalArray) {
-    const nextTabPanel = originalArray [index + 1];
-    nextTabPanel ? console.log('there is a next tabPanel after that one') : null;
+function goToNextTabPanel(tabPanel, index) {
+    const nextTabPanel = [index + 1];
+
+    function handleRightClick(event) {
+        // tabPanels.forEach(tabPanel => {
+        //     tabPanel.hidden = true
+        // });
+        // tabButtons.forEach(tabButton => {
+        //     tabButton.setAttribute('aria-selected', false);
+        // });
+        nextTabPanel.hidden = false;
+        // event.currentTarget.setAttribute('aria-selected', true);
+        // const {id} = event.currentTarget;
+    
+        // const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
+        // tabPanel.hidden = false;
+    
+    };
+
+    nextTabPanel ? handleRightClick() : null;
 }
-tabPanels.forEach(goToNextTabPanel);
 
 
 
