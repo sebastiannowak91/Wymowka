@@ -231,8 +231,8 @@ article {
     margin: 2em 10% 2em 10%;
     justify-content: center;
     line-height: 1.5;
-    opacity: 1;
     transition-property: opacity;
+    opacity: 1;
     transition-timing-function: ease-in;
     flex-shrink: 0;
     border: 2px solid red;
@@ -242,7 +242,7 @@ article {
     transition-property: opacity;
     transition-timing-function: ease-in;
     opacity: 1;
-    transition-duration: .75s;
+    transition-duration: 2s;
 }
 
 .hide-article {

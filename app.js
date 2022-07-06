@@ -63,35 +63,18 @@ const tabButtons = tabs.querySelectorAll('[role="tab"]');
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 const overlines = Array.from(tabs.querySelectorAll(".overline"));
 
+//Tu coś próbowałem, ale mi błąd wypierdala... 
+// function showArticle(event) {
+//     event.currentTarget.setAttribute('aria-selected', true);
+//     const {id} = event.currentTarget;
 
-function showArticle(event) {
-    event.currentTarget.setAttribute('aria-selected', true);
-    const {id} = event.currentTarget;
+//     const overline = overlines.find(overline => overline.getAttribute('aria-labelledby') === id);
+//     overline.classList.add('overline-on');
+//     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
+//     tabPanel.hidden = false;
+// };
 
-    const overline = overlines.find(overline => overline.getAttribute('aria-labelledby') === id);
-    overline.classList.add('overline-on');
-    const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
-    tabPanel.hidden = false;
-};
-
-function hideArticle(event) {
-    overlines.forEach(overline => {
-        overline.classList.remove('overline-on');
-    });
-    tabPanels.forEach(tabPanel => {
-        tabPanel.hidden = true
-    });
-    tabButtons.forEach(tabButton => {
-        tabButton.setAttribute('aria-selected', false);
-    });
-};
-
-function handleTabClick(event) {
-    hideArticle();
-    showArticle();
-};
-
-// function handleTabClick(event) {
+// function hideArticle() {
 //     overlines.forEach(overline => {
 //         overline.classList.remove('overline-on');
 //     });
@@ -101,15 +84,31 @@ function handleTabClick(event) {
 //     tabButtons.forEach(tabButton => {
 //         tabButton.setAttribute('aria-selected', false);
 //     });
-//     event.currentTarget.setAttribute('aria-selected', true);
-//     const {id} = event.currentTarget;
-
-//     const overline = overlines.find(overline => overline.getAttribute('aria-labelledby') === id);
-//     overline.classList.add('overline-on');
-//     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
-//     tabPanel.hidden = false;
-
 // };
+
+// function handleTabClick() {
+//     hideArticle();
+//     showArticle();
+// };
+
+function handleTabClick(event) {
+    overlines.forEach(overline => {
+        overline.classList.remove('overline-on');
+    });
+    tabPanels.forEach(tabPanel => {
+        tabPanel.hidden = true
+    });
+    tabButtons.forEach(tabButton => {
+        tabButton.setAttribute('aria-selected', false);
+    });
+    event.currentTarget.setAttribute('aria-selected', true);
+    const {id} = event.currentTarget;
+
+    const overline = overlines.find(overline => overline.getAttribute('aria-labelledby') === id);
+    overline.classList.add('overline-on');
+    const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
+    tabPanel.hidden = false;
+};
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
 
@@ -137,14 +136,12 @@ tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabCli
 
 const backUp = tabs.querySelectorAll(".go-up");
 
-backUp.forEach(backUp => backUp.addEventListener("click", hideArticle));
-
-// backUp.forEach(backUp => backUp.addEventListener("click", function() {
-//     tabPanels.forEach(tabPanel => tabPanel.setAttribute("hidden", true));
-//     overlines.forEach(overline => {
-//         overline.classList.remove('overline-on');
-//     });
-// }));
+backUp.forEach(backUp => backUp.addEventListener("click", function() {
+    tabPanels.forEach(tabPanel => tabPanel.setAttribute("hidden", true));
+    overlines.forEach(overline => {
+        overline.classList.remove('overline-on');
+    });
+}));
 
 
 // //GO RIGHT//
