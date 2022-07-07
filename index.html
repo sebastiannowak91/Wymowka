@@ -61,7 +61,7 @@
                     <p>Cennik</p>
                 </button>
                 <button role="tab" aria-selected="false" id="contact" class="figure">
-                    <img id="contact" class="photo" src="./images/klocki_ikona.png" alt="Kontakt"/>
+                    <img id="contact" class="photo" src="./images/mapa_ikona.png" alt="Kontakt"/>
                     <p>Kontakt</p>
                 </button>
             </nav>
@@ -195,65 +195,73 @@
                     <button class="go-up">Zwiń<i class="fas fa-chevron-circle-up"></i></button>
                 </div>
             </article>
+            <div class="overline contact-overline" aria-labelledby="contact" hidden></div>
+            <article role="tabpanel" aria-labelledby="contact" class="article contact" hidden>
+                <img class="contant-img" src="./images/contact.jpg" alt="Kasia przy drzwiach gabinetu Wymówka"/>
+                <h2 class="sr-only">Kontakt</h2>
+                <section class="contact-details">
+                    <p class="subtitle">mgr Katarzyna Biernacka</p>
+                    <p>Ponieważ prowadzę zajęcia od rana do późnych godzin popołudniowych, nie zawsze mogę odebrać telefon. Jeśli nie odbieram, proszę spróbować ponownie później, najlepiej po godzinie 18. Można też wysłać sms z prośbą o kontakt (na pewno oddzwonię) albo skontaktować się ze mną poprzez maila czy formularz kontaktowy.</p>
+                    <address>
+                        <ul>
+                            <li>
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                                <a href="tel:+48500866065" aria-label="Telefon kontaktowy">500 866 065</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <a href="mailto:logopeda@wymowka.pl" aria-label="Adres e-mail">logopeda@wymowka.pl</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-paste" aria-hidden="true"></i>
+                                <button class="open-form" aria-label="Formularz kontaktowy">formularz kontaktowy</button>
+                            </li>
+                        </ul>
+                    </address> 
+                </section>
+                <section class="location"></section>
+                    <p class="subtitle">Gabinet logopedyczno-terapeutyczny wy<span>MÓW</span>ka</p>
+                    <p>Gabinet znajduje się na II piętrze, w budynku jest winda. Okolica objęta jest strefą płatnego parkowania, podstrefa C.</p>
+                    <address>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <a href="https://www.google.com/maps/place/aleja+Genera%C5%82a+Jana+Skrzyneckiego+17,+30-363+Krak%C3%B3w,+Polska/@50.034005,19.93508,13z/data=!4m5!3m4!1s0x47165ca017e00213:0xb33ad67ad32b66d2!8m2!3d50.0340052!4d19.9350804?hl=pl-PL" target="_blank" aria-label="Adres">ul. Skrzyneckiego 17 m. 9<br>30-363 Kraków</a>
+                            </li>
+                        </ul>
+                    </address>
+                </section>
+                <section class="map">
+                    <p class="subtitle">Sprawdź, jak dojechać</p>
+                    <div class="mapouter" aria-label="Mapa">
+                        <iframe width="390" height="290" id="gmap_canvas" src="https://maps.google.com/maps?q=Skrzyneckiego%2017,%20Krak%C3%B3w&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    </div>
+                </section>    
+                <section class="contact-form">
+                    <button class="close-contact-form"><i class="fas fa-times"></i></button>
+                    <form class="leave-a-message">
+                        <h5>Imię i nazwisko<span>*</span></h5>
+                        <input type="text" class="contact-me must-be" placeholder="Imię i nazwisko"/>
+                        <h5>Adres e-mail<span>*</span></h5>
+                        <input type="email" class="contact-me must-be" placeholder="Wpisz swoj adres email"/>
+                        <h5>Numer kontaktowy</h5>
+                        <input type="tel" class="contact-me" placeholder="Podaj numer telefonu"/>
+                        <h5>Wiadomość<span>*</span></h5>
+                        <input type="text" class="message must-be" placeholder="Wpisz treść wiadomości"/>
+                        <p class="form-feedback"></p>   
+                        <input type="submit" class="send-btn" placeholder="Wyślij"/>
+                    </form>    
+                </section>
+                <div class="go-right-go-up">
+                    <button class="go-up">Zwiń<i class="fas fa-chevron-circle-up"></i></button>
+                </div>
+            </article>
         </div>
         <div class="footer-cover">
             <img class="footer-img" src="images/wymowka_retusz.png">
         </div>
         <footer id="footer">
-            <section class="contact">
-                <h4>mgr Katarzyna Biernacka</h4>
-                <address>
-                    <ul>
-                        <li>
-                            <i class="fas fa-phone" aria-hidden="true"></i>
-                            <a href="tel:+48500866065" aria-label="Telefon kontaktowy">500 866 065</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                            <a href="mailto:logopeda@wymowka.pl" aria-label="Adres e-mail">logopeda@wymowka.pl</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-paste" aria-hidden="true"></i>
-                            <button class="open-form" aria-label="Formularz kontaktowy">formularz kontaktowy</button>
-                        </li>
-                    </ul>
-                </address>    
-                <p>Ponieważ prowadzę zajęcia od rana do późnych godzin popołudniowych, nie zawsze mogę odebrać telefon. Jeśli nie odbieram, proszę spróbować ponownie później, najlepiej po godzinie 18. Można też wysłać sms z prośbą o kontakt (na pewno oddzwonię) albo skontaktować się ze mną poprzez maila czy formularz kontaktowy.</p>
-            </section>
-            <section class="location">
-                <h4>Gabinet logopedyczno-terapeutyczny wy<span>MÓW</span>ka</h4>
-                <address>
-                    <ul>
-                        <li>
-                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                            <a href="https://www.google.com/maps/place/aleja+Genera%C5%82a+Jana+Skrzyneckiego+17,+30-363+Krak%C3%B3w,+Polska/@50.034005,19.93508,13z/data=!4m5!3m4!1s0x47165ca017e00213:0xb33ad67ad32b66d2!8m2!3d50.0340052!4d19.9350804?hl=pl-PL" target="_blank" aria-label="Adres">ul. Skrzyneckiego 17 m. 9<br>30-363 Kraków</a>
-                        </li>
-                    </ul>
-                </address>    
-                <p>Gabinet znajduje się na II piętrze, w budynku jest winda.<br>Okolica objęta jest strefą płatnego parkowania,<br> podstrefa C.</p>
-            </section>
-            <section class="map">
-                <h4>Sprawdź, jak dojechać</h4>
-                <i class="fas fa-search-plus" aria-hidden="true"></i>
-                <div class="mapouter" aria-label="Mapa">
-                    <iframe width="390" height="290" id="gmap_canvas" src="https://maps.google.com/maps?q=Skrzyneckiego%2017,%20Krak%C3%B3w&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-                </div>
-            </section>    
-            <section class="contact-form">
-                <button class="close-contact-form"><i class="fas fa-times"></i></button>
-                <form class="leave-a-message">
-                    <h5>Imię i nazwisko<span>*</span></h5>
-                    <input type="text" class="contact-me must-be" placeholder="Imię i nazwisko"/>
-                    <h5>Adres e-mail<span>*</span></h5>
-                    <input type="email" class="contact-me must-be" placeholder="Wpisz swoj adres email"/>
-                    <h5>Numer kontaktowy</h5>
-                    <input type="tel" class="contact-me" placeholder="Podaj numer telefonu"/>
-                    <h5>Wiadomość<span>*</span></h5>
-                    <input type="text" class="message must-be" placeholder="Wpisz treść wiadomości"/>
-                    <p class="form-feedback"></p>   
-                    <input type="submit" class="send-btn" placeholder="Wyślij"/>
-                </form>    
-            </section>   
+            
         </footer>
     </body>
     <script type="text/javascript" src="./app.js"></script>
