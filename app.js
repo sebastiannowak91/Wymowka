@@ -108,6 +108,8 @@ function handleTabClick(event) {
     overline.classList.add('overline-on');
     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
     tabPanel.hidden = false;
+    setTimeout (function() {
+        tabPanel.classList.add('show-article')}, 700);
 };
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
@@ -141,6 +143,9 @@ backUp.forEach(backUp => backUp.addEventListener("click", function() {
     overlines.forEach(overline => {
         overline.classList.remove('overline-on');
     });
+    tabButtons.forEach(tabButton => {
+        tabButton.setAttribute('aria-selected', false);
+    });    
 }));
 
 
