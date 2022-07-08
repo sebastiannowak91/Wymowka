@@ -198,66 +198,104 @@ function goToNextTabPanel(tabPanel, index) {
 
 
 //CERTIFICATES//
-const crtfBtns = document.querySelectorAll(".crtf-btn");
+const crtfBtns = Array.from(document.querySelectorAll(".crtf-btn"));
 const crtfCollection = document.querySelector(".certificates-collection");
-const certificates = document.querySelectorAll(".certificate");
+const certificates = Array.from(document.querySelectorAll(".certificate"));
 const closeCrtf = document.querySelector(".close-crtf");
 const nextCrtf = document.querySelector(".next-crtf");
 const prevCrtf = document.querySelector(".prev-crtf");
+let currentCrtf;
 
-for (let i = 0; i < crtfBtns.length; i++) {
-    crtfBtns[i].addEventListener("click", showCrtf);
-};
+// for (let i = 0; i < crtfBtns.length; i++) {
+//     crtfBtns[i].addEventListener("click", showCrtf);
+// };
 
-let currentCrtfIndex = 0;
+// let currentCrtfIndex = 0;
+
+// function showCrtf() {
+//     let id = this.id;
+//     id = id.replace("-btn", "");
+//     for (let i = 0; i < certificates.length; i++) {
+//         if (id === certificates[i].id) {
+//             currentCrtfIndex = i;
+//             crtfCollection.style.display = "flex";
+//             certificates[i].style.display = "block";
+//             showHideArrow();
+//         } else {
+//             certificates[i].style.display = "none";
+//         }
+//     }
+// };
+
+const crtfBtn = crtfBtns.forEach(crtfBtn => crtfBtn.addEventListener("click", showCrtf));
 
 function showCrtf() {
-    let id = this.id;
-    id = id.replace("-btn", "");
-    for (let i = 0; i < certificates.length; i++) {
-        if (id === certificates[i].id) {
-            currentCrtfIndex = i;
-            crtfCollection.style.display = "flex";
-            certificates[i].style.display = "block";
-            showHideArrow();
-        } else {
-            certificates[i].style.display = "none";
-        }
+    openCrtfCollection()
+    showCurrentCrtf(event)
+};
+
+function openCrtfCollection() {
+    if(crtfCollection.matches('open')) {
+        return;
     }
+    crtfCollection.classList.add('open');
+    nextCrtf.addEventListener('click', showNextCrtf);
+    // prevCrtf.addEventListener('click', showPrevCrtf);
+    closeCrtf.addEventListener('click', closeCrtfCollection);
+};
+
+function showCurrentCrtf(event) {
+    const {id} = event.currentTarget;
+    crtfCollection.classList.add('open');
+    const certificate = certificates.find(certificate => certificate.getAttribute('aria-labelledby') === id);
+    certificate.style.display = "flex";
+    currentCrtf = el;
+};
+
+function showNextCrtf() {
+    showCurrentCrtf(currentCrtf.nextElementSibling);
+};
+
+function closeCrtfCollection() {
+    crtfCollection.classList.remove('open');
+    nextCrtf.removeEventListener('click', showNextCrtf);
+    prevCrtf.removeEventListener('click', showPrevCrtf);
+    closeCrtf.removeEventListener('click', closeCrtfCollection);
 };
 
 
-closeCrtf.addEventListener("click", function() {
-    crtfCollection.style.display = "none";
-    certificates[currentCrtfIndex].style.display = "none";
-});
 
-nextCrtf.addEventListener("click", function() {
-    certificates[currentCrtfIndex].style.display = "none";
-    currentCrtfIndex += 1;
-    certificates[currentCrtfIndex].style.display = "block";
-    showHideArrow(); 
-});
+// closeCrtf.addEventListener("click", function() {
+//     crtfCollection.style.display = "none";
+//     certificates[currentCrtfIndex].style.display = "none";
+// });
 
-prevCrtf.addEventListener("click", function() {
-    certificates[currentCrtfIndex].style.display = "none";
-    currentCrtfIndex -= 1;
-    certificates[currentCrtfIndex].style.display = "block"; 
-    showHideArrow(); 
-});
+// nextCrtf.addEventListener("click", function() {
+//     certificates[currentCrtfIndex].style.display = "none";
+//     currentCrtfIndex += 1;
+//     certificates[currentCrtfIndex].style.display = "block";
+//     showHideArrow(); 
+// });
 
-function showHideArrow() {
-    if (currentCrtfIndex == 0) {
-        prevCrtf.style.display = "none";
-        nextCrtf.style.display = "block";
-    } else if (currentCrtfIndex == certificates.length -1) {
-            nextCrtf.style.display = "none";
-            prevCrtf.style.display = "block";
-    } else {
-            prevCrtf.style.display = "block";
-            nextCrtf.style.display = "block";
-    }
-};
+// prevCrtf.addEventListener("click", function() {
+//     certificates[currentCrtfIndex].style.display = "none";
+//     currentCrtfIndex -= 1;
+//     certificates[currentCrtfIndex].style.display = "block"; 
+//     showHideArrow(); 
+// });
+
+// function showHideArrow() {
+//     if (currentCrtfIndex == 0) {
+//         prevCrtf.style.display = "none";
+//         nextCrtf.style.display = "block";
+//     } else if (currentCrtfIndex == certificates.length -1) {
+//             nextCrtf.style.display = "none";
+//             prevCrtf.style.display = "block";
+//     } else {
+//             prevCrtf.style.display = "block";
+//             nextCrtf.style.display = "block";
+//     }
+// };
 
 
 //CONTACT FORM//

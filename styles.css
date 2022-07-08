@@ -364,6 +364,10 @@ article img {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.open {
+    display: flex;
+}
+
 .certificates-collection img {
     height: 90%;
     width: auto;
