@@ -389,7 +389,8 @@ article img {
     color: #F5FEFC;
     border: none;
     cursor: pointer;
-    display: flex;
+    /* display: flex; */
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 1rem;

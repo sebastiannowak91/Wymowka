@@ -204,7 +204,6 @@ const certificates = Array.from(document.querySelectorAll(".certificate"));
 const closeCrtf = document.querySelector(".close-crtf");
 const nextCrtf = document.querySelector(".next-crtf");
 const prevCrtf = document.querySelector(".prev-crtf");
-let currentCrtf;
 
 // for (let i = 0; i < crtfBtns.length; i++) {
 //     crtfBtns[i].addEventListener("click", showCrtf);
@@ -249,11 +248,10 @@ function showCurrentCrtf(event) {
     crtfCollection.classList.add('open');
     const certificate = certificates.find(certificate => certificate.getAttribute('aria-labelledby') === id);
     certificate.style.display = "flex";
-    currentCrtf = el;
 };
 
 function showNextCrtf() {
-    showCurrentCrtf(currentCrtf.nextElementSibling);
+    showCurrentCrtf
 };
 
 function closeCrtfCollection() {
