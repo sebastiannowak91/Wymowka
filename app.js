@@ -244,8 +244,8 @@ function openCrtfCollection() {
         return;
     }
     crtfCollection.classList.add('open');
-    // prevCrtf.addEventListener('click', () => move('back'));
-    // nextCrtf.addEventListener('click', move);
+    prevCrtf.addEventListener('click', () => move('back'));
+    nextCrtf.addEventListener('click', move);
     closeCrtf.addEventListener('click', closeCrtfCollection);
     crtfNavBtns.style.display = "flex";
 };
@@ -267,28 +267,29 @@ function applyClasses() {
     next.classList.add('next');
 }
 
-// function move(direction) {
-//     //first strip all the classes off the current slides
-//     const classesToRemove = ['prev', 'current', 'next'];
-//     prev.classList.remove(...classesToRemove);
-//     current.classList.remove(...classesToRemove);
-//     next.classList.remove(...classesToRemove);
-//     if (direction === 'back') {
-//         [prev, current, next] = [
-//             //get the prev slide, if there is none, get the last slide from the entire slider
-//             prev.previousElementSibling || crtfCollection.lastElementChild,
-//             prev, 
-//             current];
-//     } else { 
-//         [prev, current, next] = [
-//             current, 
-//             next, 
-//             next.nextElementSibling || crtfCollection.firstElementChild,
-//         ];
-//     }
-
-//     applyClasses();
-// }
+function move(direction) {
+    //first strip all the classes off the current slides
+    current.style.display = "none";
+    const classesToRemove = ['prev', 'current', 'next'];
+    prev.classList.remove(...classesToRemove);
+    current.classList.remove(...classesToRemove);
+    next.classList.remove(...classesToRemove);
+    if (direction === 'back') {
+        [prev, current, next] = [
+            //get the prev slide, if there is none, get the last slide from the entire slider
+            prev.previousElementSibling || crtfCollection.lastElementChild,
+            prev, 
+            current];
+    } else { 
+        [prev, current, next] = [
+            current, 
+            next, 
+            next.nextElementSibling || crtfCollection.firstElementChild,
+        ];
+    }
+    current.style.display = "flex";
+    applyClasses();
+}
 
 function closeCrtfCollection() {
     crtfCollection.classList.remove('open');
