@@ -63,7 +63,7 @@ const tabButtons = tabs.querySelectorAll('[role="tab"]');
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 const overlines = Array.from(tabs.querySelectorAll(".overline"));
 
-//Tu coś próbowałem, ale mi błąd wypierdala... 
+// Tu coś próbowałem, ale mi błąd wypierdala... 
 // function showArticle(event) {
 //     event.currentTarget.setAttribute('aria-selected', true);
 //     const {id} = event.currentTarget;
@@ -83,12 +83,14 @@ const overlines = Array.from(tabs.querySelectorAll(".overline"));
 //     });
 //     tabButtons.forEach(tabButton => {
 //         tabButton.setAttribute('aria-selected', false);
+//         setTimeout (function() {
+//             tabPanel.classList.add('show-article')}, 700);
 //     });
 // };
 
-// function handleTabClick() {
+// function handleTabClick(event) {
 //     hideArticle();
-//     showArticle();
+//     showArticle(event);
 // };
 
 function handleTabClick(event) {
@@ -204,6 +206,10 @@ const certificates = Array.from(document.querySelectorAll(".certificate"));
 const closeCrtf = document.querySelector(".close-crtf");
 const nextCrtf = document.querySelector(".next-crtf");
 const prevCrtf = document.querySelector(".prev-crtf");
+const crtfNavBtns = document.querySelector(".certificates-navigation");
+let current;
+let prev;
+let next;
 
 // for (let i = 0; i < crtfBtns.length; i++) {
 //     crtfBtns[i].addEventListener("click", showCrtf);
@@ -238,9 +244,10 @@ function openCrtfCollection() {
         return;
     }
     crtfCollection.classList.add('open');
-    nextCrtf.addEventListener('click', showNextCrtf);
-    // prevCrtf.addEventListener('click', showPrevCrtf);
+    // prevCrtf.addEventListener('click', () => move('back'));
+    // nextCrtf.addEventListener('click', move);
     closeCrtf.addEventListener('click', closeCrtfCollection);
+    crtfNavBtns.style.display = "flex";
 };
 
 function showCurrentCrtf(event) {
@@ -248,17 +255,51 @@ function showCurrentCrtf(event) {
     crtfCollection.classList.add('open');
     const certificate = certificates.find(certificate => certificate.getAttribute('aria-labelledby') === id);
     certificate.style.display = "flex";
+    current = certificate;
+    prev = current.previousElementSibling || crtfCollection.lastElementChild;
+    next = current.nextElementSibling || crtfCollection.firstElementChild;
+    applyClasses();
 };
 
-function showNextCrtf() {
-    showCurrentCrtf
-};
+function applyClasses() {
+    current.classList.add('current');
+    prev.classList.add('prev');
+    next.classList.add('next');
+}
+
+// function move(direction) {
+//     //first strip all the classes off the current slides
+//     const classesToRemove = ['prev', 'current', 'next'];
+//     prev.classList.remove(...classesToRemove);
+//     current.classList.remove(...classesToRemove);
+//     next.classList.remove(...classesToRemove);
+//     if (direction === 'back') {
+//         [prev, current, next] = [
+//             //get the prev slide, if there is none, get the last slide from the entire slider
+//             prev.previousElementSibling || crtfCollection.lastElementChild,
+//             prev, 
+//             current];
+//     } else { 
+//         [prev, current, next] = [
+//             current, 
+//             next, 
+//             next.nextElementSibling || crtfCollection.firstElementChild,
+//         ];
+//     }
+
+//     applyClasses();
+// }
 
 function closeCrtfCollection() {
     crtfCollection.classList.remove('open');
-    nextCrtf.removeEventListener('click', showNextCrtf);
-    prevCrtf.removeEventListener('click', showPrevCrtf);
+    // nextCrtf.removeEventListener('click', showNextCrtf);
+    // prevCrtf.removeEventListener('click', showPrevCrtf);
     closeCrtf.removeEventListener('click', closeCrtfCollection);
+    crtfNavBtns.style.display = "none";
+    current.style.display = "none";
+    current.classList.remove('current');
+    prev.classList.remove('prev');
+    next.classList.remove('next');
 };
 
 

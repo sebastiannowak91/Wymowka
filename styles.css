@@ -378,9 +378,14 @@ article img {
     display: none;
 }
 
-.prev-crtf,
+.certificates-navigation {
+    display: none;
+}
+
+/* .prev-crtf,
 .next-crtf,
-.close-crtf,
+.close-crtf, */
+.crtf-nav-btns,
 .close-contact-form {
     position: fixed;
     height: 2rem;
@@ -389,8 +394,7 @@ article img {
     color: #F5FEFC;
     border: none;
     cursor: pointer;
-    /* display: flex; */
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
@@ -405,10 +409,12 @@ article img {
 
 .next-crtf {
     left: 75%;
+    top: 50%;
 }
 
 .prev-crtf {
     right: 75%;
+    top: 50%;
 }
 
 .close-crtf {
