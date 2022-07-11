@@ -62,42 +62,17 @@ const tabs = document.querySelector('.tabs');
 const tabButtons = tabs.querySelectorAll('[role="tab"]');
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 const overlines = Array.from(tabs.querySelectorAll(".overline"));
+let currentTabPanel;
+let prevTabPanel;
+let nextTabPanel;
 
-// Tu coś próbowałem, ale mi błąd wypierdala... 
-// function showArticle(event) {
-//     event.currentTarget.setAttribute('aria-selected', true);
-//     const {id} = event.currentTarget;
-
-//     const overline = overlines.find(overline => overline.getAttribute('aria-labelledby') === id);
-//     overline.classList.add('overline-on');
-//     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
-//     tabPanel.hidden = false;
-// };
-
-// function hideArticle() {
-//     overlines.forEach(overline => {
-//         overline.classList.remove('overline-on');
-//     });
-//     tabPanels.forEach(tabPanel => {
-//         tabPanel.hidden = true
-//     });
-//     tabButtons.forEach(tabButton => {
-//         tabButton.setAttribute('aria-selected', false);
-//         setTimeout (function() {
-//             tabPanel.classList.add('show-article')}, 700);
-//     });
-// };
-
-// function handleTabClick(event) {
-//     hideArticle();
-//     showArticle(event);
-// };
 
 function handleTabClick(event) {
     overlines.forEach(overline => {
         overline.classList.remove('overline-on');
     });
     tabPanels.forEach(tabPanel => {
+        tabPanel.classList.remove('show-article')
         tabPanel.hidden = true
     });
     tabButtons.forEach(tabButton => {
@@ -110,9 +85,44 @@ function handleTabClick(event) {
     overline.classList.add('overline-on');
     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
     tabPanel.hidden = false;
+    currentTabPanel = tabPanel;
+    prevTabPanel = tabPanel.previousElementSibling || tabPanels.lastElementChild;
+    nextTabPanel = tabPanel.nextElementSibling || tabPanels.firstElementChild;
+    applyClasses();
     setTimeout (function() {
         tabPanel.classList.add('show-article')}, 700);
 };
+
+function applyClasses() {
+    currentTabPanel.classList.add('current');
+    prevTabPanel.classList.add('prev');
+    nextTabPanel.classList.add('next');
+}
+
+
+function move(direction) {
+    //first strip all the classes off the current slides
+    tabPanel.hidden = true;
+    const classesToRemove = ['prev', 'current', 'next'];
+    prevTabPanel.classList.remove(...classesToRemove);
+    currentTabPanel.classList.remove(...classesToRemove);
+    nextTabPanel.classList.remove(...classesToRemove);
+    if (direction === 'back') {
+        [prev, current, next] = [
+            //get the prev slide, if there is none, get the last slide from the entire slider
+            prev.previousElementSibling || crtfCollection.lastElementChild,
+            prev, 
+            current];
+    } else { 
+        [prev, current, next] = [
+            current, 
+            next, 
+            next.nextElementSibling || crtfCollection.firstElementChild,
+        ];
+    }
+    currentTabPanel = tabPanel;
+    applyClasses();
+}
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
 
@@ -173,26 +183,12 @@ const goRightBtn = tabs.querySelectorAll(".go-right");
 
 goRightBtn.forEach(goRightBtn => goRightBtn.addEventListener("click", goToNextTabPanel));
 
-function goToNextTabPanel(tabPanel, index) {
-    const nextTabPanel = [index + 1];
+function goToNextTabPanel() {
+    let currentTabPanel = tabs.querySelector('.show-article');
+    let nextTabPanel = currentTabPanel.nextElementSibling;
 
-    function handleRightClick(event) {
-        // tabPanels.forEach(tabPanel => {
-        //     tabPanel.hidden = true
-        // });
-        // tabButtons.forEach(tabButton => {
-        //     tabButton.setAttribute('aria-selected', false);
-        // });
-        nextTabPanel.hidden = false;
-        // event.currentTarget.setAttribute('aria-selected', true);
-        // const {id} = event.currentTarget;
-    
-        // const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
-        // tabPanel.hidden = false;
-    
-    };
-
-    nextTabPanel ? handleRightClick() : null;
+    console.log(currentTabPanel);
+    console.log(nextTabPanel);
 }
 
 
@@ -210,27 +206,6 @@ const crtfNavBtns = document.querySelector(".certificates-navigation");
 let current;
 let prev;
 let next;
-
-// for (let i = 0; i < crtfBtns.length; i++) {
-//     crtfBtns[i].addEventListener("click", showCrtf);
-// };
-
-// let currentCrtfIndex = 0;
-
-// function showCrtf() {
-//     let id = this.id;
-//     id = id.replace("-btn", "");
-//     for (let i = 0; i < certificates.length; i++) {
-//         if (id === certificates[i].id) {
-//             currentCrtfIndex = i;
-//             crtfCollection.style.display = "flex";
-//             certificates[i].style.display = "block";
-//             showHideArrow();
-//         } else {
-//             certificates[i].style.display = "none";
-//         }
-//     }
-// };
 
 const crtfBtn = crtfBtns.forEach(crtfBtn => crtfBtn.addEventListener("click", showCrtf));
 
@@ -261,11 +236,11 @@ function showCurrentCrtf(event) {
     applyClasses();
 };
 
-function applyClasses() {
-    current.classList.add('current');
-    prev.classList.add('prev');
-    next.classList.add('next');
-}
+// function applyClasses() {
+//     current.classList.add('current');
+//     prev.classList.add('prev');
+//     next.classList.add('next');
+// }
 
 function move(direction) {
     //first strip all the classes off the current slides
