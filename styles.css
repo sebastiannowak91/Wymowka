@@ -234,7 +234,7 @@ article {
     justify-content: center;
     line-height: 1.5;
     transition-property: opacity;
-    opacity: 0;
+    opacity: 1;
     transition-timing-function: ease-in;
     flex-shrink: 0;
 }

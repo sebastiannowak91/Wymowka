@@ -68,11 +68,11 @@ let nextTabPanel;
 
 
 function handleTabClick(event) {
-    overlines.forEach(overline => {
-        overline.classList.remove('overline-on');
-    });
+    // overlines.forEach(overline => {
+    //     overline.classList.remove('overline-on');
+    // });
     tabPanels.forEach(tabPanel => {
-        tabPanel.classList.remove('show-article')
+        // tabPanel.classList.remove('show-article')
         tabPanel.hidden = true
     });
     tabButtons.forEach(tabButton => {
@@ -81,16 +81,16 @@ function handleTabClick(event) {
     event.currentTarget.setAttribute('aria-selected', true);
     const {id} = event.currentTarget;
 
-    const overline = overlines.find(overline => overline.getAttribute('aria-labelledby') === id);
-    overline.classList.add('overline-on');
+    // const overline = overlines.find(overline => overline.getAttribute('aria-labelledby') === id);
+    // overline.classList.add('overline-on');
     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
     tabPanel.hidden = false;
     currentTabPanel = tabPanel;
     prevTabPanel = tabPanel.previousElementSibling || tabPanels.lastElementChild;
     nextTabPanel = tabPanel.nextElementSibling || tabPanels.firstElementChild;
     applyClasses();
-    setTimeout (function() {
-        tabPanel.classList.add('show-article')}, 700);
+    // setTimeout (function() {
+    //     tabPanel.classList.add('show-article')}, 700);
 };
 
 function applyClasses() {
@@ -102,25 +102,27 @@ function applyClasses() {
 
 function move(direction) {
     //first strip all the classes off the current slides
-    tabPanel.hidden = true;
+    tabPanels.forEach(tabPanel => {
+        tabPanel.hidden = true
+    });
     const classesToRemove = ['prev', 'current', 'next'];
     prevTabPanel.classList.remove(...classesToRemove);
     currentTabPanel.classList.remove(...classesToRemove);
     nextTabPanel.classList.remove(...classesToRemove);
     if (direction === 'back') {
-        [prev, current, next] = [
+        [prevTabPanel, currentTabPanel, nextTabPanel] = [
             //get the prev slide, if there is none, get the last slide from the entire slider
-            prev.previousElementSibling || crtfCollection.lastElementChild,
-            prev, 
-            current];
+            prevTabPanel.previousElementSibling || tabPanels.lastElementChild,
+            prevTabPanel, 
+            currentTabPanel];
     } else { 
-        [prev, current, next] = [
-            current, 
-            next, 
-            next.nextElementSibling || crtfCollection.firstElementChild,
+        [prevTabPanel, currentTabPanel, nextTabPanel] = [
+            currentTabPanel, 
+            nextTabPanel, 
+            nextTabPanel.nextElementSibling || tabPanels.firstElementChild,
         ];
     }
-    currentTabPanel = tabPanel;
+    currentTabPanel.hidden = false;
     applyClasses();
 }
 
@@ -181,7 +183,7 @@ backUp.forEach(backUp => backUp.addEventListener("click", function() {
 // };
 const goRightBtn = tabs.querySelectorAll(".go-right");
 
-goRightBtn.forEach(goRightBtn => goRightBtn.addEventListener("click", goToNextTabPanel));
+goRightBtn.forEach(goRightBtn => goRightBtn.addEventListener("click", move));
 
 function goToNextTabPanel() {
     let currentTabPanel = tabs.querySelector('.show-article');
@@ -242,29 +244,29 @@ function showCurrentCrtf(event) {
 //     next.classList.add('next');
 // }
 
-function move(direction) {
-    //first strip all the classes off the current slides
-    current.style.display = "none";
-    const classesToRemove = ['prev', 'current', 'next'];
-    prev.classList.remove(...classesToRemove);
-    current.classList.remove(...classesToRemove);
-    next.classList.remove(...classesToRemove);
-    if (direction === 'back') {
-        [prev, current, next] = [
-            //get the prev slide, if there is none, get the last slide from the entire slider
-            prev.previousElementSibling || crtfCollection.lastElementChild,
-            prev, 
-            current];
-    } else { 
-        [prev, current, next] = [
-            current, 
-            next, 
-            next.nextElementSibling || crtfCollection.firstElementChild,
-        ];
-    }
-    current.style.display = "flex";
-    applyClasses();
-}
+// function move(direction) {
+//     //first strip all the classes off the current slides
+//     current.style.display = "none";
+//     const classesToRemove = ['prev', 'current', 'next'];
+//     prev.classList.remove(...classesToRemove);
+//     current.classList.remove(...classesToRemove);
+//     next.classList.remove(...classesToRemove);
+//     if (direction === 'back') {
+//         [prev, current, next] = [
+//             //get the prev slide, if there is none, get the last slide from the entire slider
+//             prev.previousElementSibling || crtfCollection.lastElementChild,
+//             prev, 
+//             current];
+//     } else { 
+//         [prev, current, next] = [
+//             current, 
+//             next, 
+//             next.nextElementSibling || crtfCollection.firstElementChild,
+//         ];
+//     }
+//     current.style.display = "flex";
+//     applyClasses();
+// }
 
 function closeCrtfCollection() {
     crtfCollection.classList.remove('open');
