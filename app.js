@@ -58,6 +58,7 @@
 //         overlines[i].classList.remove("overline-on")}, 700);    
 // };
 
+const fuck = document.querySelector('.fuck').open = true;
 const tabs = document.querySelector('.tabs');
 const tabButtons = tabs.querySelectorAll('[role="tab"]');
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
