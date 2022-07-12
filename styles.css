@@ -173,7 +173,7 @@ button[aria-selected="true"] {
 /*OVERLINES*/
 .overline {
     display: flex;
-    opacity: 1;
+    opacity: 0;
     width: 0;
     margin: 0 0 0 10%;
     padding: 0;
@@ -234,7 +234,7 @@ article {
     justify-content: center;
     line-height: 1.5;
     transition-property: opacity;
-    opacity: 1;
+    opacity: 0;
     transition-timing-function: ease-in;
     flex-shrink: 0;
 }

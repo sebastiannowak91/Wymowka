@@ -61,37 +61,37 @@
 const tabs = document.querySelector('.tabs');
 const tabButtons = tabs.querySelectorAll('[role="tab"]');
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
-const overlines = Array.from(tabs.querySelectorAll(".overline"));
+const overline = tabs.querySelector(".overline");
 let currentTabPanel;
 let prevTabPanel;
 let nextTabPanel;
+const backUp = tabs.querySelector(".go-up");
 
 
-function handleTabClick(event) {
-    // overlines.forEach(overline => {
-    //     overline.classList.remove('overline-on');
-    // });
+function closeWhatsOpen() {
     tabPanels.forEach(tabPanel => {
-        // tabPanel.classList.remove('show-article')
+        tabPanel.classList.remove('show-article')
         tabPanel.hidden = true
     });
     tabButtons.forEach(tabButton => {
         tabButton.setAttribute('aria-selected', false);
+        tabButton.removeAttribute('open', false);
     });
-    event.currentTarget.setAttribute('aria-selected', true);
-    const {id} = event.currentTarget;
+};
 
-    // const overline = overlines.find(overline => overline.getAttribute('aria-labelledby') === id);
-    // overline.classList.add('overline-on');
+function findAndOpen(event) {
+    event.currentTarget.setAttribute('aria-selected', true);
+    event.currentTarget.setAttribute('open', true);
+    const {id} = event.currentTarget;
     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
     tabPanel.hidden = false;
     currentTabPanel = tabPanel;
     prevTabPanel = tabPanel.previousElementSibling || tabPanels.lastElementChild;
     nextTabPanel = tabPanel.nextElementSibling || tabPanels.firstElementChild;
     applyClasses();
-    // setTimeout (function() {
-    //     tabPanel.classList.add('show-article')}, 700);
-};
+    setTimeout (function() {
+        currentTabPanel.classList.add('show-article')}, 700);
+}
 
 function applyClasses() {
     currentTabPanel.classList.add('current');
@@ -99,19 +99,67 @@ function applyClasses() {
     nextTabPanel.classList.add('next');
 }
 
+function applyEvenListeners() {
+
+}
+
+function close() {
+    closeWhatsOpen();
+    //remov classes
+    //remove addEventListeners
+    //close div with buttons;
+}
+
+function handleTabClick(event) {
+    if (event.currentTarget.hasAttribute('open')) {
+        close();
+    } else {
+        closeWhatsOpen();
+        findAndOpen(event);
+    }
+}
+
+// if (event.currentTarget.hasAttribute('open')) {
+//     close();
+//     event.currentTarget.removeAttribute('open');
+// };
+
+
+// function handleTabClick(event) {
+//     //close what's open
+//     tabPanels.forEach(tabPanel => {
+//         tabPanel.classList.remove('show-article')
+//         tabPanel.hidden = true
+//     });
+//     tabButtons.forEach(tabButton => {
+//         tabButton.setAttribute('aria-selected', false);
+//     });
+//     //finde the right one
+//     event.currentTarget.setAttribute('aria-selected', true);
+//     const {id} = event.currentTarget;
+//     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
+//     //show the right one
+//     tabPanel.hidden = false;
+//     setTimeout (function() {
+//         tabPanel.classList.add('show-article')}, 700);
+//     currentTabPanel = tabPanel;
+//     prevTabPanel = tabPanel.previousElementSibling || tabPanels.lastElementChild;
+//     nextTabPanel = tabPanel.nextElementSibling || tabPanels.firstElementChild;
+//     applyClasses();
+// };
+
 
 function move(direction) {
-    //first strip all the classes off the current slides
-    tabPanels.forEach(tabPanel => {
-        tabPanel.hidden = true
-    });
+    // tabPanels.forEach(tabPanel => {
+    //     tabPanel.hidden = true
+    // });
+    closeWhatsOpen();
     const classesToRemove = ['prev', 'current', 'next'];
     prevTabPanel.classList.remove(...classesToRemove);
     currentTabPanel.classList.remove(...classesToRemove);
     nextTabPanel.classList.remove(...classesToRemove);
     if (direction === 'back') {
         [prevTabPanel, currentTabPanel, nextTabPanel] = [
-            //get the prev slide, if there is none, get the last slide from the entire slider
             prevTabPanel.previousElementSibling || tabPanels.lastElementChild,
             prevTabPanel, 
             currentTabPanel];
@@ -123,10 +171,13 @@ function move(direction) {
         ];
     }
     currentTabPanel.hidden = false;
+    setTimeout (function() {
+        currentTabPanel.classList.add('show-article')}, 700);
     applyClasses();
 }
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
+backUp.addEventListener("click", close);
 
 
 
@@ -150,17 +201,17 @@ tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabCli
 // };
 
 
-const backUp = tabs.querySelectorAll(".go-up");
+// const backUp = tabs.querySelectorAll(".go-up");
 
-backUp.forEach(backUp => backUp.addEventListener("click", function() {
-    tabPanels.forEach(tabPanel => tabPanel.setAttribute("hidden", true));
-    overlines.forEach(overline => {
-        overline.classList.remove('overline-on');
-    });
-    tabButtons.forEach(tabButton => {
-        tabButton.setAttribute('aria-selected', false);
-    });    
-}));
+// backUp.forEach(backUp => backUp.addEventListener("click", function() {
+//     tabPanels.forEach(tabPanel => tabPanel.setAttribute("hidden", true));
+//     overlines.forEach(overline => {
+//         overline.classList.remove('overline-on');
+//     });
+//     tabButtons.forEach(tabButton => {
+//         tabButton.setAttribute('aria-selected', false);
+//     });    
+// }));
 
 
 // //GO RIGHT//
