@@ -340,9 +340,9 @@ article img {
 
 /*ARTICLE WHO*/
 
-[role="tabpanel"] {
+/* [data-color="red"] {
     background: red;
-}
+} */
 
 .who img {
     float: left;
