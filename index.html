@@ -29,13 +29,13 @@
                     </a>
                 </li>
                 <li>
-                    <a  href="#footer" rel=”noopener” title="Dane kontaktowe" aria-label="Dana kontaktowe">
+                    <a  href="#tabs" rel=”noopener” title="Dane kontaktowe" aria-label="Dana kontaktowe">
                         <i class="fas fa-address-book" aria-hidden="true"></i>
                     </a>
                 </li>
             </ul>
         </header>
-        <div class="tabs">
+        <div class="tabs" id="tabs">
             <nav role="tablist">
                 <button role="tab" aria-selected="false" id="who" class="figure">
                     <svg class="swip" viewBox="0 0 84 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,177 +66,179 @@
                 </button>
             </nav>
             <div class="overline"></div>
-            <article role="tabpanel" aria-labelledby="who" class="article who" hidden>
-                <h2 class="sr-only">Kim jestem?</h2>
-                <img src="./images/kaska.jpg" alt="Kim jestem?"/>
-                <p>Nazywam się Katarzyna Biernacka, choć dzieci mówią do mnie Pani Kasia lub po prostu Kasia. Jestem logopedą i filologiem polskim. Ukończyłam filologię polską ze specjalnością nauczycielską z logopedią oraz podyplomowe studia neurologopedyczne w Uniwersytecie Pedagogicznym im. KEN w Krakowie. Pracę magisterską na temat wysokich technologii w słownictwie dzieci przedszkolnych napisałam pod kierunkiem Profesor Jagody Cieszyńskiej-Rożek.</p>
-                <p>Doświadczenie zawodowe zdobywałam pod okiem terapeutów z Centrum Metody Krakowskiej oraz podczas praktyk w Specjalnym Ośrodku Szkolno-Wychowawczym dla Dzieci Niesłyszących w Krakowie przy ul. Spadochroniarzy, w prywatnym gabinecie logopedycznym „SY-LA-BA” oraz w Specjalnym Ośrodku Szkolno-Wychowawczym pn. „Centrum Autyzmu i Całościowych Zaburzeń Rozwojowych” w Krakowie przy ul. Szopkarzy.</p>
-                <p>Przez pięć lat pracowałam w Centrum Metody Krakowskiej. Ponadto przygotowywałam i współprowadziłam warsztaty nauki czytania dla dzieci, prowadziłam także spotkania dla rodziców, logopedów i nauczycieli „Metoda Krakowska – warsztat pracy terapeuty” oraz „Porady logopedyczne” o tematyce: jak uczyć czytać oraz jak ćwiczyć lewą półkulę mózgu. Udzielam porad z zakresu logopedii w dziale „Okiem eksperta” na portalu Czas Dzieci.</p>
-                <p>Od 2020 roku prowadzę własny gabinet logopedyczno-terapeutyczny.</p>
-                <p class="subtitle">Do tej pory ukończyłam następujące szkolenia:</p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i><div>Dyslalia. Diagnoza i terapia wybranych form zaburzeń (prowadzące: dr D. Pluta-Wojciechowska i B. Sambor)<button id="dyslalia" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i>System Numicon – podstawowe umiejętności matematyczne (prowadząca: mgr Dagmara Kubiak)</dt>
-                    <li><i class="fas fa-check-circle"></i><div>Metoda Krakowska w pracy z dzieckiem o specjalnych potrzebach edukacyjnych – warsztat praktyczny (prowadząca: dr Katarzyna Sedivy)<button id="metodakrakowska" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i><div>Praca z dzieckiem autystycznym – początek drogi. Warsztat praktyczny (prowadząca: mgr Agnieszka Bala)<button id="praca" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i><div>Alalia (opóźniony rozwój mowy, SLI) – diagnoza i terapia (prowadząca: dr Ewa Bielenda-Mazur)<button id="alalia" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i><div>Rozwój i stymulacja dziecka w pierwszym roku życia (prowadząca: E. Bielenda-Mazur)<button id="rozwoj" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i><div>Stymulacja mechanizmów lewopółkulowych – usprawnienie pracy lewej półkuli mózgu(prowadząca prof. UP dr hab Marta Korendo)<button id="stymulacja" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i><div>Programowanie języka dla dzieci z zaburzeniami komunikacji – niesłyszących, autystycznych, z afazją (prowadząca: dr Zdzisława Orłowska-Popek)<button id="programowanie" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i><div>Rozwijanie funkcji poznawczych u dzieci w wieku przedszkolnym (prowadząca: mgr A. Bala)<button id="rozwijanie" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i><div>Diagnozowanie możliwości poznawczych i ocena rozwoju Międzynarodową Skalą Wykonaniową Leitera (prowadząca: prof. zw. dr hab. J. Cieszyńska)<button id="diagnozowanie" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i><div>Test SON-R 2,5 – 7 badanie i interpretacja wyników (prowadząca: prof. zw. dr hab. J. Cieszyńska)<button id="testson" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i><div>Diagnoza i terapia wad wymowy (prowadząca: dr A. Kabała)<button id="diagnoza" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i><div>Kurs pierwszej pomocy dzieciom (prowadzący: rat. medyczny M. Gnap)<button id="pierwszapomoc" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
-                    <li><i class="fas fa-check-circle"></i>I Międzynarodowa Neurobiologiczna Konferencja Naukowa – Uniwersytet Pedagogiczny im. KEN w Krakowie</li>
-                </ul>
-                <dialog class="certificates-collection">
-                        <img aria-labelledby="dyslalia" class="certificate" src="./images/dyslalia.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                        <img aria-labelledby="metodakrakowska" class="certificate" src="./images/metodakrakowska.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                        <img aria-labelledby="praca" class="certificate" src="./images/PracaZDzieckiemAutystycznym.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                        <img aria-labelledby="alalia" class="certificate" src="./images/Alalia.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                        <img aria-labelledby="rozwoj" class="certificate" src="./images/rozwoj.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                        <img aria-labelledby="stymulacja" class="certificate" src="./images/stymulacja.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                        <img aria-labelledby="programowanie" class="certificate" src="./images/programowanie.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                        <img aria-labelledby="rozwijanie" class="certificate" src="./images/rozwijanie.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                        <img aria-labelledby="diagnozowanie" class="certificate" src="./images/diagnozowanie.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                        <img aria-labelledby="testson" class="certificate" src="./images/testSon.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                        <img aria-labelledby="diagnoza" class="certificate" src="./images/diagnoza.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                        <img aria-labelledby="pierwszapomoc" class="certificate" src="./images/pierwszapomoc.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
-                </dialog>
-                <div class ="certificates-navigation">
-                    <button class="close-crtf crtf-nav-btns"><i class="fas fa-times"></i></button>
-                    <button class="prev-crtf crtf-nav-btns"><i class="fas fa-chevron-left"></i></button>
-                    <button class="next-crtf crtf-nav-btns"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </article>
-            <article role="tabpanel" aria-labelledby="what" class="article what" hidden>
-                <h2 class="sr-only">Co robię?</h2>
-                <p>Prowadzę terapię ogólnorozwojową, która polega na stymulacji wszystkich funkcji poznawczych.</p>
-                <img class="what-photo1" src="images/co-robie-foto1.jpg" alt="Wybrane pomoce logopedyczne">
-                <p class="subtitle">Co ćwiczę z dziećmi podczas zajęć?</p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i>rozwój systemu językowego</li>
-                    <li><i class="fas fa-check-circle"></i>percepcję wzrokową</li>
-                    <li><i class="fas fa-check-circle"></i>percepcję słuchową</li>
-                    <img class="what-photo2" src="images/what2.jpg" alt="WyMÓWka - wnętrze gabinetu">
-                    <li><i class="fas fa-check-circle"></i>naukę czytania metodą sylabową</li>
-                    <li><i class="fas fa-check-circle"></i>naukę liczenia w oparciu o system Numicon</li>
-                    <li><i class="fas fa-check-circle"></i>stymulację lewej półkuli mózgu</li>
-                    <li><i class="fas fa-check-circle"></i>myślenie przyczynowo-skutkowe</li>
-                    <li><i class="fas fa-check-circle"></i>logiczne myślenie</li>
-                    <li><i class="fas fa-check-circle"></i>rozwój umiejętności społecznych</li>
-                    <li><i class="fas fa-check-circle"></i>rozwój zabawy</li>
-                    <li><i class="fas fa-check-circle"></i>pamięć</li>
-                    <li><i class="fas fa-check-circle"></i>motorykę mała i dużą</li>
-                </ul>
-                <p><br><br>Pamiętam o tym, że każdy człowiek jest wyjątkowy, więc dla każdego dziecka tworzę osobny program terapii dostosowany do jego indywidualnych potrzeb, umiejętności i możliwości.</p>
-            </article>
-            <article role="tabpanel" aria-labelledby="for-who" class="article for-who" hidden>
-                <h2 class="sr-only">Z kim pracuję?</h2>
-                <p>Kto może przyjść na zajęcia do mojego gabinetu?<br>Wszystkie dzieci!</p>
-                <p class="subtitle">Prowadzę terapię dzieci z zaburzeniami komunikacji językowej oraz całościowymi zaburzeniami rozwoju, między innymi z:</p>
-                <img class="for-who-img1" src="images/Gabinet-po-2048x1155 Cropped.jpg" alt="wyMÓWka - wnętrze gabinetu logopedycznego">
-                <ul>
-                    <li><i class="fas fa-check-circle"></i>opóźnionym rozwojem mowy</li>
-                    <li><i class="fas fa-check-circle"></i>alalią</li>
-                    <li><i class="fas fa-check-circle"></i>dyslalią (wadami wymowy)</li>
-                    <li><i class="fas fa-check-circle"></i>autyzmem</li>
-                    <li><i class="fas fa-check-circle"></i>zespołem Aspergera</li>
-                    <li><i class="fas fa-check-circle"></i>afazją</li>
-                    <li><i class="fas fa-check-circle"></i>zespołem Downa</li>
-                    <li><i class="fas fa-check-circle"></i>niedosłuchem</li>
-                    <li><i class="fas fa-check-circle"></i>mózgowym porażeniem dziecięcym</li>
-                    <li><i class="fas fa-check-circle"></i>zespołami genetycznymi</li>
-                </ul>
-                <p class="subtitle">Na zajęcia przychodzą do mnie również dzieci:</p>
-                <img class="for-who-img2" src="images/how-much-kasia.jpg" alt="Katarzyna Biernacka, logopeda i właścicielka gabinetu wyMÓWka">
-                <ul>
-                    <li><i class="fas fa-check-circle"></i>dwujęzyczne i wielojęzyczne</li>
-                    <li><i class="fas fa-check-circle"></i>zagrożone dysleksją</li>
-                    <li><i class="fas fa-check-circle"></i>z dysleksją</li>
-                    <li><i class="fas fa-check-circle"></i>z trudnościami w nauce</li>
-                </ul>
-                <p>Pracuję także z dziećmi bez żadnych trudności, które po prostu chciałyby się nauczyć czytać lub liczyć i których rodzice chcą wspierać i stymulować ich prawidłowy rozwój poznawczy na zajęciach ogólnorozwojowych.</p>
-                <p>Dzieci w jakim wieku mogą zgłosić się na zajęcia?<br>W każdym! Jak do tej pory mój najmłodszy uczeń miał 8 miesięcy, a najstarszy 15 lat.</P>
-            </article>
-            <article role="tabpanel" aria-labelledby="how-much" class="article how-much" hidden>
-                <h2 class="sr-only">Cennik</h2>
-                <img class="how-much-img" src="images/what3.jpg" alt="Przykładowe ćwiczenie podczas zajęć logopedycznych">
-                <div class="how-much-details">
+            <div class="tabpanels">
+                <article role="tabpanel" aria-labelledby="who" class="article who" hidden>
+                    <h2 class="sr-only">Kim jestem?</h2>
+                    <img src="./images/kaska.jpg" alt="Kim jestem?"/>
+                    <p>Nazywam się Katarzyna Biernacka, choć dzieci mówią do mnie Pani Kasia lub po prostu Kasia. Jestem logopedą i filologiem polskim. Ukończyłam filologię polską ze specjalnością nauczycielską z logopedią oraz podyplomowe studia neurologopedyczne w Uniwersytecie Pedagogicznym im. KEN w Krakowie. Pracę magisterską na temat wysokich technologii w słownictwie dzieci przedszkolnych napisałam pod kierunkiem Profesor Jagody Cieszyńskiej-Rożek.</p>
+                    <p>Doświadczenie zawodowe zdobywałam pod okiem terapeutów z Centrum Metody Krakowskiej oraz podczas praktyk w Specjalnym Ośrodku Szkolno-Wychowawczym dla Dzieci Niesłyszących w Krakowie przy ul. Spadochroniarzy, w prywatnym gabinecie logopedycznym „SY-LA-BA” oraz w Specjalnym Ośrodku Szkolno-Wychowawczym pn. „Centrum Autyzmu i Całościowych Zaburzeń Rozwojowych” w Krakowie przy ul. Szopkarzy.</p>
+                    <p>Przez pięć lat pracowałam w Centrum Metody Krakowskiej. Ponadto przygotowywałam i współprowadziłam warsztaty nauki czytania dla dzieci, prowadziłam także spotkania dla rodziców, logopedów i nauczycieli „Metoda Krakowska – warsztat pracy terapeuty” oraz „Porady logopedyczne” o tematyce: jak uczyć czytać oraz jak ćwiczyć lewą półkulę mózgu. Udzielam porad z zakresu logopedii w dziale „Okiem eksperta” na portalu Czas Dzieci.</p>
+                    <p>Od 2020 roku prowadzę własny gabinet logopedyczno-terapeutyczny.</p>
+                    <p class="subtitle">Do tej pory ukończyłam następujące szkolenia:</p>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i>Terapia logopedyczna</li>
-                        <li><i class="fas fa-check-circle"></i>Konsultacja/pierwsze spotkanie</li>
-                        <li><i class="fas fa-check-circle"></i>Opinia logopedyczna na piśmie</li>
+                        <li><i class="fas fa-check-circle"></i><div>Dyslalia. Diagnoza i terapia wybranych form zaburzeń (prowadzące: dr D. Pluta-Wojciechowska i B. Sambor)<button id="dyslalia" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i>System Numicon – podstawowe umiejętności matematyczne (prowadząca: mgr Dagmara Kubiak)</dt>
+                        <li><i class="fas fa-check-circle"></i><div>Metoda Krakowska w pracy z dzieckiem o specjalnych potrzebach edukacyjnych – warsztat praktyczny (prowadząca: dr Katarzyna Sedivy)<button id="metodakrakowska" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Praca z dzieckiem autystycznym – początek drogi. Warsztat praktyczny (prowadząca: mgr Agnieszka Bala)<button id="praca" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Alalia (opóźniony rozwój mowy, SLI) – diagnoza i terapia (prowadząca: dr Ewa Bielenda-Mazur)<button id="alalia" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Rozwój i stymulacja dziecka w pierwszym roku życia (prowadząca: E. Bielenda-Mazur)<button id="rozwoj" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Stymulacja mechanizmów lewopółkulowych – usprawnienie pracy lewej półkuli mózgu(prowadząca prof. UP dr hab Marta Korendo)<button id="stymulacja" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Programowanie języka dla dzieci z zaburzeniami komunikacji – niesłyszących, autystycznych, z afazją (prowadząca: dr Zdzisława Orłowska-Popek)<button id="programowanie" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Rozwijanie funkcji poznawczych u dzieci w wieku przedszkolnym (prowadząca: mgr A. Bala)<button id="rozwijanie" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Diagnozowanie możliwości poznawczych i ocena rozwoju Międzynarodową Skalą Wykonaniową Leitera (prowadząca: prof. zw. dr hab. J. Cieszyńska)<button id="diagnozowanie" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Test SON-R 2,5 – 7 badanie i interpretacja wyników (prowadząca: prof. zw. dr hab. J. Cieszyńska)<button id="testson" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Diagnoza i terapia wad wymowy (prowadząca: dr A. Kabała)<button id="diagnoza" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Kurs pierwszej pomocy dzieciom (prowadzący: rat. medyczny M. Gnap)<button id="pierwszapomoc" class="crtf-btn"><i class="fas fa-search-plus"></i>Zobacz certyfikat</button></div></li>
+                        <li><i class="fas fa-check-circle"></i>I Międzynarodowa Neurobiologiczna Konferencja Naukowa – Uniwersytet Pedagogiczny im. KEN w Krakowie</li>
                     </ul>
-                    <ul>
-                        <li>90 zł / 60 min</li>
-                        <li>120 zł / 60 – 90 min</li>
-                        <li>30 zł</li>
-                    </ul>
-                </div>
-                <p class="subtitle">Czas trwania zajęć oraz ich częstotliwość jest ustalana indywidualnie dla każdego ucznia.</p>
-                <br>
-            </article>
-            <article role="tabpanel" aria-labelledby="contact" class="article contact" hidden>
-                <img class="contant-img" src="./images/contact.jpg" alt="Kasia przy drzwiach gabinetu Wymówka"/>
-                <h2 class="sr-only">Kontakt</h2>
-                <section class="contact-details">
-                    <p class="subtitle">mgr Katarzyna Biernacka</p>
-                    <p>Ponieważ prowadzę zajęcia od rana do późnych godzin popołudniowych, nie zawsze mogę odebrać telefon. Jeśli nie odbieram, proszę spróbować ponownie później, najlepiej po godzinie 18. Można też wysłać sms z prośbą o kontakt (na pewno oddzwonię) albo skontaktować się ze mną poprzez maila czy formularz kontaktowy.</p>
-                    <address>
-                        <ul>
-                            <li>
-                                <i class="fas fa-phone" aria-hidden="true"></i>
-                                <a href="tel:+48500866065" aria-label="Telefon kontaktowy">500 866 065</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope" aria-hidden="true"></i>
-                                <a href="mailto:logopeda@wymowka.pl" aria-label="Adres e-mail">logopeda@wymowka.pl</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-paste" aria-hidden="true"></i>
-                                <button class="open-form" aria-label="Formularz kontaktowy">formularz kontaktowy</button>
-                            </li>
-                        </ul>
-                    </address> 
-                </section>
-                <section class="location"></section>
-                    <p class="subtitle">Gabinet logopedyczno-terapeutyczny wy<span>MÓW</span>ka</p>
-                    <p>Gabinet znajduje się na II piętrze, w budynku jest winda. Okolica objęta jest strefą płatnego parkowania, podstrefa C.</p>
-                    <address>
-                        <ul>
-                            <li>
-                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                <a href="https://www.google.com/maps/place/aleja+Genera%C5%82a+Jana+Skrzyneckiego+17,+30-363+Krak%C3%B3w,+Polska/@50.034005,19.93508,13z/data=!4m5!3m4!1s0x47165ca017e00213:0xb33ad67ad32b66d2!8m2!3d50.0340052!4d19.9350804?hl=pl-PL" target="_blank" aria-label="Adres">ul. Skrzyneckiego 17 m. 9<br>30-363 Kraków</a>
-                            </li>
-                        </ul>
-                    </address>
-                </section>
-                <section class="map">
-                    <p class="subtitle">Sprawdź, jak dojechać</p>
-                    <div class="mapouter" aria-label="Mapa">
-                        <iframe width="390" height="290" id="gmap_canvas" src="https://maps.google.com/maps?q=Skrzyneckiego%2017,%20Krak%C3%B3w&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <dialog class="certificates-collection">
+                            <img aria-labelledby="dyslalia" class="certificate" src="./images/dyslalia.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                            <img aria-labelledby="metodakrakowska" class="certificate" src="./images/metodakrakowska.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                            <img aria-labelledby="praca" class="certificate" src="./images/PracaZDzieckiemAutystycznym.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                            <img aria-labelledby="alalia" class="certificate" src="./images/Alalia.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                            <img aria-labelledby="rozwoj" class="certificate" src="./images/rozwoj.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                            <img aria-labelledby="stymulacja" class="certificate" src="./images/stymulacja.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                            <img aria-labelledby="programowanie" class="certificate" src="./images/programowanie.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                            <img aria-labelledby="rozwijanie" class="certificate" src="./images/rozwijanie.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                            <img aria-labelledby="diagnozowanie" class="certificate" src="./images/diagnozowanie.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                            <img aria-labelledby="testson" class="certificate" src="./images/testSon.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                            <img aria-labelledby="diagnoza" class="certificate" src="./images/diagnoza.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                            <img aria-labelledby="pierwszapomoc" class="certificate" src="./images/pierwszapomoc.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia"/>
+                    </dialog>
+                    <div class ="certificates-navigation">
+                        <button class="close-crtf crtf-nav-btns"><i class="fas fa-times"></i></button>
+                        <button class="prev-crtf crtf-nav-btns"><i class="fas fa-chevron-left"></i></button>
+                        <button class="next-crtf crtf-nav-btns"><i class="fas fa-chevron-right"></i></button>
                     </div>
-                </section>    
-                <section class="contact-form">
-                    <button class="close-contact-form"><i class="fas fa-times"></i></button>
-                    <form class="leave-a-message">
-                        <h5>Imię i nazwisko<span>*</span></h5>
-                        <input type="text" class="contact-me must-be" placeholder="Imię i nazwisko"/>
-                        <h5>Adres e-mail<span>*</span></h5>
-                        <input type="email" class="contact-me must-be" placeholder="Wpisz swoj adres email"/>
-                        <h5>Numer kontaktowy</h5>
-                        <input type="tel" class="contact-me" placeholder="Podaj numer telefonu"/>
-                        <h5>Wiadomość<span>*</span></h5>
-                        <input type="text" class="message must-be" placeholder="Wpisz treść wiadomości"/>
-                        <p class="form-feedback"></p>   
-                        <input type="submit" class="send-btn" placeholder="Wyślij"/>
-                    </form>    
-                </section>
-            </article>
-            <div class="go-right-go-up" hidden>
-                <button class="go-left"><i class="fas fa-chevron-circle-right"></i>Wróć do poprzedniego</button>
+                </article>
+                <article role="tabpanel" aria-labelledby="what" class="article what" hidden>
+                    <h2 class="sr-only">Co robię?</h2>
+                    <p>Prowadzę terapię ogólnorozwojową, która polega na stymulacji wszystkich funkcji poznawczych.</p>
+                    <img class="what-photo1" src="images/co-robie-foto1.jpg" alt="Wybrane pomoce logopedyczne">
+                    <p class="subtitle">Co ćwiczę z dziećmi podczas zajęć?</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i>rozwój systemu językowego</li>
+                        <li><i class="fas fa-check-circle"></i>percepcję wzrokową</li>
+                        <li><i class="fas fa-check-circle"></i>percepcję słuchową</li>
+                        <img class="what-photo2" src="images/what2.jpg" alt="WyMÓWka - wnętrze gabinetu">
+                        <li><i class="fas fa-check-circle"></i>naukę czytania metodą sylabową</li>
+                        <li><i class="fas fa-check-circle"></i>naukę liczenia w oparciu o system Numicon</li>
+                        <li><i class="fas fa-check-circle"></i>stymulację lewej półkuli mózgu</li>
+                        <li><i class="fas fa-check-circle"></i>myślenie przyczynowo-skutkowe</li>
+                        <li><i class="fas fa-check-circle"></i>logiczne myślenie</li>
+                        <li><i class="fas fa-check-circle"></i>rozwój umiejętności społecznych</li>
+                        <li><i class="fas fa-check-circle"></i>rozwój zabawy</li>
+                        <li><i class="fas fa-check-circle"></i>pamięć</li>
+                        <li><i class="fas fa-check-circle"></i>motorykę mała i dużą</li>
+                    </ul>
+                    <p><br><br>Pamiętam o tym, że każdy człowiek jest wyjątkowy, więc dla każdego dziecka tworzę osobny program terapii dostosowany do jego indywidualnych potrzeb, umiejętności i możliwości.</p>
+                </article>
+                <article role="tabpanel" aria-labelledby="for-who" class="article for-who" hidden>
+                    <h2 class="sr-only">Z kim pracuję?</h2>
+                    <p>Kto może przyjść na zajęcia do mojego gabinetu?<br>Wszystkie dzieci!</p>
+                    <p class="subtitle">Prowadzę terapię dzieci z zaburzeniami komunikacji językowej oraz całościowymi zaburzeniami rozwoju, między innymi z:</p>
+                    <img class="for-who-img1" src="images/Gabinet-po-2048x1155 Cropped.jpg" alt="wyMÓWka - wnętrze gabinetu logopedycznego">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i>opóźnionym rozwojem mowy</li>
+                        <li><i class="fas fa-check-circle"></i>alalią</li>
+                        <li><i class="fas fa-check-circle"></i>dyslalią (wadami wymowy)</li>
+                        <li><i class="fas fa-check-circle"></i>autyzmem</li>
+                        <li><i class="fas fa-check-circle"></i>zespołem Aspergera</li>
+                        <li><i class="fas fa-check-circle"></i>afazją</li>
+                        <li><i class="fas fa-check-circle"></i>zespołem Downa</li>
+                        <li><i class="fas fa-check-circle"></i>niedosłuchem</li>
+                        <li><i class="fas fa-check-circle"></i>mózgowym porażeniem dziecięcym</li>
+                        <li><i class="fas fa-check-circle"></i>zespołami genetycznymi</li>
+                    </ul>
+                    <p class="subtitle">Na zajęcia przychodzą do mnie również dzieci:</p>
+                    <img class="for-who-img2" src="images/how-much-kasia.jpg" alt="Katarzyna Biernacka, logopeda i właścicielka gabinetu wyMÓWka">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i>dwujęzyczne i wielojęzyczne</li>
+                        <li><i class="fas fa-check-circle"></i>zagrożone dysleksją</li>
+                        <li><i class="fas fa-check-circle"></i>z dysleksją</li>
+                        <li><i class="fas fa-check-circle"></i>z trudnościami w nauce</li>
+                    </ul>
+                    <p>Pracuję także z dziećmi bez żadnych trudności, które po prostu chciałyby się nauczyć czytać lub liczyć i których rodzice chcą wspierać i stymulować ich prawidłowy rozwój poznawczy na zajęciach ogólnorozwojowych.</p>
+                    <p>Dzieci w jakim wieku mogą zgłosić się na zajęcia?<br>W każdym! Jak do tej pory mój najmłodszy uczeń miał 8 miesięcy, a najstarszy 15 lat.</P>
+                </article>
+                <article role="tabpanel" aria-labelledby="how-much" class="article how-much" hidden>
+                    <h2 class="sr-only">Cennik</h2>
+                    <img class="how-much-img" src="images/what3.jpg" alt="Przykładowe ćwiczenie podczas zajęć logopedycznych">
+                    <div class="how-much-details">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Terapia logopedyczna</li>
+                            <li><i class="fas fa-check-circle"></i>Konsultacja/pierwsze spotkanie</li>
+                            <li><i class="fas fa-check-circle"></i>Opinia logopedyczna na piśmie</li>
+                        </ul>
+                        <ul>
+                            <li>90 zł / 60 min</li>
+                            <li>120 zł / 60 – 90 min</li>
+                            <li>30 zł</li>
+                        </ul>
+                    </div>
+                    <p class="subtitle">Czas trwania zajęć oraz ich częstotliwość jest ustalana indywidualnie dla każdego ucznia.</p>
+                    <br>
+                </article>
+                <article role="tabpanel" aria-labelledby="contact" class="article contact" hidden>
+                    <img class="contant-img" src="./images/contact.jpg" alt="Kasia przy drzwiach gabinetu Wymówka"/>
+                    <h2 class="sr-only">Kontakt</h2>
+                    <section class="contact-details">
+                        <p class="subtitle">mgr Katarzyna Biernacka</p>
+                        <p>Ponieważ prowadzę zajęcia od rana do późnych godzin popołudniowych, nie zawsze mogę odebrać telefon. Jeśli nie odbieram, proszę spróbować ponownie później, najlepiej po godzinie 18. Można też wysłać sms z prośbą o kontakt (na pewno oddzwonię) albo skontaktować się ze mną poprzez maila czy formularz kontaktowy.</p>
+                        <address>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
+                                    <a href="tel:+48500866065" aria-label="Telefon kontaktowy">500 866 065</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                    <a href="mailto:logopeda@wymowka.pl" aria-label="Adres e-mail">logopeda@wymowka.pl</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-paste" aria-hidden="true"></i>
+                                    <button class="open-form" aria-label="Formularz kontaktowy">formularz kontaktowy</button>
+                                </li>
+                            </ul>
+                        </address> 
+                    </section>
+                    <section class="location"></section>
+                        <p class="subtitle">Gabinet logopedyczno-terapeutyczny wy<span>MÓW</span>ka</p>
+                        <p>Gabinet znajduje się na II piętrze, w budynku jest winda. Okolica objęta jest strefą płatnego parkowania, podstrefa C.</p>
+                        <address>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                    <a href="https://www.google.com/maps/place/aleja+Genera%C5%82a+Jana+Skrzyneckiego+17,+30-363+Krak%C3%B3w,+Polska/@50.034005,19.93508,13z/data=!4m5!3m4!1s0x47165ca017e00213:0xb33ad67ad32b66d2!8m2!3d50.0340052!4d19.9350804?hl=pl-PL" target="_blank" aria-label="Adres">ul. Skrzyneckiego 17 m. 9<br>30-363 Kraków</a>
+                                </li>
+                            </ul>
+                        </address>
+                    </section>
+                    <section class="map">
+                        <p class="subtitle">Sprawdź, jak dojechać</p>
+                        <div class="mapouter" aria-label="Mapa">
+                            <iframe width="390" height="290" id="gmap_canvas" src="https://maps.google.com/maps?q=Skrzyneckiego%2017,%20Krak%C3%B3w&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                        </div>
+                    </section>    
+                    <section class="contact-form">
+                        <button class="close-contact-form"><i class="fas fa-times"></i></button>
+                        <form class="leave-a-message">
+                            <h5>Imię i nazwisko<span>*</span></h5>
+                            <input type="text" class="contact-me must-be" placeholder="Imię i nazwisko"/>
+                            <h5>Adres e-mail<span>*</span></h5>
+                            <input type="email" class="contact-me must-be" placeholder="Wpisz swoj adres email"/>
+                            <h5>Numer kontaktowy</h5>
+                            <input type="tel" class="contact-me" placeholder="Podaj numer telefonu"/>
+                            <h5>Wiadomość<span>*</span></h5>
+                            <input type="text" class="message must-be" placeholder="Wpisz treść wiadomości"/>
+                            <p class="form-feedback"></p>   
+                            <input type="submit" class="send-btn" placeholder="Wyślij"/>
+                        </form>    
+                    </section>
+                </article>
+            </div>
+            <div class="go-right-go-up">
+                <button class="go-left"><i class="fas fa-chevron-circle-left"></i>Poprzednia sekcja</button>
                 <button class="go-right">Czytaj dalej<i class="fas fa-chevron-circle-right"></i></button>
                 <button class="go-up">Zwiń<i class="fas fa-chevron-circle-up"></i></button>
             </div>

@@ -60,16 +60,20 @@
 
 const tabs = document.querySelector('.tabs');
 const tabButtons = tabs.querySelectorAll('[role="tab"]');
+const parentTabPanel = tabs.querySelector(".tabpanels");
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
+const index = tabPanels.firstElementChild;
 const overline = tabs.querySelector(".overline");
 let currentTabPanel;
 let prevTabPanel;
 let nextTabPanel;
+const navigationButtons = tabs.querySelector(".go-right-go-up");
 const backUp = tabs.querySelector(".go-up");
 
 
 
 function closeWhatsOpen() {
+    overline.classList.remove('.overline-on');
     tabPanels.forEach(tabPanel => {
         tabPanel.classList.remove('show-article')
         tabPanel.hidden = true
@@ -81,14 +85,26 @@ function closeWhatsOpen() {
 };
 
 function findAndOpen(event) {
+    overline.classList.add('.overline-on');
     event.currentTarget.setAttribute('aria-selected', true);
     event.currentTarget.setAttribute('open', true);
     const {id} = event.currentTarget;
     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
     tabPanel.hidden = false;
+    navigationButtons.style.display = "grid";
     currentTabPanel = tabPanel;
-    prevTabPanel = tabPanel.previousElementSibling || tabPanels.lastElementChild;
-    nextTabPanel = tabPanel.nextElementSibling || tabPanels.firstElementChild;
+    //LATOŚ HELP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    const currentTabPanelIndex = tabPanels.indexOf(currentTabPanel);
+    if (currentTabPanelIndex === tabPanels[0]) {
+        console.log('ok');
+    } else {
+        console.log('no mach');
+    };
+    // console.log(currentTabPanelIndex);
+    // console.log(tabPanels[0]);
+    prevTabPanel = tabPanel.previousElementSibling || parentTabPanel.lastElementChild;
+    nextTabPanel = tabPanel.nextElementSibling || parentTabPanel.firstElementChild;
+    // prevTabPanel ? console.log(tabPanels[0]) : console.log("there is no previous sibling"),
     applyClasses();
     setTimeout (function() {
         currentTabPanel.classList.add('show-article')}, 700);
@@ -101,11 +117,12 @@ function applyClasses() {
 }
 
 function applyEvenListeners() {
-
 }
+
 
 function close() {
     closeWhatsOpen();
+    navigationButtons.style.display = "none";
     //remov classes
     //remove addEventListeners
     //close div with buttons;
@@ -233,17 +250,11 @@ backUp.addEventListener("click", close);
 //     setTimeout (function() {
 //         showArticle(currentArticleIndex)}, 300);
 // };
-const goRightBtn = tabs.querySelectorAll(".go-right");
+const goRightBtn = tabs.querySelector(".go-right");
+const goLeftBtn = tabs.querySelector(".go-left");
 
-goRightBtn.forEach(goRightBtn => goRightBtn.addEventListener("click", move));
-
-function goToNextTabPanel() {
-    let currentTabPanel = tabs.querySelector('.show-article');
-    let nextTabPanel = currentTabPanel.nextElementSibling;
-
-    console.log(currentTabPanel);
-    console.log(nextTabPanel);
-}
+goRightBtn.addEventListener("click", move);
+goLeftBtn.addEventListener("click", () => move('back'));
 
 
 

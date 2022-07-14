@@ -175,7 +175,7 @@ button[aria-selected="true"] {
     display: flex;
     opacity: 0;
     width: 0;
-    margin: 0 0 0 10%;
+    margin: 1em 0 0 10%;
     padding: 0;
     border-bottom: .2rem;
     border-bottom-style: solid;
@@ -285,8 +285,11 @@ article img {
 
 
 .go-right-go-up {
+    display: none;
+    margin-left: 10%;
+    margin-right: 10%;
     border: 1px solid pink;
-    display: grid;
+    /* display: grid; */
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(2, auto);
 
@@ -336,6 +339,13 @@ article img {
     transform: scale(1.2);
     filter: brightness(110%);
 }
+
+.fa-chevron-circle-right,
+.fa-chevron-circle-left,
+.fa-chevron-circle-up {
+    color: #9df6dc;
+}
+
 
 
 /*ARTICLE WHO*/
