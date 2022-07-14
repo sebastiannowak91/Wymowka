@@ -60,15 +60,17 @@
 
 const tabs = document.querySelector('.tabs');
 const tabButtons = tabs.querySelectorAll('[role="tab"]');
-const parentTabPanel = tabs.querySelector(".tabpanels");
+// const parentTabPanel = tabs.querySelector(".tabpanels");
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
-const index = tabPanels.firstElementChild;
 const overline = tabs.querySelector(".overline");
+
+
 let currentTabPanel;
-let prevTabPanel;
-let nextTabPanel;
+// let prevTabPanel;
+// let nextTabPanel;
 const navigationButtons = tabs.querySelector(".go-right-go-up");
 const backUp = tabs.querySelector(".go-up");
+let currentTabPanelIndex;
 
 function wait(ms = 0) {
     return new Promise((resolve) => {
@@ -90,7 +92,6 @@ function down() {
 }
 
 function closeWhatsOpen() {
-    overline.classList.toggle('overline-on');
     tabPanels.forEach(tabPanel => {
         tabPanel.classList.remove('show-article')
         tabPanel.hidden = true
@@ -101,7 +102,7 @@ function closeWhatsOpen() {
     });
 };
 
-function findAndOpen(event) {
+function findMatchingTabpanel(event) {
     event.currentTarget.setAttribute('aria-selected', true);
     event.currentTarget.setAttribute('open', true);
     const {id} = event.currentTarget;
@@ -109,28 +110,47 @@ function findAndOpen(event) {
     tabPanel.hidden = false;
     navigationButtons.style.display = "grid";
     currentTabPanel = tabPanel;
-    down();
-    //LATOŚ HELP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    const currentTabPanelIndex = tabPanels.indexOf(currentTabPanel);
-    if (currentTabPanelIndex === tabPanels[0]) {
-        console.log('ok');
-    } else {
-        console.log('no mach');
-    };
-    // console.log(currentTabPanelIndex);
-    // console.log(tabPanels[0]);
-    prevTabPanel = tabPanel.previousElementSibling || parentTabPanel.lastElementChild;
-    nextTabPanel = tabPanel.nextElementSibling || parentTabPanel.firstElementChild;
-    // prevTabPanel ? console.log(tabPanels[0]) : console.log("there is no previous sibling"),
-    applyClasses();
-    showArticle();
+    
+    // const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
+    // tabPanel.hidden = false;
 }
 
-function applyClasses() {
-    currentTabPanel.classList.add('current');
-    prevTabPanel.classList.add('prev');
-    nextTabPanel.classList.add('next');
+function setPrevNextCurrent() {
+    const currentTabPanelIndex = tabPanels.indexOf(currentTabPanel);
+    const prevTabPanelIndex = currentTabPanelIndex - 1;
+    const nextTabPanelIndex = currentTabPanelIndex + 1;
 }
+
+// function findAndOpen(event) {
+    // event.currentTarget.setAttribute('aria-selected', true);
+    // event.currentTarget.setAttribute('open', true);
+    // const {id} = event.currentTarget;
+    // const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
+    // tabPanel.hidden = false;
+    // navigationButtons.style.display = "grid";
+    // currentTabPanel = tabPanel;
+    down();
+    //LATOŚ HELP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // const currentTabPanelIndex = tabPanels.indexOf(currentTabPanel);
+    // if (currentTabPanelIndex === 0) {
+    //     console.log('ok');
+    // } else {
+    //     console.log('no mach');
+    // };
+    // console.log(currentTabPanelIndex);
+    // console.log(tabPanels[0]);
+    // prevTabPanel = tabPanel.previousElementSibling || parentTabPanel.lastElementChild;
+    // nextTabPanel = tabPanel.nextElementSibling || parentTabPanel.firstElementChild;
+    // prevTabPanel ? console.log(tabPanels[0]) : console.log("there is no previous sibling"),
+    // applyClasses();
+    // showArticle();
+// }
+
+// function applyClasses() {
+//     currentTabPanel.classList.add('current');
+//     prevTabPanel.classList.add('prev');
+//     nextTabPanel.classList.add('next');
+// }
 
 function applyEvenListeners() {
 }
@@ -152,7 +172,11 @@ function handleTabClick(event) {
         close();
     } else {
         closeWhatsOpen();
-        findAndOpen(event);
+        // findAndOpen(event);
+        findMatchingTabpanel(event);
+        setPrevNextCurrent();
+        showArticle();
+
     }
 }
 
@@ -185,37 +209,60 @@ function handleTabClick(event) {
 //     applyClasses();
 // };
 
+// const backUp = tabs.querySelector(".go-up");
+const goRightBtn = tabs.querySelector(".go-right");
+const goLeftBtn = tabs.querySelector(".go-left");
 
-function move(direction) {
-    // tabPanels.forEach(tabPanel => {
-    //     tabPanel.hidden = true
-    // });
+function navigate(direction) {
+
     closeWhatsOpen();
-    const classesToRemove = ['prev', 'current', 'next'];
-    prevTabPanel.classList.remove(...classesToRemove);
-    currentTabPanel.classList.remove(...classesToRemove);
-    nextTabPanel.classList.remove(...classesToRemove);
-    if (direction === 'back') {
-        [prevTabPanel, currentTabPanel, nextTabPanel] = [
-            prevTabPanel.previousElementSibling || tabPanels.lastElementChild,
-            prevTabPanel, 
-            currentTabPanel];
-    } else { 
-        [prevTabPanel, currentTabPanel, nextTabPanel] = [
-            currentTabPanel, 
-            nextTabPanel, 
-            nextTabPanel.nextElementSibling || tabPanels.firstElementChild,
-        ];
-    }
-    currentTabPanel.hidden = false;
-    down();
-    setTimeout (function() {
-        currentTabPanel.classList.add('show-article')}, 700);
-    applyClasses();
-}
+    const currentTabPanelIndex = tabPanels.indexOf(currentTabPanel);
+    // if (direction === 'back') {
+    //     currentTabPanelIndex = currentTabPanelIndex -1;
+    // } else {
+        nextTabPanelIndex = currentTabPanelIndex + 1;
+        console.log(nextTabPanelIndex);
+    // };
+    // tabPanel = currentTabPanelIndex;
+    // tabPanel.hidden = false;
+    // showArticle(tabPanel);
+
+};
+
+backUp.addEventListener("click", close);
+goRightBtn.addEventListener("click", navigate);
+goLeftBtn.addEventListener("click", () => navigate('back'));
+
+// function move(direction) {
+//     // tabPanels.forEach(tabPanel => {
+//     //     tabPanel.hidden = true
+//     // });
+//     closeWhatsOpen();
+//     const classesToRemove = ['prev', 'current', 'next'];
+//     prevTabPanel.classList.remove(...classesToRemove);
+//     currentTabPanel.classList.remove(...classesToRemove);
+//     nextTabPanel.classList.remove(...classesToRemove);
+//     if (direction === 'back') {
+//         [prevTabPanel, currentTabPanel, nextTabPanel] = [
+//             prevTabPanel.previousElementSibling || tabPanels.lastElementChild,
+//             prevTabPanel, 
+//             currentTabPanel];
+//     } else { 
+//         [prevTabPanel, currentTabPanel, nextTabPanel] = [
+//             currentTabPanel, 
+//             nextTabPanel, 
+//             nextTabPanel.nextElementSibling || tabPanels.firstElementChild,
+//         ];
+//     }
+//     currentTabPanel.hidden = false;
+//     down();
+//     setTimeout (function() {
+//         currentTabPanel.classList.add('show-article')}, 700);
+//     applyClasses();
+// }
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
-backUp.addEventListener("click", close);
+// backUp.addEventListener("click", close);
 
 
 
@@ -270,11 +317,11 @@ backUp.addEventListener("click", close);
 //     setTimeout (function() {
 //         showArticle(currentArticleIndex)}, 300);
 // };
-const goRightBtn = tabs.querySelector(".go-right");
-const goLeftBtn = tabs.querySelector(".go-left");
+// const goRightBtn = tabs.querySelector(".go-right");
+// const goLeftBtn = tabs.querySelector(".go-left");
 
-goRightBtn.addEventListener("click", move);
-goLeftBtn.addEventListener("click", () => move('back'));
+// goRightBtn.addEventListener("click", move);
+// goLeftBtn.addEventListener("click", () => move('back'));
 
 
 
