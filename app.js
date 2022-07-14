@@ -70,10 +70,27 @@ let nextTabPanel;
 const navigationButtons = tabs.querySelector(".go-right-go-up");
 const backUp = tabs.querySelector(".go-up");
 
+function wait(ms = 0) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    })
+};
 
+async function showArticle() {
+    await wait(300);
+    currentTabPanel.classList.add('show-article');
+}
+
+function up() {
+    document.getElementById("jump-up-here").scrollIntoView({behavior: 'smooth'});
+};
+
+function down() {
+    document.getElementById("jump-down-here").scrollIntoView({behavior: 'smooth'});
+}
 
 function closeWhatsOpen() {
-    overline.classList.remove('.overline-on');
+    overline.classList.toggle('overline-on');
     tabPanels.forEach(tabPanel => {
         tabPanel.classList.remove('show-article')
         tabPanel.hidden = true
@@ -85,7 +102,6 @@ function closeWhatsOpen() {
 };
 
 function findAndOpen(event) {
-    overline.classList.add('.overline-on');
     event.currentTarget.setAttribute('aria-selected', true);
     event.currentTarget.setAttribute('open', true);
     const {id} = event.currentTarget;
@@ -93,6 +109,7 @@ function findAndOpen(event) {
     tabPanel.hidden = false;
     navigationButtons.style.display = "grid";
     currentTabPanel = tabPanel;
+    down();
     //LATOŚ HELP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     const currentTabPanelIndex = tabPanels.indexOf(currentTabPanel);
     if (currentTabPanelIndex === tabPanels[0]) {
@@ -106,8 +123,7 @@ function findAndOpen(event) {
     nextTabPanel = tabPanel.nextElementSibling || parentTabPanel.firstElementChild;
     // prevTabPanel ? console.log(tabPanels[0]) : console.log("there is no previous sibling"),
     applyClasses();
-    setTimeout (function() {
-        currentTabPanel.classList.add('show-article')}, 700);
+    showArticle();
 }
 
 function applyClasses() {
@@ -120,9 +136,12 @@ function applyEvenListeners() {
 }
 
 
-function close() {
+async function close() {
+    up();
+    await wait (500);
     closeWhatsOpen();
     navigationButtons.style.display = "none";
+    overline.classList.remove('overline-on');
     //remov classes
     //remove addEventListeners
     //close div with buttons;
@@ -189,6 +208,7 @@ function move(direction) {
         ];
     }
     currentTabPanel.hidden = false;
+    down();
     setTimeout (function() {
         currentTabPanel.classList.add('show-article')}, 700);
     applyClasses();

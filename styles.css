@@ -107,11 +107,11 @@ nav {
     width: 80%;
     max-width: 100%;
     margin: 0 10% 0 10%;
-    padding: 7em 0 5em 0;
+    padding: 0 0 5em 0;
     display: grid;
     grid-template-columns: repeat(3, 30%);
     grid-template-rows: repeat(2, 50%);
-    grid-column-gap: 5%;
+    grid-column-gap: 3em;
     grid-row-gap: 10%;
     border: 2px solid green;
 }
