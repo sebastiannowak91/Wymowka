@@ -65,12 +65,13 @@ const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 const overline = tabs.querySelector(".overline");
 
 
-let currentTabPanel;
+let currenttabPanel;
 // let prevTabPanel;
-// let nextTabPanel;
+let nextTabPanel;
 const navigationButtons = tabs.querySelector(".go-right-go-up");
 const backUp = tabs.querySelector(".go-up");
-let currentTabPanelIndex;
+// let currentTabPanelIndex;
+// let nextTabPanelIndex;
 
 function wait(ms = 0) {
     return new Promise((resolve) => {
@@ -213,53 +214,26 @@ function handleTabClick(event) {
 const goRightBtn = tabs.querySelector(".go-right");
 const goLeftBtn = tabs.querySelector(".go-left");
 
+
 function navigate(direction) {
+    tabPanel = tabPanels.indexOf(currentTabPanel);
+    const prevTabPanel = tabPanels[tabPanel - 1];
+    const nextTabPanel = tabPanels[tabPanel + 1];
 
     closeWhatsOpen();
-    const currentTabPanelIndex = tabPanels.indexOf(currentTabPanel);
-    // if (direction === 'back') {
-    //     currentTabPanelIndex = currentTabPanelIndex -1;
-    // } else {
-        nextTabPanelIndex = currentTabPanelIndex + 1;
-        console.log(nextTabPanelIndex);
-    // };
-    // tabPanel = currentTabPanelIndex;
-    // tabPanel.hidden = false;
-    // showArticle(tabPanel);
-
+    if (direction === 'back') {
+        currentTabPanel = prevTabPanel;
+        prevTabPanel.hidden = false;
+    } else {
+        currentTabPanel = nextTabPanel;
+        currentTabPanel.hidden = false;
+    }
+    showArticle();
 };
 
 backUp.addEventListener("click", close);
 goRightBtn.addEventListener("click", navigate);
 goLeftBtn.addEventListener("click", () => navigate('back'));
-
-// function move(direction) {
-//     // tabPanels.forEach(tabPanel => {
-//     //     tabPanel.hidden = true
-//     // });
-//     closeWhatsOpen();
-//     const classesToRemove = ['prev', 'current', 'next'];
-//     prevTabPanel.classList.remove(...classesToRemove);
-//     currentTabPanel.classList.remove(...classesToRemove);
-//     nextTabPanel.classList.remove(...classesToRemove);
-//     if (direction === 'back') {
-//         [prevTabPanel, currentTabPanel, nextTabPanel] = [
-//             prevTabPanel.previousElementSibling || tabPanels.lastElementChild,
-//             prevTabPanel, 
-//             currentTabPanel];
-//     } else { 
-//         [prevTabPanel, currentTabPanel, nextTabPanel] = [
-//             currentTabPanel, 
-//             nextTabPanel, 
-//             nextTabPanel.nextElementSibling || tabPanels.firstElementChild,
-//         ];
-//     }
-//     currentTabPanel.hidden = false;
-//     down();
-//     setTimeout (function() {
-//         currentTabPanel.classList.add('show-article')}, 700);
-//     applyClasses();
-// }
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
 // backUp.addEventListener("click", close);
