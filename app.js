@@ -60,18 +60,8 @@
 
 const tabs = document.querySelector('.tabs');
 const tabButtons = tabs.querySelectorAll('[role="tab"]');
-// const parentTabPanel = tabs.querySelector(".tabpanels");
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 const overline = tabs.querySelector(".overline");
-
-
-let currenttabPanel;
-// let prevTabPanel;
-let nextTabPanel;
-const navigationButtons = tabs.querySelector(".go-right-go-up");
-const backUp = tabs.querySelector(".go-up");
-// let currentTabPanelIndex;
-// let nextTabPanelIndex;
 
 function wait(ms = 0) {
     return new Promise((resolve) => {
@@ -109,49 +99,9 @@ function findMatchingTabpanel(event) {
     const {id} = event.currentTarget;
     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
     tabPanel.hidden = false;
-    navigationButtons.style.display = "grid";
     currentTabPanel = tabPanel;
-    
-    // const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
-    // tabPanel.hidden = false;
+    showNavigationButtons();
 }
-
-function setPrevNextCurrent() {
-    const currentTabPanelIndex = tabPanels.indexOf(currentTabPanel);
-    const prevTabPanelIndex = currentTabPanelIndex - 1;
-    const nextTabPanelIndex = currentTabPanelIndex + 1;
-}
-
-// function findAndOpen(event) {
-    // event.currentTarget.setAttribute('aria-selected', true);
-    // event.currentTarget.setAttribute('open', true);
-    // const {id} = event.currentTarget;
-    // const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
-    // tabPanel.hidden = false;
-    // navigationButtons.style.display = "grid";
-    // currentTabPanel = tabPanel;
-    down();
-    //LATOŚ HELP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    // const currentTabPanelIndex = tabPanels.indexOf(currentTabPanel);
-    // if (currentTabPanelIndex === 0) {
-    //     console.log('ok');
-    // } else {
-    //     console.log('no mach');
-    // };
-    // console.log(currentTabPanelIndex);
-    // console.log(tabPanels[0]);
-    // prevTabPanel = tabPanel.previousElementSibling || parentTabPanel.lastElementChild;
-    // nextTabPanel = tabPanel.nextElementSibling || parentTabPanel.firstElementChild;
-    // prevTabPanel ? console.log(tabPanels[0]) : console.log("there is no previous sibling"),
-    // applyClasses();
-    // showArticle();
-// }
-
-// function applyClasses() {
-//     currentTabPanel.classList.add('current');
-//     prevTabPanel.classList.add('prev');
-//     nextTabPanel.classList.add('next');
-// }
 
 function applyEvenListeners() {
 }
@@ -159,7 +109,7 @@ function applyEvenListeners() {
 
 async function close() {
     up();
-    await wait (500);
+    await wait (750);
     closeWhatsOpen();
     navigationButtons.style.display = "none";
     overline.classList.remove('overline-on');
@@ -173,47 +123,34 @@ function handleTabClick(event) {
         close();
     } else {
         closeWhatsOpen();
-        // findAndOpen(event);
         findMatchingTabpanel(event);
-        setPrevNextCurrent();
+        down();
         showArticle();
-
     }
 }
 
-// if (event.currentTarget.hasAttribute('open')) {
-//     close();
-//     event.currentTarget.removeAttribute('open');
-// };
-
-
-// function handleTabClick(event) {
-//     //close what's open
-//     tabPanels.forEach(tabPanel => {
-//         tabPanel.classList.remove('show-article')
-//         tabPanel.hidden = true
-//     });
-//     tabButtons.forEach(tabButton => {
-//         tabButton.setAttribute('aria-selected', false);
-//     });
-//     //finde the right one
-//     event.currentTarget.setAttribute('aria-selected', true);
-//     const {id} = event.currentTarget;
-//     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
-//     //show the right one
-//     tabPanel.hidden = false;
-//     setTimeout (function() {
-//         tabPanel.classList.add('show-article')}, 700);
-//     currentTabPanel = tabPanel;
-//     prevTabPanel = tabPanel.previousElementSibling || tabPanels.lastElementChild;
-//     nextTabPanel = tabPanel.nextElementSibling || tabPanels.firstElementChild;
-//     applyClasses();
-// };
-
-// const backUp = tabs.querySelector(".go-up");
+const navigation = tabs.querySelector(".go-right-go-up");
+const navigationBtns = tabs.querySelectorAll(".navigation-btn");
+const backUp = tabs.querySelector(".go-up");
 const goRightBtn = tabs.querySelector(".go-right");
 const goLeftBtn = tabs.querySelector(".go-left");
 
+function showNavigationButtons() {
+    navigation.classList.add('open');
+    console.log(tabPanels.indexOf(currentTabPanel));
+    if (tabPanels.indexOf(currentTabPanel) !== 0 && tabPanels.indexOf(currentTabPanel) !== tabPanels.length -1 ) { 
+        navigationBtns.forEach(navigationBtn => navigationBtn.style.display = "flex"); 
+        console.log(currentTabPanel); 
+    } if (tabPanels.indexOf(currentTabPanel) === 0) {
+        goLeftBtn.style.display = "none";
+        goRightBtn.style.display = "flex";
+        console.log('im 0');
+    } if (tabPanels.indexOf(currentTabPanel) === tabPanels.length -1 ) {
+        goRightBtn.style.display = "none";
+        goLeftBtn.style.display = "flex";
+        console.log('im last');
+}
+};
 
 function navigate(direction) {
     tabPanel = tabPanels.indexOf(currentTabPanel);
@@ -221,13 +158,16 @@ function navigate(direction) {
     const nextTabPanel = tabPanels[tabPanel + 1];
 
     closeWhatsOpen();
+
     if (direction === 'back') {
         currentTabPanel = prevTabPanel;
-        prevTabPanel.hidden = false;
+        currentTabPanel.hidden = false;
     } else {
         currentTabPanel = nextTabPanel;
         currentTabPanel.hidden = false;
     }
+    down();
+    showNavigationButtons();
     showArticle();
 };
 
