@@ -111,7 +111,7 @@ async function close() {
     up();
     await wait (750);
     closeWhatsOpen();
-    navigationButtons.style.display = "none";
+    navigation.classList.remove('show');
     overline.classList.remove('overline-on');
     //remov classes
     //remove addEventListeners
@@ -136,18 +136,19 @@ const goRightBtn = tabs.querySelector(".go-right");
 const goLeftBtn = tabs.querySelector(".go-left");
 
 function showNavigationButtons() {
-    navigation.classList.add('open');
+    // navigation.classList.add('show');
+    navigation.hidden = false;
     console.log(tabPanels.indexOf(currentTabPanel));
     if (tabPanels.indexOf(currentTabPanel) !== 0 && tabPanels.indexOf(currentTabPanel) !== tabPanels.length -1 ) { 
-        navigationBtns.forEach(navigationBtn => navigationBtn.style.display = "flex"); 
+        navigationBtns.forEach(navigationBtn => navigationBtn.hidden = false);
         console.log(currentTabPanel); 
     } if (tabPanels.indexOf(currentTabPanel) === 0) {
-        goLeftBtn.style.display = "none";
-        goRightBtn.style.display = "flex";
+        goLeftBtn.hidden = true;
+        goRightBtn.hidden = false;
         console.log('im 0');
     } if (tabPanels.indexOf(currentTabPanel) === tabPanels.length -1 ) {
-        goRightBtn.style.display = "none";
-        goLeftBtn.style.display = "flex";
+        goRightBtn.hidden = true;
+        goLeftBtn.hidden = false;
         console.log('im last');
 }
 };
@@ -158,7 +159,6 @@ function navigate(direction) {
     const nextTabPanel = tabPanels[tabPanel + 1];
 
     closeWhatsOpen();
-
     if (direction === 'back') {
         currentTabPanel = prevTabPanel;
         currentTabPanel.hidden = false;

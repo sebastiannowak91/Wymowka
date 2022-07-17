@@ -285,11 +285,10 @@ article img {
 
 
 .go-right-go-up {
-    display: none;
     margin-left: 10%;
     margin-right: 10%;
     border: 1px solid pink;
-    /* display: grid; */
+    display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(2, auto);
 
@@ -311,7 +310,7 @@ article img {
 
 
 .go-right-go-up button {
-    /* display: flex; */
+    display: flex;
     padding: 1em 0 0 0;
     font-size: 1rem;
     align-items: center;
@@ -401,7 +400,7 @@ article img {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.open {
+.show {
     display: grid;
 }
 
