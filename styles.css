@@ -30,15 +30,15 @@ a {
 /*HEADER*/
 header {
     width: inherit;
+    height: 100vh;
     display: flex;
     justify-content: flex-end;
     border: 3px solid red;
-    height: 100vh;
 }
 
 .cover-photo {
     width: inherit;
-    height: 80vh;
+    height: 75vh;
     background-color: #9df6dc;
     display: flex;
     justify-content: center;
@@ -288,7 +288,7 @@ article img {
     margin-left: 10%;
     margin-right: 10%;
     border: 1px solid pink;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(2, auto);
 

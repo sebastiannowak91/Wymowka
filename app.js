@@ -136,20 +136,15 @@ const goRightBtn = tabs.querySelector(".go-right");
 const goLeftBtn = tabs.querySelector(".go-left");
 
 function showNavigationButtons() {
-    // navigation.classList.add('show');
-    navigation.hidden = false;
-    console.log(tabPanels.indexOf(currentTabPanel));
+    navigation.classList.add('show');
     if (tabPanels.indexOf(currentTabPanel) !== 0 && tabPanels.indexOf(currentTabPanel) !== tabPanels.length -1 ) { 
-        navigationBtns.forEach(navigationBtn => navigationBtn.hidden = false);
-        console.log(currentTabPanel); 
+        navigationBtns.forEach(navigationBtn => navigationBtn.style.display = "flex");
     } if (tabPanels.indexOf(currentTabPanel) === 0) {
-        goLeftBtn.hidden = true;
-        goRightBtn.hidden = false;
-        console.log('im 0');
+        goLeftBtn.style.display = "none";
+        goRightBtn.style.display = "flex";
     } if (tabPanels.indexOf(currentTabPanel) === tabPanels.length -1 ) {
-        goRightBtn.hidden = true;
-        goLeftBtn.hidden = false;
-        console.log('im last');
+        goRightBtn.style.display = "none";
+        goLeftBtn.style.display = "flex";
 }
 };
 
@@ -176,66 +171,6 @@ goRightBtn.addEventListener("click", navigate);
 goLeftBtn.addEventListener("click", () => navigate('back'));
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
-// backUp.addEventListener("click", close);
-
-
-
-// //BACK UP//
-// const backUp = document.querySelectorAll(".go-up");
-
-// backUp.forEach(function (button) {
-//     button.addEventListener("click", goUp);
-// });
-
-// function goUp() {
-//         window.scroll ({
-//             top: 600,
-//             left: 0,
-//             behavior: "smooth"
-//         });
-//         for (let i = 0; i < articles.length; i++) { 
-//             setTimeout (function() {
-//                 hideArticle(i)}, 300);
-//         }
-// };
-
-
-// const backUp = tabs.querySelectorAll(".go-up");
-
-// backUp.forEach(backUp => backUp.addEventListener("click", function() {
-//     tabPanels.forEach(tabPanel => tabPanel.setAttribute("hidden", true));
-//     overlines.forEach(overline => {
-//         overline.classList.remove('overline-on');
-//     });
-//     tabButtons.forEach(tabButton => {
-//         tabButton.setAttribute('aria-selected', false);
-//     });    
-// }));
-
-
-// //GO RIGHT//
-// const goRightBtns = document.querySelectorAll(".go-right");
-
-// goRightBtns.forEach(function (button) {
-//     button.addEventListener("click", goRight);
-// });
-
-// function goRight() {
-//     window.scroll ({
-//         top: 600,
-//         left: 0,
-//         behavior: "smooth"
-//     });
-//     hideArticle(currentArticleIndex);
-//     currentArticleIndex += 1;
-//     setTimeout (function() {
-//         showArticle(currentArticleIndex)}, 300);
-// };
-// const goRightBtn = tabs.querySelector(".go-right");
-// const goLeftBtn = tabs.querySelector(".go-left");
-
-// goRightBtn.addEventListener("click", move);
-// goLeftBtn.addEventListener("click", () => move('back'));
 
 
 
@@ -282,11 +217,11 @@ function showCurrentCrtf(event) {
     applyClasses();
 };
 
-// function applyClasses() {
-//     current.classList.add('current');
-//     prev.classList.add('prev');
-//     next.classList.add('next');
-// }
+function applyClasses() {
+    current.classList.add('current');
+    prev.classList.add('prev');
+    next.classList.add('next');
+}
 
 // function move(direction) {
 //     //first strip all the classes off the current slides
