@@ -190,14 +190,14 @@ button[aria-selected="true"] {
     filter: brightness(100%);
     opacity: 1;
     width: 80%;
-    transition-duration: 1s;
+    transition-duration: 750ms;
 }
 
 .overline-off {
     transition-property: width;
     width: 0;
     filter: brightness(90%);
-    transition-duration: 1s;
+    transition-duration: 750ms;
 }
 
 .who-overline {

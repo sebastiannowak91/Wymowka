@@ -59,7 +59,7 @@
 // };
 
 const tabs = document.querySelector('.tabs');
-const tabButtons = tabs.querySelectorAll('[role="tab"]');
+const tabButtons = Array.from(tabs.querySelectorAll('[role="tab"]'));
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 const overline = tabs.querySelector(".overline");
 
@@ -70,8 +70,9 @@ function wait(ms = 0) {
 };
 
 async function showArticle() {
-    await wait(300);
+    await wait(100);
     currentTabPanel.classList.add('show-article');
+    overline.classList.add("overline-on");
 }
 
 function up() {
@@ -82,6 +83,7 @@ function down() {
     document.getElementById("jump-down-here").scrollIntoView({behavior: 'smooth'});
 }
 
+
 function closeWhatsOpen() {
     tabPanels.forEach(tabPanel => {
         tabPanel.classList.remove('show-article')
@@ -91,6 +93,8 @@ function closeWhatsOpen() {
         tabButton.setAttribute('aria-selected', false);
         tabButton.removeAttribute('open', false);
     });
+    overline.classList.remove("overline-on");
+    overline.classList.remove("overline-off");
 };
 
 function findMatchingTabpanel(event) {
@@ -100,8 +104,10 @@ function findMatchingTabpanel(event) {
     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
     tabPanel.hidden = false;
     currentTabPanel = tabPanel;
-    showNavigationButtons();
+    const tabButton = tabButtons.find(tabButton => tabButton.id === tabPanel.getAttribute('aria-labelledby'));
+    currentTabButton = tabButton;
 }
+
 
 function applyEvenListeners() {
 }
@@ -109,10 +115,11 @@ function applyEvenListeners() {
 
 async function close() {
     up();
+    overline.classList.add('overline-off');
     await wait (750);
     closeWhatsOpen();
     navigation.classList.remove('show');
-    overline.classList.remove('overline-on');
+    // overline.classList.remove('overline-on');
     //remov classes
     //remove addEventListeners
     //close div with buttons;
@@ -145,7 +152,7 @@ function showNavigationButtons() {
     } if (tabPanels.indexOf(currentTabPanel) === tabPanels.length -1 ) {
         goRightBtn.style.display = "none";
         goLeftBtn.style.display = "flex";
-}
+    };
 };
 
 function navigate(direction) {
@@ -153,13 +160,23 @@ function navigate(direction) {
     const prevTabPanel = tabPanels[tabPanel - 1];
     const nextTabPanel = tabPanels[tabPanel + 1];
 
+    tabButton = tabButtons.indexOf(currentTabButton);
+    const prevTabButton = tabButtons[tabButton - 1];
+    const nextTabButton = tabButtons[tabButton + 1];
+
     closeWhatsOpen();
     if (direction === 'back') {
         currentTabPanel = prevTabPanel;
         currentTabPanel.hidden = false;
+        currentTabButton = prevTabButton;
+        currentTabButton.setAttribute('aria-selected', true);
+        currentTabButton.setAttribute('open', true);
     } else {
         currentTabPanel = nextTabPanel;
         currentTabPanel.hidden = false;
+        currentTabButton = nextTabButton;
+        currentTabButton.setAttribute('aria-selected', true);
+        currentTabButton.setAttribute('open', true);
     }
     down();
     showNavigationButtons();
