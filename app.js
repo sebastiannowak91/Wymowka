@@ -1,63 +1,6 @@
 
 //ARTICLES//
 
-// const articles = document.querySelectorAll(".article");
-// const figures = document.querySelectorAll(".figure");
-// const overlines = document.querySelectorAll(".overline");
-
-
-// for (let i = 0; i < figures.length; i++) {
-//     figures[i].addEventListener("click", showHideArticle);
-// };
-
-// let currentArticleIndex = 0;
-
-// function showHideArticle() {
-//     let id = this.id;
-//     id = id.replace("-figure", "");
-//     for (let i = 0; i < articles.length; i++) {
-//         if (id === articles[i].id) {
-//             if (articles[i].style.display === "none" || articles[i].style.display === "") {
-//                 currentArticleIndex = i;
-//                 showArticle(i);
-//                 window.scroll ({
-//                     top: 600,
-//                     left: 0,
-//                     behavior: "smooth"
-//                 });
-//             } else if (articles[i].style.display === "block") {
-//                 hideArticle(i);
-//             }
-//         } else {
-//             overlines[i].classList.remove("overline-on");
-//             articles[i].classList.remove("show-article");
-//             articles[i].style.display = "none";
-//             figures[i].classList.remove("highlight");
-//         }
-//     }
-// };
-
-// function showArticle(i) {
-//     figures[i].classList.add("highlight");
-//     overlines[i].classList.remove("overline-off");
-//     overlines[i].classList.add("overline-on");
-//     articles[i].style.display = "block";
-//     articles[i].classList.remove("hide-article");
-//     setTimeout (function () {
-//         articles[i].classList.add("show-article")}, 500);
-// };
-
-// function hideArticle(i) {
-//     articles[i].classList.add("hide-article");
-//     articles[i].classList.remove("show-article");
-//     overlines[i].classList.add("overline-off");
-//     setTimeout (function() {
-//         articles[i].style.display = "none"}, 700);
-//     figures[i].classList.remove("highlight");
-//     setTimeout (function() {
-//         overlines[i].classList.remove("overline-on")}, 700);    
-// };
-
 const tabs = document.querySelector('.tabs');
 const tabButtons = Array.from(tabs.querySelectorAll('[role="tab"]'));
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
@@ -119,8 +62,6 @@ async function close() {
     await wait (750);
     closeWhatsOpen();
     navigation.classList.remove('show');
-    // overline.classList.remove('overline-on');
-    //remov classes
     //remove addEventListeners
     //close div with buttons;
 }
@@ -133,6 +74,7 @@ function handleTabClick(event) {
         findMatchingTabpanel(event);
         down();
         showArticle();
+        showNavigationButtons();
     }
 }
 
@@ -179,8 +121,8 @@ function navigate(direction) {
         currentTabButton.setAttribute('open', true);
     }
     down();
-    showNavigationButtons();
     showArticle();
+    showNavigationButtons();
 };
 
 backUp.addEventListener("click", close);
@@ -201,68 +143,61 @@ const closeCrtf = document.querySelector(".close-crtf");
 const nextCrtf = document.querySelector(".next-crtf");
 const prevCrtf = document.querySelector(".prev-crtf");
 const crtfNavBtns = document.querySelector(".certificates-navigation");
-let current;
-let prev;
-let next;
+// let current;
+// let prev;
+// let next;
 
 const crtfBtn = crtfBtns.forEach(crtfBtn => crtfBtn.addEventListener("click", showCrtf));
+nextCrtf.addEventListener('click', navigateCrtf);
+prevCrtf.addEventListener('click', () => navigateCrtf('back'));
 
 function showCrtf() {
-    openCrtfCollection()
-    showCurrentCrtf(event)
+    openCrtfCollection();
+    // hideCrtf();
+    findMatchingCrtf(event);
+};
+
+function hideCrtf() {
+    certificates.forEach(certificate => {
+        certificate.hidden = true
+    });
 };
 
 function openCrtfCollection() {
     if(crtfCollection.matches('open')) {
         return;
     }
-    crtfCollection.classList.add('open');
-    prevCrtf.addEventListener('click', () => move('back'));
-    nextCrtf.addEventListener('click', move);
-    closeCrtf.addEventListener('click', closeCrtfCollection);
+    findMatchingCrtf(event);
+    // crtfCollection.classList.add('show');
+    // prevCrtf.addEventListener('click', () => navigate('back'));
+    // nextCrtf.addEventListener('click', navigate);
+    // closeCrtf.addEventListener('click', closeCrtfCollection);
     crtfNavBtns.style.display = "flex";
 };
 
-function showCurrentCrtf(event) {
+function findMatchingCrtf(event) {
     const {id} = event.currentTarget;
-    crtfCollection.classList.add('open');
+    crtfCollection.classList.add('show');
     const certificate = certificates.find(certificate => certificate.getAttribute('aria-labelledby') === id);
-    certificate.style.display = "flex";
-    current = certificate;
-    prev = current.previousElementSibling || crtfCollection.lastElementChild;
-    next = current.nextElementSibling || crtfCollection.firstElementChild;
-    applyClasses();
+    certificate.hidden = false;
+    currentCertificate = certificate;
 };
 
-function applyClasses() {
-    current.classList.add('current');
-    prev.classList.add('prev');
-    next.classList.add('next');
-}
+function navigateCrtf(direction) {
+    certificate = certificates.indexOf(currentCertificate);
+    const prevCertificate = certificates[certificate - 1];
+    const nextCertificate = certificates[certificate + 1];
+    console.log(currentCertificate);
 
-// function move(direction) {
-//     //first strip all the classes off the current slides
-//     current.style.display = "none";
-//     const classesToRemove = ['prev', 'current', 'next'];
-//     prev.classList.remove(...classesToRemove);
-//     current.classList.remove(...classesToRemove);
-//     next.classList.remove(...classesToRemove);
-//     if (direction === 'back') {
-//         [prev, current, next] = [
-//             //get the prev slide, if there is none, get the last slide from the entire slider
-//             prev.previousElementSibling || crtfCollection.lastElementChild,
-//             prev, 
-//             current];
-//     } else { 
-//         [prev, current, next] = [
-//             current, 
-//             next, 
-//             next.nextElementSibling || crtfCollection.firstElementChild,
-//         ];
-//     }
-//     current.style.display = "flex";
-//     applyClasses();
-// }
+    hideCrtf();
+    if (direction === 'back') {
+        currentCertificate = prevCertificate;
+        currentCertificate.hidden = false;
+    } else {
+        currentCertificate = nextCertificate;
+        currentCertificate.hidden = false;
+    };
+};
 
 function closeCrtfCollection() {
     crtfCollection.classList.remove('open');
@@ -271,44 +206,7 @@ function closeCrtfCollection() {
     closeCrtf.removeEventListener('click', closeCrtfCollection);
     crtfNavBtns.style.display = "none";
     current.style.display = "none";
-    current.classList.remove('current');
-    prev.classList.remove('prev');
-    next.classList.remove('next');
 };
-
-
-
-// closeCrtf.addEventListener("click", function() {
-//     crtfCollection.style.display = "none";
-//     certificates[currentCrtfIndex].style.display = "none";
-// });
-
-// nextCrtf.addEventListener("click", function() {
-//     certificates[currentCrtfIndex].style.display = "none";
-//     currentCrtfIndex += 1;
-//     certificates[currentCrtfIndex].style.display = "block";
-//     showHideArrow(); 
-// });
-
-// prevCrtf.addEventListener("click", function() {
-//     certificates[currentCrtfIndex].style.display = "none";
-//     currentCrtfIndex -= 1;
-//     certificates[currentCrtfIndex].style.display = "block"; 
-//     showHideArrow(); 
-// });
-
-// function showHideArrow() {
-//     if (currentCrtfIndex == 0) {
-//         prevCrtf.style.display = "none";
-//         nextCrtf.style.display = "block";
-//     } else if (currentCrtfIndex == certificates.length -1) {
-//             nextCrtf.style.display = "none";
-//             prevCrtf.style.display = "block";
-//     } else {
-//             prevCrtf.style.display = "block";
-//             nextCrtf.style.display = "block";
-//     }
-// };
 
 
 //CONTACT FORM//
