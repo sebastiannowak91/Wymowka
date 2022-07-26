@@ -404,6 +404,10 @@ article img {
     display: grid;
 }
 
+.show-crtf-collection {
+    display: flex;
+}
+
 .certificates-collection img {
     height: 90%;
     width: auto;

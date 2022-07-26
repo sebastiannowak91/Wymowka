@@ -142,10 +142,8 @@ const certificates = Array.from(document.querySelectorAll(".certificate"));
 const closeCrtf = document.querySelector(".close-crtf");
 const nextCrtf = document.querySelector(".next-crtf");
 const prevCrtf = document.querySelector(".prev-crtf");
-const crtfNavBtns = document.querySelector(".certificates-navigation");
-// let current;
-// let prev;
-// let next;
+const crtfNav = document.querySelector(".certificates-navigation");
+const crtfNavBtns = Array.from(document.querySelectorAll(".crtf-nav-btns"));
 
 const crtfBtn = crtfBtns.forEach(crtfBtn => crtfBtn.addEventListener("click", showCrtf));
 nextCrtf.addEventListener('click', navigateCrtf);
@@ -153,7 +151,6 @@ prevCrtf.addEventListener('click', () => navigateCrtf('back'));
 
 function showCrtf() {
     openCrtfCollection();
-    // hideCrtf();
     findMatchingCrtf(event);
 };
 
@@ -168,16 +165,12 @@ function openCrtfCollection() {
         return;
     }
     findMatchingCrtf(event);
-    // crtfCollection.classList.add('show');
-    // prevCrtf.addEventListener('click', () => navigate('back'));
-    // nextCrtf.addEventListener('click', navigate);
-    // closeCrtf.addEventListener('click', closeCrtfCollection);
-    crtfNavBtns.style.display = "flex";
+    showCrtfNav();
 };
 
 function findMatchingCrtf(event) {
     const {id} = event.currentTarget;
-    crtfCollection.classList.add('show');
+    crtfCollection.classList.add('show-crtf-collection');
     const certificate = certificates.find(certificate => certificate.getAttribute('aria-labelledby') === id);
     certificate.hidden = false;
     currentCertificate = certificate;
@@ -187,9 +180,9 @@ function navigateCrtf(direction) {
     certificate = certificates.indexOf(currentCertificate);
     const prevCertificate = certificates[certificate - 1];
     const nextCertificate = certificates[certificate + 1];
-    console.log(currentCertificate);
 
     hideCrtf();
+    showCrtfNav();
     if (direction === 'back') {
         currentCertificate = prevCertificate;
         currentCertificate.hidden = false;
@@ -198,6 +191,19 @@ function navigateCrtf(direction) {
         currentCertificate.hidden = false;
     };
 };
+
+function showCrtfNav() {
+    crtfNav.style.display = "flex";
+    if (certificates.indexOf(currentCertificate) !== 0 && certificates.indexOf(currentCertificate) !== certificates.length -1 ) { 
+        crtfNavBtns.forEach(crtfNavBtn => crtfNavBtn.style.display = "flex");
+    } if (certificates.indexOf(currentCertificate) === 0) {
+        prevCrtf.style.display = "none";
+        nextCrtf.style.display = "flex";
+    } if (certificates.indexOf(currentCertificate) === certificates.length -1 ) {
+        nextCrtf.style.display = "none";
+        prevCrtf.style.display = "flex";
+    };
+}
 
 function closeCrtfCollection() {
     crtfCollection.classList.remove('open');
