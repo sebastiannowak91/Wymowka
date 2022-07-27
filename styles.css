@@ -38,7 +38,9 @@ header {
 
 .cover-photo {
     width: inherit;
+    max-width: 100%;
     height: 75vh;
+    max-height: 100%;
     background-color: #9df6dc;
     display: flex;
     justify-content: center;
@@ -51,6 +53,7 @@ header {
     max-width: 100%;
     border: 2px solid pink;
 }
+
 
 .main-arrow {
     width: 1.5em;

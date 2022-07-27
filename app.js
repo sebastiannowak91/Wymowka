@@ -170,7 +170,7 @@ function findMatchingCrtf(event) {
 function showCrtfNav() {
     crtfNav.style.display = "flex";
     if (certificates.indexOf(currentCertificate) !== 0 && certificates.indexOf(currentCertificate) !== certificates.length -1 ) { 
-        crtfNavBtns.forEach(crtfNavBtn => crtfNavBtn.classList.add('show-button'));
+        crtfNavBtns.forEach(crtfNavBtn => crtfNavBtn.style.display = "flex");
     } if (certificates.indexOf(currentCertificate) === 0) {
         prevCrtf.style.display = "none";
         nextCrtf.style.display = "flex";
