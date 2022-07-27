@@ -27,16 +27,6 @@ a {
     color: black;
 }
 
-/*Do umieszczenia gdzie indziej*/
-
-.show-button {
-    display: flex;
-}
-
-.hide-button {
-    display: none;
-}
-
 /*HEADER*/
 header {
     width: inherit;

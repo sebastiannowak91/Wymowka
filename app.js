@@ -23,7 +23,7 @@ function handleTabClick(event) {
         showArticle();
         showNavigationButtons();
         applyEventListeners();
-    }
+    };
 };
 
 function closeWhatsOpen() {
@@ -148,19 +148,15 @@ const crtfNav = document.querySelector(".certificates-navigation");
 const crtfNavBtns = Array.from(document.querySelectorAll(".crtf-nav-btns"));
 
 const crtfBtn = crtfBtns.forEach(crtfBtn => crtfBtn.addEventListener("click", showCrtf));
-nextCrtf.addEventListener('click', navigateCrtf);
-prevCrtf.addEventListener('click', () => navigateCrtf('back'));
+
 
 function showCrtf() {
-    openCrtfCollection();
-    showCrtfNav();
-};
-
-function openCrtfCollection() {
-    if(crtfCollection.matches('open')) {
+    if(crtfCollection.matches('show-crtf-collection')) {
         return;
     }
     findMatchingCrtf(event);
+    showCrtfNav();
+    applyCrtfEventListeners();
 };
 
 function findMatchingCrtf(event) {
@@ -169,6 +165,25 @@ function findMatchingCrtf(event) {
     const certificate = certificates.find(certificate => certificate.getAttribute('aria-labelledby') === id);
     certificate.hidden = false;
     currentCertificate = certificate;
+};
+
+function showCrtfNav() {
+    crtfNav.style.display = "flex";
+    if (certificates.indexOf(currentCertificate) !== 0 && certificates.indexOf(currentCertificate) !== certificates.length -1 ) { 
+        crtfNavBtns.forEach(crtfNavBtn => crtfNavBtn.classList.add('show-button'));
+    } if (certificates.indexOf(currentCertificate) === 0) {
+        prevCrtf.style.display = "none";
+        nextCrtf.style.display = "flex";
+    } if (certificates.indexOf(currentCertificate) === certificates.length -1 ) {
+        nextCrtf.style.display = "none";
+        prevCrtf.style.display = "flex";
+    };
+};
+
+function applyCrtfEventListeners() {
+    nextCrtf.addEventListener('click', navigateCrtf);
+    prevCrtf.addEventListener('click', () => navigateCrtf('back'));
+    closeCrtf.addEventListener('click', closeCrtfCollection);
 };
 
 function navigateCrtf(direction) {
@@ -187,19 +202,6 @@ function navigateCrtf(direction) {
     showCrtfNav();
 };
 
-function showCrtfNav() {
-    crtfNav.style.display = "flex";
-    if (certificates.indexOf(currentCertificate) !== 0 && certificates.indexOf(currentCertificate) !== certificates.length -1 ) { 
-        crtfNavBtns.forEach(crtfNavBtn => crtfNavBtn.classList.add('show-button'));
-    } if (certificates.indexOf(currentCertificate) === 0) {
-        prevCrtf.style.display = "none";
-        nextCrtf.style.display = "flex";
-    } if (certificates.indexOf(currentCertificate) === certificates.length -1 ) {
-        nextCrtf.style.display = "none";
-        prevCrtf.style.display = "flex";
-    };
-};
-
 
 function hideCrtf() {
     certificates.forEach(certificate => {
@@ -208,12 +210,16 @@ function hideCrtf() {
 };
 
 function closeCrtfCollection() {
-    crtfCollection.classList.remove('open');
-    // nextCrtf.removeEventListener('click', showNextCrtf);
-    // prevCrtf.removeEventListener('click', showPrevCrtf);
+    crtfCollection.classList.remove('show-crtf-collection');
+    hideCrtf();
+    removeCrtfEventListeners();
+    crtfNav.style.display = "none";
+};
+
+function removeCrtfEventListeners() {
+    nextCrtf.removeEventListener('click', navigateCrtf);
+    prevCrtf.removeEventListener('click', () => navigateCrtf('back'));
     closeCrtf.removeEventListener('click', closeCrtfCollection);
-    crtfNavBtns.style.display = "none";
-    current.style.display = "none";
 };
 
 
