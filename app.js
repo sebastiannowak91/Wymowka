@@ -1,10 +1,11 @@
 
 //ARTICLES//
-
 const tabs = document.querySelector('.tabs');
 const tabButtons = Array.from(tabs.querySelectorAll('[role="tab"]'));
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 const overline = tabs.querySelector(".overline");
+
+tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
 
 function wait(ms = 0) {
     return new Promise((resolve) => {
@@ -12,20 +13,18 @@ function wait(ms = 0) {
     })
 };
 
-async function showArticle() {
-    await wait(100);
-    currentTabPanel.classList.add('show-article');
-    overline.classList.add("overline-on");
-}
-
-function up() {
-    document.getElementById("jump-up-here").scrollIntoView({behavior: 'smooth'});
+function handleTabClick(event) {
+    if (event.currentTarget.hasAttribute('open')) {
+        close();
+    } else {
+        closeWhatsOpen();
+        findMatchingTabpanel(event);
+        down();
+        showArticle();
+        showNavigationButtons();
+        applyEventListeners();
+    }
 };
-
-function down() {
-    document.getElementById("jump-down-here").scrollIntoView({behavior: 'smooth'});
-}
-
 
 function closeWhatsOpen() {
     tabPanels.forEach(tabPanel => {
@@ -49,34 +48,18 @@ function findMatchingTabpanel(event) {
     currentTabPanel = tabPanel;
     const tabButton = tabButtons.find(tabButton => tabButton.id === tabPanel.getAttribute('aria-labelledby'));
     currentTabButton = tabButton;
-}
+};
 
+function down() {
+    document.getElementById("jump-down-here").scrollIntoView({behavior: 'smooth'});
+};
 
-function applyEvenListeners() {
-}
+async function showArticle() {
+    await wait(100);
+    currentTabPanel.classList.add('show-article');
+    overline.classList.add("overline-on");
+};
 
-
-async function close() {
-    up();
-    overline.classList.add('overline-off');
-    await wait (750);
-    closeWhatsOpen();
-    navigation.classList.remove('show');
-    //remove addEventListeners
-    //close div with buttons;
-}
-
-function handleTabClick(event) {
-    if (event.currentTarget.hasAttribute('open')) {
-        close();
-    } else {
-        closeWhatsOpen();
-        findMatchingTabpanel(event);
-        down();
-        showArticle();
-        showNavigationButtons();
-    }
-}
 
 const navigation = tabs.querySelector(".go-right-go-up");
 const navigationBtns = tabs.querySelectorAll(".navigation-btn");
@@ -95,6 +78,12 @@ function showNavigationButtons() {
         goRightBtn.style.display = "none";
         goLeftBtn.style.display = "flex";
     };
+};
+
+function applyEventListeners() {
+    backUp.addEventListener("click", close);
+    goRightBtn.addEventListener("click", navigate);
+    goLeftBtn.addEventListener("click", () => navigate('back'));
 };
 
 function navigate(direction) {
@@ -125,11 +114,24 @@ function navigate(direction) {
     showNavigationButtons();
 };
 
-backUp.addEventListener("click", close);
-goRightBtn.addEventListener("click", navigate);
-goLeftBtn.addEventListener("click", () => navigate('back'));
+async function close() {
+    up();
+    overline.classList.add('overline-off');
+    await wait (750);
+    closeWhatsOpen();
+    navigation.classList.remove('show');
+    removeEventListeners();
+};
 
-tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
+function up() {
+    document.getElementById("jump-up-here").scrollIntoView({behavior: 'smooth'});
+};
+
+function removeEventListeners() {
+    backUp.removeEventListener("click", close);
+    goRightBtn.removeEventListener("click", navigate);
+    goLeftBtn.removeEventListener("click", () => navigate('back'));
+};
 
 
 
@@ -151,13 +153,7 @@ prevCrtf.addEventListener('click', () => navigateCrtf('back'));
 
 function showCrtf() {
     openCrtfCollection();
-    findMatchingCrtf(event);
-};
-
-function hideCrtf() {
-    certificates.forEach(certificate => {
-        certificate.hidden = true
-    });
+    showCrtfNav();
 };
 
 function openCrtfCollection() {
@@ -165,7 +161,6 @@ function openCrtfCollection() {
         return;
     }
     findMatchingCrtf(event);
-    showCrtfNav();
 };
 
 function findMatchingCrtf(event) {
@@ -182,7 +177,6 @@ function navigateCrtf(direction) {
     const nextCertificate = certificates[certificate + 1];
 
     hideCrtf();
-    showCrtfNav();
     if (direction === 'back') {
         currentCertificate = prevCertificate;
         currentCertificate.hidden = false;
@@ -190,12 +184,13 @@ function navigateCrtf(direction) {
         currentCertificate = nextCertificate;
         currentCertificate.hidden = false;
     };
+    showCrtfNav();
 };
 
 function showCrtfNav() {
     crtfNav.style.display = "flex";
     if (certificates.indexOf(currentCertificate) !== 0 && certificates.indexOf(currentCertificate) !== certificates.length -1 ) { 
-        crtfNavBtns.forEach(crtfNavBtn => crtfNavBtn.style.display = "flex");
+        crtfNavBtns.forEach(crtfNavBtn => crtfNavBtn.classList.add('show-button'));
     } if (certificates.indexOf(currentCertificate) === 0) {
         prevCrtf.style.display = "none";
         nextCrtf.style.display = "flex";
@@ -203,7 +198,14 @@ function showCrtfNav() {
         nextCrtf.style.display = "none";
         prevCrtf.style.display = "flex";
     };
-}
+};
+
+
+function hideCrtf() {
+    certificates.forEach(certificate => {
+        certificate.hidden = true
+    });
+};
 
 function closeCrtfCollection() {
     crtfCollection.classList.remove('open');
