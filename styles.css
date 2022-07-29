@@ -35,6 +35,7 @@ header {
 }
 
 .hero {
+    width: inherit;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -51,7 +52,7 @@ header {
 
 .cover-photo img {
     width: 80%;
-    height: auto;
+    height: 100%;
     max-width: 100%;
 }
 
