@@ -30,17 +30,19 @@ a {
 /*HEADER*/
 header {
     width: inherit;
-    height: 100vh;
     display: flex;
     justify-content: flex-end;
-    border: 3px solid red;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .cover-photo {
     width: inherit;
-    max-width: 100%;
-    height: 75vh;
-    max-height: 100%;
     background-color: #9df6dc;
     display: flex;
     justify-content: center;
@@ -49,22 +51,21 @@ header {
 
 .cover-photo img {
     width: 80%;
-    height: 100%;
+    height: auto;
     max-width: 100%;
-    border: 2px solid pink;
 }
 
-
 .main-arrow {
-    width: 1.5em;
     position: absolute;
-    left: 2em;
-    bottom: 3em;
+    width: 1.5rem;
+    left: 6em;
+    bottom: 1.5em;
     animation: downArrow 1s alternate-reverse infinite;
 }
 
 .main-arrow path {
     fill: black;
+
 }
 
 .menu {
@@ -108,31 +109,29 @@ header {
 /* NAV*/
 nav {
     width: 80%;
-    max-width: 100%;
-    margin: 0 10% 0 10%;
-    padding: 0 0 5em 0;
+    height: 100vh;
+    margin: 0 10% 10vh 10%;
+    padding: 0 0 0 0;
     display: grid;
     grid-template-columns: repeat(3, 30%);
-    grid-template-rows: repeat(2, 50%);
-    grid-column-gap: 3em;
-    grid-row-gap: 10%;
-    border: 2px solid green;
+    grid-template-rows: repeat(2);
+    grid-row-gap: 2em;
+    justify-content: space-between;
+
 }
 
 nav button {
-    width: 80%;
+    width: 100%;
     margin: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     transition: 1.5s;
-    border: 2px solid red;
 }
 
 nav button img {
     width: 75%;
-    max-width: 100%;
     height: auto;
     border-radius: 50%;
     box-shadow: 0 0 10px black;
@@ -155,8 +154,8 @@ nav button img {
 }
 
 nav button p {
-    margin: 1.2em 0 0 0;
-    font-size: 1.5rem;
+    margin: 1em 0 0 0;
+    font-size: 1.7rem;
     font-weight: bold;
     color: black;
 }
@@ -178,7 +177,7 @@ button[aria-selected="true"] {
     display: flex;
     opacity: 0;
     width: 0;
-    margin: 1em 0 0 10%;
+    margin: 0 0 0 10%;
     padding: 0;
     border-bottom: .2rem;
     border-bottom-style: solid;
@@ -233,7 +232,7 @@ button[aria-selected="true"] {
 
 article {
     width: 80%;
-    margin: 2em 10% 2em 10%;
+    margin: 2em 10% 5em 10%;
     justify-content: center;
     line-height: 1.5;
     transition-property: opacity;
@@ -288,9 +287,7 @@ article img {
 
 
 .go-right-go-up {
-    margin-left: 10%;
-    margin-right: 10%;
-    border: 1px solid pink;
+    margin: 0 10% 3em 10%;
     display: none;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(2, auto);
@@ -320,7 +317,6 @@ article img {
     font-weight: 600;
     color: black;
     transition: 1s;
-    border: 1px solid red;
 }
 
 .go-right i,
@@ -765,7 +761,7 @@ padding-top: 3.5em;
     .overline-on,
     article {
         width: 1100px;
-        margin: 0 auto;
+        /* margin: 0 auto; */
     }
 }
 

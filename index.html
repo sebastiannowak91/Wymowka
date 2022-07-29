@@ -10,13 +10,16 @@
     </head>
     <body>
         <header id="header">
-            <!-- <svg class="main-arrow" viewBox="0 0 16 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="main-arrow" viewBox="0 0 16 195" fill="none">
                 <path d="M7.29289 194.707C7.68342 195.098 8.31658 195.098 8.70711 194.707L15.0711 188.343C15.4616 187.953 15.4616 187.319 15.0711 186.929C14.6805 186.538 14.0474 186.538 13.6569 186.929L8 192.586L2.34315 186.929C1.95262 186.538 1.31946 186.538 0.928932 186.929C0.538408 187.319 0.538408 187.953 0.928932 188.343L7.29289 194.707ZM7 0L7 194H9L9 0L7 0Z" fill="black"/>
-            </svg>  -->
-            <section class="cover-photo">
-                <h1 class="sr-only">Gabinet logopedyczno-terapeutyczny WYMÓWKA</h1>
-                <img src="./images/logo.png" alt="Gabinet logopedyczno-terapeutyczny WYMÓWKA"/>
-            </section>
+            </svg>
+            <div class="hero">
+                <section class="cover-photo">
+                    <h1 class="sr-only">Gabinet logopedyczno-terapeutyczny WYMÓWKA</h1>
+                    <img src="./images/logo.png" alt="Gabinet logopedyczno-terapeutyczny WYMÓWKA"/>
+                </section>
+                <div class="arrow-space"></div>
+            </div>
             <ul class="menu">
                 <li>
                     <a  href="https://www.instagram.com/wymoowka/"  target="_blank" rel=”noopener” title="Instagram" aria-label="Instagram">
@@ -34,17 +37,11 @@
                     </a>
                 </li>
             </ul>
-            <!-- <button class="main-button">
-                <i class="fa-solid fa-circle-chevron-down"></i>
-            </button> -->
         </header>
         <div class="tabs" id="tabs">
             <span id="jump-up-here"></span>
             <nav role="tablist">
                 <button role="tab" aria-selected="false" id="who" class="figure">
-                    <svg class="swip" viewBox="0 0 84 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M83.7071 8.70711C84.0976 8.31658 84.0976 7.68342 83.7071 7.29289L77.3431 0.928932C76.9526 0.538408 76.3195 0.538408 75.9289 0.928932C75.5384 1.31946 75.5384 1.95262 75.9289 2.34315L81.5858 8L75.9289 13.6569C75.5384 14.0474 75.5384 14.6805 75.9289 15.0711C76.3195 15.4616 76.9526 15.4616 77.3431 15.0711L83.7071 8.70711ZM0 9H83V7H0L0 9Z" fill="black"/>
-                    </svg>
                     <img id="who-img" class="photo" src="./images/kasia_ikona.png" alt="Kim jestem?"/>
                     <p>Kim jestem?</p>
                 </button>
@@ -69,7 +66,7 @@
                     <p>Kontakt</p>
                 </button>
             </nav>
-            <span id="jump-down-here"></span>
+            <span id="jump-down-here" class="jump-down-here"></span>
             <div class="overline"></div>
             <div class="tabpanels">
                 <article role="tabpanel" aria-labelledby="who" class="article who" hidden>
