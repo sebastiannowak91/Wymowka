@@ -437,16 +437,21 @@ article img {
 .crtf-nav-btns,
 .close-contact-form {
     position: fixed;
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
-    color: #F5FEFC;
     border: none;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
+}
+
+.crtf-nav-btns i {
+    color: #F5FEFC;
+    margin: 0;
+    padding: 0;
 }
 
 .prev-crtf,
