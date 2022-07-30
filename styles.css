@@ -40,6 +40,12 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* box-shadow: 0 0 7px #75b2a0; */
+}
+
+.extra-space {
+    background-color: #9df6dc;
+    height: inherit;
 }
 
 .cover-photo {
@@ -47,7 +53,11 @@ header {
     background-color: #9df6dc;
     display: flex;
     justify-content: center;
-    box-shadow: 0 0 7px #75b2a0;
+    /* box-shadow: 0 0 7px #75b2a0; */
+}
+
+.arrow-space {
+    height: inherit;
 }
 
 .cover-photo img {
@@ -76,8 +86,8 @@ header {
 }
 
 .menu li {
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
     background-color: #9df6dc;
     display: flex;
@@ -111,7 +121,7 @@ header {
 nav {
     width: 80%;
     height: 100vh;
-    margin: 0 10% 10vh 10%;
+    margin: 3em 10% 7em 10%;
     padding: 0 0 0 0;
     display: grid;
     grid-template-columns: repeat(3, 30%);
@@ -132,7 +142,7 @@ nav button {
 }
 
 nav button img {
-    width: 75%;
+    width: 14rem;
     height: auto;
     border-radius: 50%;
     box-shadow: 0 0 10px black;
@@ -258,7 +268,7 @@ article {
 
 article p {
     margin: 1em 0 0 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .subtitle {
@@ -269,14 +279,14 @@ article p {
 }
 
 article li {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 0;
     display: flex;
 }
 
 article i {
     margin: .1em 1em 0 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 article img {
@@ -313,7 +323,7 @@ article img {
 .go-right-go-up button {
     display: flex;
     padding: 1em 0 0 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     align-items: center;
     font-weight: 600;
     color: black;
@@ -355,7 +365,7 @@ article img {
 
 .who img {
     float: left;
-    width: 30%;
+    width: 20rem;
     border-left: .1rem solid black;
     margin: 0 1.3em 1.3em 0;
 }
@@ -383,7 +393,7 @@ article img {
     border: none;
     margin: 0;
     cursor: pointer;
-    font-size: .8rem;
+    font-size: .9rem;
 }
 
 .certificates-collection {
@@ -484,15 +494,15 @@ article img {
 
 .what-photo1 {
     float: right;
-    width: 30%;
+    width: 17rem;
     margin: 2em 0 2em 0;
     border-top: .15vw solid black;
 }
 
 .what-photo2 {
     float: right;
-    width: 20%;
-    margin: 2em .5em 1em 2em;
+    width: 14rem;
+    margin: 2em .5em 1em 0em;
     border-top: .1rem solid black;
 }
 
@@ -506,14 +516,14 @@ article img {
 }
 
 .for-who-img1 {
-    width: 27%;
+    width: 17rem;
     float: right;
     margin: 0 0 0 3em;
     border-right: .1rem solid black;
 }
 
 .for-who-img2 {
-    width: 25%;
+    width: 14rem;
     float: right;
     margin: 1em 3em 0 7em;
     border-right: .1rem solid black;
@@ -521,7 +531,7 @@ article img {
 
 /*ARTICLE HOW-MUCH*/
 .how-much-img {
-    width: 18%;
+    width: 17rem;
     float: right;
     margin: 0 1em 0 2em;
     border-bottom: .1rem solid black;
@@ -542,7 +552,7 @@ article img {
 /*ARTICLE CONTACT*/
 .contact img {
     float: left;
-    width: 30%;
+    width: 17rem;
     border-left: .1rem solid black;
     margin: 0 1.3em 1.3em 0;
 }
