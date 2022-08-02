@@ -164,6 +164,14 @@ nav button img {
     border-bottom: .1rem outset black;
 }
 
+.how-much-photo {
+    background-color: #C29DF6;
+}
+
+.to-read-img {
+    background-color: #F6A89D;
+}
+
 nav button p {
     margin: 1em 0 0 0;
     font-size: 1.7rem;
@@ -551,7 +559,7 @@ article img {
 }
 
 .how-much i {
-    color: #79fd92;
+    color: #C29DF6;
 }
 
 /*ARTICLE CONTACT*/
