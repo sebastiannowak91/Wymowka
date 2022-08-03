@@ -33,8 +33,8 @@
                     </a>
                 </li>
                 <li>
-                    <a  href="#tabs" rel=”noopener” title="Dane kontaktowe" aria-label="Dana kontaktowe">
-                        <i class="fas fa-address-book" aria-hidden="true"></i>
+                    <a  href="#header" rel=”noopener” title="Strona główna" aria-label="Strona główna">
+                        <svg aria-hidden="true" width="30" height="30" fill="#000000" viewBox="0 0 256 256"><path d="M152,208V160a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v48a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V115.5a8.3,8.3,0,0,1,2.6-5.9l80-72.7a8,8,0,0,1,10.8,0l80,72.7a8.3,8.3,0,0,1,2.6,5.9V208a8,8,0,0,1-8,8H160A8,8,0,0,1,152,208Z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg>
                     </a>
                 </li>
             </ul>
@@ -54,12 +54,13 @@
                     <img id="for-who-img" class="photo" src="./images/dzieci_ikona.png" alt="Z kim pracuję?"/>
                     <p>Dla kogo?</p>
                 </button>
-                <button role="tab" aria-selected="false" id="to-red" class="figure">
-                    <img id="to-read-img" class="photo" src="./images/klocki_ikona.png" alt="Do poczytania"/>
+                <button role="tab" aria-selected="false" id="to-read" class="figure">
+                    <img id="to-read-img" class="photo to-read-img" src="./images/manual-98728_1280.png" alt="Do poczytania" />
                     <p>Do poczytania</p>
                 </button>
                 <button role="tab" aria-selected="false" id="how-much" class="figure">
-                    <img id="how-much-img" class="photo" src="./images/mapa_ikona.png" alt="Cennik"/>
+                    <img id="how-much-img" class="photo how-much-photo" src="./images/manual-98728_1280.png" alt="Cennik" />
+                    <!-- <svg id="how-much-img" class="photo how-much-img" alt="Cennik" width="150" height="150" fill="#000000" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><rect x="24" y="56" width="208" height="144" rx="8" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></rect><line x1="168" y1="168" x2="200" y2="168" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="120" y1="168" x2="136" y2="168" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="24" y1="96.9" x2="232" y2="96.9" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg> -->
                     <p>Cennik</p>
                 </button>
                 <button role="tab" aria-selected="false" id="contact" class="figure">
@@ -163,6 +164,10 @@
                     </ul>
                     <p>Pracuję także z dziećmi bez żadnych trudności, które po prostu chciałyby się nauczyć czytać lub liczyć i których rodzice chcą wspierać i stymulować ich prawidłowy rozwój poznawczy na zajęciach ogólnorozwojowych.</p>
                     <p>Dzieci w jakim wieku mogą zgłosić się na zajęcia?<br>W każdym! Jak do tej pory mój najmłodszy uczeń miał 8 miesięcy, a najstarszy 15 lat.</P>
+                </article>
+                <article role="tabpanel" aria-labelledby="to-read" class="article to-read" hidden>
+                    <h2 class="sr-only">Do poczytania</h2>
+                    <p class="subtitle">Sekcja w przygotowaniu, prosimy o chwilę cierpliwości.</p>
                 </article>
                 <article role="tabpanel" aria-labelledby="how-much" class="article how-much" hidden>
                     <h2 class="sr-only">Cennik</h2>
