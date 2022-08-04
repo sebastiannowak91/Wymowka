@@ -165,11 +165,11 @@ nav button img {
 }
 
 .how-much-photo {
-    background-color: #C29DF6;
+    background-color: #F6A89D;
 }
 
 .to-read-img {
-    background-color: #F6A89D;
+    background-color: #C29DF6;
 }
 
 nav button p {
@@ -546,6 +546,26 @@ article img {
     float: right;
     margin: 1em 3em 0 7em;
     border-right: .1rem solid black;
+}
+
+/*ARTICLE TO-READ*/
+.article-content h3,
+.article-content span {
+    color: #C29DF6;
+}
+
+.article-content span {
+    font-size: 1.5rem;
+}
+
+.article-content .lead {
+    margin: 0 0 3em 0;
+    padding: 0;
+}
+
+.article-content .subtitle {
+    margin: 0;
+    padding: 0;
 }
 
 /*ARTICLE HOW-MUCH*/

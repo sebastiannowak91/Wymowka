@@ -231,11 +231,10 @@ leads.forEach(lead => lead.addEventListener("click", showText));
 
 function showText(event) {
     let text = event.currentTarget.nextElementSibling;
-    console.log(event.currentTarget.nextElementSibling);
-    if (text.hidden = false) {
-        text.hidden = true;
+    if (text.hasAttribute("hidden")) {
+        text.removeAttribute("hidden");
     } else {
-        text.hidden = false;
+    text.setAttribute("hidden", true);
     }
 };
 
