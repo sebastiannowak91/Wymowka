@@ -286,6 +286,12 @@ article p {
     font-weight: bold;
 }
 
+h3 {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
 article li {
     font-size: 1.1rem;
     margin: 0;

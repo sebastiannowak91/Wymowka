@@ -223,6 +223,27 @@ function removeCrtfEventListeners() {
 };
 
 
+//TO READ//
+const articles = document.querySelector(".to-read");
+const leads = articles.querySelectorAll(".lead");
+
+leads.forEach(lead => lead.addEventListener("click", showText));
+
+function showText(event) {
+    let text = event.currentTarget.nextElementSibling;
+    console.log(event.currentTarget.nextElementSibling);
+    if (text.hidden = false) {
+        text.hidden = true;
+    } else {
+        text.hidden = false;
+    }
+};
+
+
+
+
+
+
 //CONTACT FORM//
 openContactFormBtn = document.querySelector(".open-form");
 closeContactFormBtn = document.querySelector(".close-contact-form");
