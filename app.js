@@ -225,16 +225,23 @@ function removeCrtfEventListeners() {
 
 //TO READ//
 const articles = document.querySelector(".to-read");
-const leads = articles.querySelectorAll(".lead");
+// const leads = articles.querySelectorAll(".lead");
+const readBtns = articles.querySelectorAll(".read-article-btn");
+const icon = 'Makao';
 
-leads.forEach(lead => lead.addEventListener("click", showText));
+readBtns.forEach(readBtn => readBtn.addEventListener("click", showText));
 
 function showText(event) {
-    let text = event.currentTarget.nextElementSibling;
+    const readBtn = event.currentTarget;
+    const text = event.currentTarget.previousElementSibling;
+    // const icon = articles.querySelector(".fas fa-search-plus");
     if (text.hasAttribute("hidden")) {
         text.removeAttribute("hidden");
+        readBtn.textContent = "Zamknij artykuł";
     } else {
-    text.setAttribute("hidden", true);
+        text.setAttribute("hidden", true);
+        readBtn.textContent = "Przeczytane!";
+
     }
 };
 
