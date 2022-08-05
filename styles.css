@@ -558,13 +558,22 @@ article img {
     font-size: 1.5rem;
 }
 
-.article-content .lead {
+.article-content {
     margin: 0 0 3em 0;
     padding: 0;
 }
 
 .article-content .subtitle {
     margin: 0;
+    padding: 0;
+}
+
+.article-text {
+    margin-bottom: 1em;
+}
+
+.read-article-btn {
+    color: #C29DF6;
     padding: 0;
 }
 
@@ -585,7 +594,7 @@ article img {
 }
 
 .how-much i {
-    color: #C29DF6;
+    color: #F6A89D;
 }
 
 /*ARTICLE CONTACT*/
