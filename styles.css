@@ -220,7 +220,7 @@ button[aria-selected="true"] {
     transition-duration: 750ms;
 }
 
-.who-color {
+/* .who-color {
     color: #ff96e3;
 }
 
@@ -242,7 +242,7 @@ button[aria-selected="true"] {
 .contact-overline {
     border-color: #79fd92;
     top: -0.6rem;
-}
+} */
 
 /*ARTICLE*/
 
