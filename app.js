@@ -23,6 +23,7 @@ function handleTabClick(event) {
         showArticle();
         showNavigationButtons();
         applyEventListeners();
+        colorIt();
     };
 };
 
@@ -58,6 +59,16 @@ async function showArticle() {
     await wait(100);
     currentTabPanel.classList.add('show-article');
     overline.classList.add("overline-on");
+};
+
+function colorIt() {
+    overline.style.color = null;
+    let tabButton = tabButtons.find(tabButton => tabButton.hasAttribute('open'));
+    let color = tabButton.getAttribute('data-color');
+    console.log(color);
+    if (tabButton.id === "who") {
+        overline.style.color = color;
+    }
 };
 
 
@@ -225,7 +236,6 @@ function removeCrtfEventListeners() {
 
 //TO READ//
 const articles = document.querySelector(".to-read");
-// const leads = articles.querySelectorAll(".lead");
 const readBtns = articles.querySelectorAll(".read-article-btn");
 const icon = 'Makao';
 
@@ -234,14 +244,12 @@ readBtns.forEach(readBtn => readBtn.addEventListener("click", showText));
 function showText(event) {
     const readBtn = event.currentTarget;
     const text = event.currentTarget.previousElementSibling;
-    // const icon = articles.querySelector(".fas fa-search-plus");
     if (text.hasAttribute("hidden")) {
         text.removeAttribute("hidden");
         readBtn.textContent = "Zamknij artykuł";
     } else {
         text.setAttribute("hidden", true);
         readBtn.textContent = "Przeczytane!";
-
     }
 };
 
