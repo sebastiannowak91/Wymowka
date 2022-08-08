@@ -190,7 +190,6 @@ button[aria-selected="true"] {
     filter: brightness(110%);
 }
 
-
 /*OVERLINES*/
 .overline {
     display: flex;
@@ -221,9 +220,8 @@ button[aria-selected="true"] {
     transition-duration: 750ms;
 }
 
-.who-overline {
-    border-color: #ff96e3;
-    top: 0;
+.who-color {
+    color: #ff96e3;
 }
 
 .what-overline {
