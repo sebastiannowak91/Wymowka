@@ -22,8 +22,8 @@ function handleTabClick(event) {
         down();
         showArticle();
         showNavigationButtons();
-        applyEventListeners();
         colorIt();
+        applyEventListeners();
     };
 };
 
@@ -62,15 +62,23 @@ async function showArticle() {
 };
 
 function colorIt() {
-    overline.style.color = null;
-    let tabButton = tabButtons.find(tabButton => tabButton.hasAttribute('open'));
-    let color = tabButton.getAttribute('data-color');
-    console.log(color);
-    if (tabButton.id === "who") {
-        overline.style.color = color;
-    }
-};
+    const tabButton = tabButtons.find(tabButton => tabButton.hasAttribute('open'));
+    const nextTabButton = tabButton.nextElementSibling;
+    const prevTabButton = tabButton.previousElementSibling;
+    
+    const color = tabButton.getAttribute('data-color');
+    const nextColor = nextTabButton.getAttribute('data-color');
+    const prevColor = prevTabButton ? prevTabButton.getAttribute('data-color') : null;
 
+    const arrowUp = tabs.querySelector(".fa-chevron-circle-up");
+    const arrowRight = tabs.querySelector(".fa-chevron-circle-right");
+    const arrowLeft = tabs.querySelector(".fa-chevron-circle-left");
+
+    overline.style.color = color;
+    arrowUp.style.color = color;
+    arrowRight.style.color = nextColor;
+    arrowLeft.style.color = prevColor;
+};
 
 const navigation = tabs.querySelector(".go-right-go-up");
 const navigationBtns = tabs.querySelectorAll(".navigation-btn");
@@ -123,6 +131,7 @@ function navigate(direction) {
     down();
     showArticle();
     showNavigationButtons();
+    colorIt();
 };
 
 async function close() {
