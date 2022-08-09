@@ -196,7 +196,7 @@ button[aria-selected="true"] {
     opacity: 0;
     width: 0;
     margin: 0 0 0 10%;
-    padding: 0;
+    padding: 1em 0 0 0;
     border-bottom: .2rem;
     border-bottom-style: solid;
     filter: brightness(100%);
@@ -210,14 +210,14 @@ button[aria-selected="true"] {
     filter: brightness(100%);
     opacity: 1;
     width: 80%;
-    transition-duration: 750ms;
+    transition-duration: 1s;
 }
 
 .overline-off {
     transition-property: width;
     width: 0;
     filter: brightness(90%);
-    transition-duration: 750ms;
+    transition-duration: 1s;
 }
 
 /* .who-color {
@@ -314,27 +314,24 @@ article img {
     display: none;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(2, auto);
-
 }
 
 .go-left {
     grid-column-start: 1;
     grid-column-end: 1;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .go-right,
 .go-up {
     grid-column-start: 2;
     grid-column-end: 2;
-    justify-content: end;
-
+    justify-content: flex-end;
 }
-
 
 .go-right-go-up button {
     display: flex;
-    padding: 1em 0 0 0;
+    margin: 1em 0 0 0;
     font-size: 1.2rem;
     align-items: center;
     font-weight: 600;
@@ -851,8 +848,9 @@ padding-top: 3.5em;
         margin: 3em 1.5% 7em .5%;
         grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(3);
+        grid-row-gap: 5em;
         justify-content: space-around;
-        height: 150vh;
+        height: unset;
     }
 
     /* nav button {
