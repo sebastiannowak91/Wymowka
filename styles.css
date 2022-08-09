@@ -851,8 +851,9 @@ padding-top: 3.5em;
         margin: 3em 1.5% 7em .5%;
         grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(3);
+        grid-row-gap: 5em;
         justify-content: space-around;
-        height: 150vh;
+        height: unset;
     }
 
     /* nav button {
