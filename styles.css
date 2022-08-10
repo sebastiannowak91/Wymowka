@@ -574,9 +574,9 @@ article img {
 
 /*ARTICLE HOW-MUCH*/
 .how-much-img {
-    width: 17rem;
+    width: 15rem;
     float: right;
-    margin: 0 1em 0em 2em;
+    margin: 0 0 0 2em;
     border-bottom: .1rem solid black;
 }
 
