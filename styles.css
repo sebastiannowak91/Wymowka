@@ -852,9 +852,9 @@ padding-top: 3.5em;
         width: 100%;
     }
 
-    /* .main-arrow {
-        display: none;
-    } */
+    .main-arrow {
+        left: 17%;
+    }
 
     nav {
         width: 97%;
@@ -968,6 +968,26 @@ padding-top: 3.5em;
     .location {
         align-items: flex-start;
     } */
+}
+
+@media only screen and (max-width: 680px) {
+
+    .arrow-space {
+        background-color: #9df6dc;
+    }
+    
+    nav {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(1);
+    }
+
+    .how-much-img {
+        display: none;
+    }
+
+    .how-much ul {
+        margin-right: 1em;
+    }
 }
 
 
