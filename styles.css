@@ -509,7 +509,7 @@ article img {
 .what-photo1 {
     float: right;
     width: 17rem;
-    margin: 2em 0 2em 0;
+    margin: 2em 0 2em 1em;
     border-top: .15vw solid black;
 }
 
@@ -532,14 +532,14 @@ article img {
 .for-who-img1 {
     width: 17rem;
     float: right;
-    margin: 0 0 0 3em;
+    margin: 1em 0 0 3em;
     border-right: .1rem solid black;
 }
 
 .for-who-img2 {
     width: 14rem;
     float: right;
-    margin: 1em 3em 0 7em;
+    margin: 1em 3em 1em 5em;
     border-right: .1rem solid black;
 }
 
@@ -576,7 +576,7 @@ article img {
 .how-much-img {
     width: 17rem;
     float: right;
-    margin: 0 1em 0 2em;
+    margin: 0 1em 0em 2em;
     border-bottom: .1rem solid black;
 }
 
@@ -585,7 +585,13 @@ article img {
 }
 
 .how-much-details ul {
-    margin-right: 5em;
+    margin: 0 5em 0 0;
+    padding: 0;
+}
+
+.how-much-details li {
+    margin: 0;
+    padding: 0;
 }
 
 .how-much i {
@@ -859,6 +865,14 @@ padding-top: 3.5em;
 
     nav button:hover {
         transform: none;
+    }
+
+    .what-photo2 {
+        display: none;
+    }
+
+    .how-much-img {
+        width: 14rem;
     }
 
     /* nav button p {
