@@ -854,6 +854,7 @@ padding-top: 3.5em;
 
     .main-arrow {
         left: 17%;
+        height: 10rem;;
     }
 
     nav {
@@ -971,14 +972,14 @@ padding-top: 3.5em;
 }
 
 @media only screen and (max-width: 680px) {
-
-    .arrow-space {
-        background-color: #9df6dc;
-    }
     
     nav {
         grid-template-columns: repeat(1, auto);
         grid-template-rows: repeat(1);
+    }
+
+    nav button img {
+        width: 12rem;
     }
 
     .how-much-img {
