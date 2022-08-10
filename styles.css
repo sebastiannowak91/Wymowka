@@ -383,12 +383,13 @@ article img {
     color: #ff96e3;
 }
 
-.who .fa-chevron-circle-right {
+/* .who .fa-chevron-circle-right {
     color:#62d2f5;
-}
+} */
 
 .who .fa-search-plus {
     margin: 0 .3em 0 0;
+    font-size: .9rem;
 }
 
 .who li {
@@ -570,6 +571,11 @@ article img {
 .read-article-btn {
     color: #C29DF6;
     padding: 0;
+    font-size: .9rem;
+}
+
+.to-read .fa-search-plus {
+    font-size: .9rem;
 }
 
 /*ARTICLE HOW-MUCH*/
@@ -867,6 +873,11 @@ padding-top: 3.5em;
         transform: none;
     }
 
+    /*WHO ARTICLE*/
+    .crtf-btn {
+        font-size: .7rem;
+    }
+    
     .what-photo2 {
         display: none;
     }
