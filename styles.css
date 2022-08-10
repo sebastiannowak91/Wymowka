@@ -869,13 +869,12 @@ padding-top: 3.5em;
         width: 24.5%;
     } */
 
-    nav button:hover {
+    /* nav button:hover {
         transform: none;
-    }
+    } */
 
-    /*WHO ARTICLE*/
-    .crtf-btn {
-        font-size: .7rem;
+    button:hover {
+        transform: none;
     }
     
     .what-photo2 {
