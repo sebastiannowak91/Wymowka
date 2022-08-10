@@ -852,9 +852,9 @@ padding-top: 3.5em;
         width: 100%;
     }
 
-    /* .main-arrow {
-        display: none;
-    } */
+    .main-arrow {
+        left: 17%;
+    }
 
     nav {
         width: 97%;
@@ -972,6 +972,10 @@ padding-top: 3.5em;
 
 @media only screen and (max-width: 680px) {
 
+    .arrow-space {
+        background-color: #9df6dc;
+    }
+    
     nav {
         grid-template-columns: repeat(1, auto);
         grid-template-rows: repeat(1);
