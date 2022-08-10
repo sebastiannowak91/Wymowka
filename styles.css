@@ -971,7 +971,7 @@ padding-top: 3.5em;
 }
 
 
-@media only screen and (max-width: 680px) {
+/* @media only screen and (max-width: 680px) {
 
     header {
         justify-content: flex-start;
@@ -1110,9 +1110,9 @@ padding-top: 3.5em;
         transform: translateX(5em);
         opacity: 1;
     }
-}
+} */
 
-@media only screen and (max-width: 450px) {
+/* @media only screen and (max-width: 450px) {
     body {
         width: 450px;
         display: flex;
@@ -1130,4 +1130,4 @@ padding-top: 3.5em;
         align-items: flex-start;
     }
 
-}
+} */
