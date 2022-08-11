@@ -563,6 +563,12 @@ article img {
 }
 
 /*ARTICLE TO-READ*/
+.to-read-article-img {
+    width: 17rem;
+    float: right;
+    margin: 0 0 2em 2em;
+}
+
 .article-content h3,
 .article-content span {
     color: #C29DF6;
@@ -880,9 +886,13 @@ padding-top: 3.5em;
         width: 100%;
     }
 
+    .arrow-space {
+        background-color: #9df6dc;
+    }
+
     .main-arrow {
         left: 17%;
-        height: 10rem;;
+        height: 10rem;
     }
 
     nav {
