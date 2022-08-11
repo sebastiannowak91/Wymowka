@@ -172,6 +172,7 @@ nav button img {
     background-color: #C29DF6;
 }
 
+
 nav button p {
     margin: 1em 0 0 0;
     font-size: 1.7rem;
@@ -246,7 +247,6 @@ button[aria-selected="true"] {
 
 /*ARTICLE*/
 
-
 article {
     width: 80%;
     margin: 2em 10% 5em 10%;
@@ -314,20 +314,36 @@ article img {
     display: none;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(2, auto);
+    border: 2px solid red;
 }
 
-.go-left {
+.go-left-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.go-right-go-up-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* .go-left {
     grid-column-start: 1;
     grid-column-end: 1;
     justify-content: flex-start;
-}
+    border: 2px solid black;
+} */
 
-.go-right,
+/* .go-right,
 .go-up {
     grid-column-start: 2;
     grid-column-end: 2;
     justify-content: flex-end;
-}
+    border: 2px solid black;
+} */
 
 .go-right-go-up button {
     display: flex;
@@ -509,7 +525,7 @@ article img {
 
 .what-photo1 {
     float: right;
-    width: 17rem;
+    width: 20rem;
     margin: 2em 0 2em 1em;
     border-top: .15vw solid black;
 }
@@ -591,7 +607,7 @@ article img {
 }
 
 .how-much-details ul {
-    margin: 0 5em 0 0;
+    margin: 0 5em 3em 0;
     padding: 0;
 }
 
