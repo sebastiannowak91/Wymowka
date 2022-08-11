@@ -67,7 +67,7 @@ function colorIt() {
     const prevTabButton = tabButton.previousElementSibling;
     
     const color = tabButton.getAttribute('data-color');
-    const nextColor = nextTabButton.getAttribute('data-color');
+    const nextColor = nextTabButton? nextTabButton.getAttribute('data-color') : null;
     const prevColor = prevTabButton ? prevTabButton.getAttribute('data-color') : null;
 
     const arrowUp = tabs.querySelector(".fa-chevron-circle-up");
