@@ -71,11 +71,12 @@ header {
     width: 1.5rem;
     left: 6em;
     bottom: 1.5em;
-    animation: downArrow 1s alternate-reverse infinite;
+    animation: moveArrow 1s alternate-reverse infinite;
 }
 
 .main-arrow path {
     fill: black;
+    animation: dropDown 1s ease-in-out forwards;
 
 }
 
@@ -83,6 +84,7 @@ header {
     margin: 0 0 0 0;
     padding-right: 1.5em;
     position: fixed;
+    animation: dropDown 1s ease-in-out forwards;
 }
 
 .menu li {
@@ -825,14 +827,26 @@ padding-top: 3.5em;
     display: none;
 }
 
-@keyframes downArrow {
+@keyframes dropDown {
     from {
-        transform: translateY(-8em);
+        transform: translateY(-20em);
     }
     to {
-        transform: translateY(0em);
+        transform: translateY(0);
     }
 }
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-8em);
+    }
+}
+
+
+
 
 
 
