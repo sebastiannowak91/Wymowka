@@ -1,3 +1,5 @@
+import { showText } from './toread.js';
+
 
 //ARTICLES//
 const tabs = document.querySelector('.tabs');
@@ -246,21 +248,20 @@ function removeCrtfEventListeners() {
 //TO READ//
 const articles = document.querySelector(".to-read");
 const readBtns = articles.querySelectorAll(".read-article-btn");
-const icon = 'Makao';
 
 readBtns.forEach(readBtn => readBtn.addEventListener("click", showText));
 
-function showText(event) {
-    const readBtn = event.currentTarget;
-    const text = event.currentTarget.previousElementSibling;
-    if (text.hasAttribute("hidden")) {
-        text.removeAttribute("hidden");
-        readBtn.textContent = "Zamknij artykuł";
-    } else {
-        text.setAttribute("hidden", true);
-        readBtn.textContent = "Przeczytane!";
-    }
-};
+// function showText(event) {
+//     const readBtn = event.currentTarget;
+//     const text = event.currentTarget.previousElementSibling;
+//     if (text.hasAttribute("hidden")) {
+//         text.removeAttribute("hidden");
+//         readBtn.textContent = "Zamknij artykuł";
+//     } else {
+//         text.setAttribute("hidden", true);
+//         readBtn.textContent = "Przeczytane!";
+//     }
+// };
 
 
 
