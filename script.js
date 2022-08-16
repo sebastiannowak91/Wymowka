@@ -1,4 +1,4 @@
-import { showText } from './toread.js';
+import { checkIt } from './check.js';
 
 
 //ARTICLES//
@@ -19,6 +19,7 @@ function handleTabClick(event) {
     if (event.currentTarget.hasAttribute('open')) {
         close();
     } else {
+        checkIt();
         closeWhatsOpen();
         findMatchingTabpanel(event);
         down();
@@ -251,17 +252,17 @@ const readBtns = articles.querySelectorAll(".read-article-btn");
 
 readBtns.forEach(readBtn => readBtn.addEventListener("click", showText));
 
-// function showText(event) {
-//     const readBtn = event.currentTarget;
-//     const text = event.currentTarget.previousElementSibling;
-//     if (text.hasAttribute("hidden")) {
-//         text.removeAttribute("hidden");
-//         readBtn.textContent = "Zamknij artykuł";
-//     } else {
-//         text.setAttribute("hidden", true);
-//         readBtn.textContent = "Przeczytane!";
-//     }
-// };
+function showText(event) {
+    const readBtn = event.currentTarget;
+    const text = event.currentTarget.previousElementSibling;
+    if (text.hasAttribute("hidden")) {
+        text.removeAttribute("hidden");
+        readBtn.textContent = "Zamknij artykuł";
+    } else {
+        text.setAttribute("hidden", true);
+        readBtn.textContent = "Przeczytane!";
+    }
+};
 
 
 
