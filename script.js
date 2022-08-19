@@ -1,11 +1,16 @@
 import { checkIt } from './check.js';
-
+import showText from './to-read.js';
+import { showCrtf } from './certificates.js';
 
 //ARTICLES//
 const tabs = document.querySelector('.tabs');
 const tabButtons = Array.from(tabs.querySelectorAll('[role="tab"]'));
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 const overline = tabs.querySelector(".overline");
+let tabPanel;
+let currentTabPanel;
+let tabButton;
+let currentTabButton;
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
 
@@ -48,8 +53,8 @@ function findMatchingTabpanel(event) {
     event.currentTarget.setAttribute('open', true);
     const {id} = event.currentTarget;
     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
-    tabPanel.hidden = false;
     currentTabPanel = tabPanel;
+    tabPanel.hidden = false;
     const tabButton = tabButtons.find(tabButton => tabButton.id === tabPanel.getAttribute('aria-labelledby'));
     currentTabButton = tabButton;
 };
@@ -162,88 +167,90 @@ function removeEventListeners() {
 
 //CERTIFICATES//
 const crtfBtns = Array.from(document.querySelectorAll(".crtf-btn"));
-const crtfCollection = document.querySelector(".certificates-collection");
-const certificates = Array.from(document.querySelectorAll(".certificate"));
-const closeCrtf = document.querySelector(".close-crtf");
-const nextCrtf = document.querySelector(".next-crtf");
-const prevCrtf = document.querySelector(".prev-crtf");
-const crtfNav = document.querySelector(".certificates-navigation");
-const crtfNavBtns = Array.from(document.querySelectorAll(".crtf-nav-btns"));
+// const crtfCollection = document.querySelector(".certificates-collection");
+// const certificates = Array.from(document.querySelectorAll(".certificate"));
+// const closeCrtf = document.querySelector(".close-crtf");
+// const nextCrtf = document.querySelector(".next-crtf");
+// const prevCrtf = document.querySelector(".prev-crtf");
+// const crtfNav = document.querySelector(".certificates-navigation");
+// const crtfNavBtns = Array.from(document.querySelectorAll(".crtf-nav-btns"));
+// let certificate;
+// let currentCertificate;
 
 const crtfBtn = crtfBtns.forEach(crtfBtn => crtfBtn.addEventListener("click", showCrtf));
 
 
-function showCrtf() {
-    if(crtfCollection.matches('show-crtf-collection')) {
-        return;
-    }
-    findMatchingCrtf(event);
-    showCrtfNav();
-    applyCrtfEventListeners();
-};
+// function showCrtf() {
+//     if(crtfCollection.matches('show-crtf-collection')) {
+//         return;
+//     }
+//     findMatchingCrtf(event);
+//     showCrtfNav();
+//     applyCrtfEventListeners();
+// };
 
-function findMatchingCrtf(event) {
-    const {id} = event.currentTarget;
-    crtfCollection.classList.add('show-crtf-collection');
-    const certificate = certificates.find(certificate => certificate.getAttribute('aria-labelledby') === id);
-    certificate.hidden = false;
-    currentCertificate = certificate;
-};
+// function findMatchingCrtf(event) {
+//     const {id} = event.currentTarget;
+//     crtfCollection.classList.add('show-crtf-collection');
+//     const certificate = certificates.find(certificate => certificate.getAttribute('aria-labelledby') === id);
+//     certificate.hidden = false;
+//     currentCertificate = certificate;
+// };
 
-function showCrtfNav() {
-    crtfNav.style.display = "flex";
-    if (certificates.indexOf(currentCertificate) !== 0 && certificates.indexOf(currentCertificate) !== certificates.length -1 ) { 
-        crtfNavBtns.forEach(crtfNavBtn => crtfNavBtn.style.display = "flex");
-    } if (certificates.indexOf(currentCertificate) === 0) {
-        prevCrtf.style.display = "none";
-        nextCrtf.style.display = "flex";
-    } if (certificates.indexOf(currentCertificate) === certificates.length -1 ) {
-        nextCrtf.style.display = "none";
-        prevCrtf.style.display = "flex";
-    };
-};
+// function showCrtfNav() {
+//     crtfNav.style.display = "flex";
+//     if (certificates.indexOf(currentCertificate) !== 0 && certificates.indexOf(currentCertificate) !== certificates.length -1 ) { 
+//         crtfNavBtns.forEach(crtfNavBtn => crtfNavBtn.style.display = "flex");
+//     } if (certificates.indexOf(currentCertificate) === 0) {
+//         prevCrtf.style.display = "none";
+//         nextCrtf.style.display = "flex";
+//     } if (certificates.indexOf(currentCertificate) === certificates.length -1 ) {
+//         nextCrtf.style.display = "none";
+//         prevCrtf.style.display = "flex";
+//     };
+// };
 
-function applyCrtfEventListeners() {
-    nextCrtf.addEventListener('click', navigateCrtf);
-    prevCrtf.addEventListener('click', () => navigateCrtf('back'));
-    closeCrtf.addEventListener('click', closeCrtfCollection);
-};
+// function applyCrtfEventListeners() {
+//     nextCrtf.addEventListener('click', navigateCrtf);
+//     prevCrtf.addEventListener('click', () => navigateCrtf('back'));
+//     closeCrtf.addEventListener('click', closeCrtfCollection);
+// };
 
-function navigateCrtf(direction) {
-    certificate = certificates.indexOf(currentCertificate);
-    const prevCertificate = certificates[certificate - 1];
-    const nextCertificate = certificates[certificate + 1];
+// function navigateCrtf(direction) {
+//     certificate = certificates.indexOf(currentCertificate);
+//     const prevCertificate = certificates[certificate - 1];
+//     const nextCertificate = certificates[certificate + 1];
 
-    hideCrtf();
-    if (direction === 'back') {
-        currentCertificate = prevCertificate;
-        currentCertificate.hidden = false;
-    } else {
-        currentCertificate = nextCertificate;
-        currentCertificate.hidden = false;
-    };
-    showCrtfNav();
-};
+//     hideCrtf();
+//     if (direction === 'back') {
+//         currentCertificate = prevCertificate;
+//         currentCertificate.hidden = false;
+//     } else {
+//         currentCertificate = nextCertificate;
+//         currentCertificate.hidden = false;
+//     };
+//     showCrtfNav();
+// };
 
 
-function hideCrtf() {
-    certificates.forEach(certificate => {
-        certificate.hidden = true
-    });
-};
+// function hideCrtf() {
+//     certificates.forEach(certificate => {
+//         certificate.hidden = true
+//     });
+// };
 
-function closeCrtfCollection() {
-    crtfCollection.classList.remove('show-crtf-collection');
-    hideCrtf();
-    removeCrtfEventListeners();
-    crtfNav.style.display = "none";
-};
+// function closeCrtfCollection() {
+//     crtfCollection.classList.remove('show-crtf-collection');
+//     hideCrtf();
+//     removeCrtfEventListeners();
+//     crtfNav.style.display = "none";
+// };
 
-function removeCrtfEventListeners() {
-    nextCrtf.removeEventListener('click', navigateCrtf);
-    prevCrtf.removeEventListener('click', () => navigateCrtf('back'));
-    closeCrtf.removeEventListener('click', closeCrtfCollection);
-};
+// function removeCrtfEventListeners() {
+//     nextCrtf.removeEventListener('click', navigateCrtf);
+//     prevCrtf.removeEventListener('click', () => navigateCrtf('back'));
+//     closeCrtf.removeEventListener('click', closeCrtfCollection);
+// };
 
 
 //TO READ//
@@ -252,17 +259,17 @@ const readBtns = articles.querySelectorAll(".read-article-btn");
 
 readBtns.forEach(readBtn => readBtn.addEventListener("click", showText));
 
-function showText(event) {
-    const readBtn = event.currentTarget;
-    const text = event.currentTarget.previousElementSibling;
-    if (text.hasAttribute("hidden")) {
-        text.removeAttribute("hidden");
-        readBtn.textContent = "Zamknij artykuł";
-    } else {
-        text.setAttribute("hidden", true);
-        readBtn.textContent = "Przeczytane!";
-    }
-};
+// function showText(event) {
+//     const readBtn = event.currentTarget;
+//     const text = event.currentTarget.previousElementSibling;
+//     if (text.hasAttribute("hidden")) {
+//         text.removeAttribute("hidden");
+//         readBtn.textContent = "Zamknij artykuł";
+//     } else {
+//         text.setAttribute("hidden", true);
+//         readBtn.textContent = "Przeczytane!";
+//     }
+// };
 
 
 
