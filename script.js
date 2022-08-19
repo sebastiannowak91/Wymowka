@@ -1,6 +1,8 @@
 import { checkIt } from './check.js';
 import showText from './to-read.js';
 import { showCrtf } from './certificates.js';
+import wait from './helpers.js';
+import { applyContactFormEventListeners, sendBtn, sendMessage, contactForm, closeContactFormBtn, closeContactForm } from './contact-form.js';
 
 //ARTICLES//
 const tabs = document.querySelector('.tabs');
@@ -14,11 +16,11 @@ let currentTabButton;
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
 
-function wait(ms = 0) {
-    return new Promise((resolve) => {
-        setTimeout(resolve, ms);
-    })
-};
+// function wait(ms = 0) {
+//     return new Promise((resolve) => {
+//         setTimeout(resolve, ms);
+//     })
+// };
 
 function handleTabClick(event) {
     if (event.currentTarget.hasAttribute('open')) {
@@ -277,38 +279,38 @@ readBtns.forEach(readBtn => readBtn.addEventListener("click", showText));
 
 
 //CONTACT FORM//
-openContactFormBtn = document.querySelector(".open-form");
-closeContactFormBtn = document.querySelector(".close-contact-form");
-contactForm = document.querySelector(".contact-form");
-sendBtn = document.querySelector(".send-btn");
-mustBe = document.querySelectorAll(".must-be");
-feedback = document.querySelector(".form-feedback");
+const openContactFormBtn = document.querySelector(".open-form");
+// closeContactFormBtn = document.querySelector(".close-contact-form");
+// const contactForm = document.querySelector(".contact-form");
+// sendBtn = document.querySelector(".send-btn");
+// mustBe = document.querySelectorAll(".must-be");
+// feedback = document.querySelector(".form-feedback");
 
 
 openContactFormBtn.addEventListener("click", function() {
     contactForm.style.display = "flex";
 });
 
-closeContactFormBtn.addEventListener("click", function() {
-    contactForm.style.display = "none";
-});
+// closeContactFormBtn.addEventListener("click", function() {
+//     contactForm.style.display = "none";
+// });
 
-sendBtn.addEventListener("click", function(event) {
-    event.preventDefault();
-    let readyToSend = true;
-    mustBe.forEach(function (input) {
-        if (input.value === "") {
-            readyToSend = false;
-        }
-    })
-    if (readyToSend === true) {
-        feedback.textContent = "Wiadomość została wysłana.";
-        mustBe.forEach(function (input) {
-            input.value = "";
-            sendBtn.style.display = "none";
-            feedback.classList.add("confirmation");
-        })
-    } else {
-        feedback.textContent = "Proszę uzupełnić wszystkie pola oznaczone *";
-    }
-});
+// sendBtn.addEventListener("click", function(event) {
+//     event.preventDefault();
+//     let readyToSend = true;
+//     mustBe.forEach(function (input) {
+//         if (input.value === "") {
+//             readyToSend = false;
+//         }
+//     })
+//     if (readyToSend === true) {
+//         feedback.textContent = "Wiadomość została wysłana.";
+//         mustBe.forEach(function (input) {
+//             input.value = "";
+//             sendBtn.style.display = "none";
+//             feedback.classList.add("confirmation");
+//         })
+//     } else {
+//         feedback.textContent = "Proszę uzupełnić wszystkie pola oznaczone *";
+//     }
+// });
