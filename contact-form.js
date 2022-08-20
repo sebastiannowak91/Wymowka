@@ -1,4 +1,5 @@
 
+const articles = document.querySelector(".to-read");
 const closeContactFormBtn = document.querySelector(".close-contact-form");
 const contactForm = document.querySelector(".contact-form");
 const sendBtn = document.querySelector(".send-btn");
@@ -36,4 +37,4 @@ function sendMessage(event) {
     }
 };
 
-export { applyContactFormEventListeners, sendBtn, sendMessage, contactForm, closeContactFormBtn, closeContactForm };
+export { applyContactFormEventListeners };

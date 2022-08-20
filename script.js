@@ -2,7 +2,7 @@ import { checkIt } from './check.js';
 import showText from './to-read.js';
 import { showCrtf } from './certificates.js';
 import wait from './helpers.js';
-import { applyContactFormEventListeners, sendBtn, sendMessage, contactForm, closeContactFormBtn, closeContactForm } from './contact-form.js';
+import { applyContactFormEventListeners } from './contact-form.js';
 
 //ARTICLES//
 const tabs = document.querySelector('.tabs');
@@ -259,6 +259,7 @@ const crtfBtn = crtfBtns.forEach(crtfBtn => crtfBtn.addEventListener("click", sh
 const articles = document.querySelector(".to-read");
 const readBtns = articles.querySelectorAll(".read-article-btn");
 
+
 readBtns.forEach(readBtn => readBtn.addEventListener("click", showText));
 
 // function showText(event) {
@@ -280,6 +281,7 @@ readBtns.forEach(readBtn => readBtn.addEventListener("click", showText));
 
 //CONTACT FORM//
 const openContactFormBtn = document.querySelector(".open-form");
+const contactForm = document.querySelector(".contact-form");
 // closeContactFormBtn = document.querySelector(".close-contact-form");
 // const contactForm = document.querySelector(".contact-form");
 // sendBtn = document.querySelector(".send-btn");
@@ -289,6 +291,7 @@ const openContactFormBtn = document.querySelector(".open-form");
 
 openContactFormBtn.addEventListener("click", function() {
     contactForm.style.display = "flex";
+    applyContactFormEventListeners();
 });
 
 // closeContactFormBtn.addEventListener("click", function() {
