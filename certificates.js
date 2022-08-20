@@ -1,4 +1,4 @@
-// const crtfBtns = Array.from(document.querySelectorAll(".crtf-btn"));
+
 const crtfCollection = document.querySelector(".certificates-collection");
 const certificates = Array.from(document.querySelectorAll(".certificate"));
 const closeCrtf = document.querySelector(".close-crtf");
