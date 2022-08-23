@@ -953,6 +953,25 @@ padding-top: 3.5em;
 
 @media only screen and (max-width: 680px) {
     
+    .extra-space {
+        display: block;
+    }
+
+    .arrow-space {
+        background-color: #9df6dc;
+    }
+
+    .hero {
+        height: 100vh;
+        box-shadow: 0 0 7px #75b2a0;
+    }
+    
+    .main-arrow {
+        left: 16.5%;
+        height: 7rem;
+        bottom: 10em;
+    }
+
     nav {
         grid-template-columns: repeat(1, auto);
         grid-template-rows: repeat(1);
@@ -960,6 +979,11 @@ padding-top: 3.5em;
 
     nav button img {
         width: 12rem;
+    }
+
+    .for-who-img1,
+    .for-who-img2 {
+        display: none;
     }
 
     .how-much-img {
