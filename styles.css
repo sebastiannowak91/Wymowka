@@ -635,6 +635,7 @@ article img {
     font-weight: 300;
     line-height: 1.5;
     text-decoration: none;
+    color: black;
 }
 
 .contact a,
@@ -706,7 +707,7 @@ article img {
 .leave-a-message {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     border-radius: 5%;
     background-color: #F5FEFC;
     border: .3rem solid #9df6dc;
@@ -852,10 +853,6 @@ padding-top: 3.5em;
 
 
 @media only screen and (max-width: 1100px) {
-
-    /* body {
-        min-height: 100vh;
-    } */
     
     .menu {
         padding-right: 1em;
@@ -867,6 +864,10 @@ padding-top: 3.5em;
 
     .hero {
         height: 75vh;
+    }
+
+    .extra-space {
+        display: none;
     }
     
     .cover-photo img {
@@ -889,14 +890,6 @@ padding-top: 3.5em;
         height: unset;
     }
 
-    /* nav button {
-        width: 24.5%;
-    } */
-
-    /* nav button:hover {
-        transform: none;
-    } */
-
     button:hover {
         transform: none;
     }
@@ -908,11 +901,6 @@ padding-top: 3.5em;
     .how-much-img {
         width: 14rem;
     }
-
-    /* nav button p {
-        font-size: 1.2rem;
-        font-weight: bold;
-    } */
 
     .overline {
         width: 90%;
@@ -929,20 +917,9 @@ padding-top: 3.5em;
         padding: 0;
     }
 
-    /* .for-who-img2 {
-        width: 25%;
-        float: right;
-        margin: 1em 3em 0 7em;
-        border-right: .1rem solid black;
-    } */
-
     .how-much-details ul {
         margin-right: 2em;
     }
-
-    /* #who img {
-        width: 40%;
-    } */
     
     .certificates-collection img {
         height: 75%;
@@ -961,36 +938,15 @@ padding-top: 3.5em;
         left: 90%;
     }
 
-    /* footer {
-        margin: 0;
-        padding-top: 4em;
-    } */
-
-    .footer-img {
-        margin-bottom: -3em;
+    .leave-a-message {
+        max-width: 70%;
+        min-width: 50%;
+        height: 80vh;
     }
 
-    /* footer p,
-    .map,
-    .contact-form,
-    .fa-paste,
-    .open-form {
-        display: none;
-    } */
-
-    /* .location,
-    .contact {
-        margin: 0;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    } */
-
-    /* .contact,
-    .location {
-        align-items: flex-start;
-    } */
+    .footer-img {
+        margin-bottom: -2em;
+    }
 }
 
 @media only screen and (max-width: 680px) {
