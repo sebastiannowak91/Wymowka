@@ -853,10 +853,6 @@ padding-top: 3.5em;
 
 
 @media only screen and (max-width: 1100px) {
-
-    /* body {
-        min-height: 100vh;
-    } */
     
     .menu {
         padding-right: 1em;
@@ -894,14 +890,6 @@ padding-top: 3.5em;
         height: unset;
     }
 
-    /* nav button {
-        width: 24.5%;
-    } */
-
-    /* nav button:hover {
-        transform: none;
-    } */
-
     button:hover {
         transform: none;
     }
@@ -913,11 +901,6 @@ padding-top: 3.5em;
     .how-much-img {
         width: 14rem;
     }
-
-    /* nav button p {
-        font-size: 1.2rem;
-        font-weight: bold;
-    } */
 
     .overline {
         width: 90%;
@@ -934,20 +917,9 @@ padding-top: 3.5em;
         padding: 0;
     }
 
-    /* .for-who-img2 {
-        width: 25%;
-        float: right;
-        margin: 1em 3em 0 7em;
-        border-right: .1rem solid black;
-    } */
-
     .how-much-details ul {
         margin-right: 2em;
     }
-
-    /* #who img {
-        width: 40%;
-    } */
     
     .certificates-collection img {
         height: 75%;
@@ -972,36 +944,9 @@ padding-top: 3.5em;
         height: 80vh;
     }
 
-    /* footer {
-        margin: 0;
-        padding-top: 4em;
-    } */
-
     .footer-img {
         margin-bottom: -2em;
     }
-
-    /* footer p,
-    .map,
-    .contact-form,
-    .fa-paste,
-    .open-form {
-        display: none;
-    } */
-
-    /* .location,
-    .contact {
-        margin: 0;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    } */
-
-    /* .contact,
-    .location {
-        align-items: flex-start;
-    } */
 }
 
 @media only screen and (max-width: 680px) {
