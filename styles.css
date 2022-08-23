@@ -635,6 +635,7 @@ article img {
     font-weight: 300;
     line-height: 1.5;
     text-decoration: none;
+    color: black;
 }
 
 .contact a,
@@ -706,7 +707,7 @@ article img {
 .leave-a-message {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     border-radius: 5%;
     background-color: #F5FEFC;
     border: .3rem solid #9df6dc;
@@ -868,6 +869,10 @@ padding-top: 3.5em;
     .hero {
         height: 75vh;
     }
+
+    .extra-space {
+        display: none;
+    }
     
     .cover-photo img {
         width: 100%;
@@ -961,13 +966,19 @@ padding-top: 3.5em;
         left: 90%;
     }
 
+    .leave-a-message {
+        max-width: 70%;
+        min-width: 50%;
+        height: 80vh;
+    }
+
     /* footer {
         margin: 0;
         padding-top: 4em;
     } */
 
     .footer-img {
-        margin-bottom: -3em;
+        margin-bottom: -2em;
     }
 
     /* footer p,
