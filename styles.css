@@ -980,8 +980,22 @@ padding-top: 3.5em;
         width: 12rem;
     }
 
+    .go-right-go-up {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(2, auto);
+        justify-content: center;
+    }
+
+    .what-photo1 {
+        display: none;
+    }
+
     .for-who-img1,
     .for-who-img2 {
+        display: none;
+    }
+
+    .to-read-article-img {
         display: none;
     }
 
