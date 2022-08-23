@@ -863,7 +863,7 @@ padding-top: 3.5em;
     }
 
     .hero {
-        height: 75vh;
+        height: 60vh;
     }
 
     .extra-space {
@@ -877,7 +877,7 @@ padding-top: 3.5em;
     .main-arrow {
         left: 16.5%;
         height: 10rem;
-        bottom: 10em;
+        bottom: 20em;
     }
 
     nav {
@@ -939,9 +939,12 @@ padding-top: 3.5em;
     }
 
     .leave-a-message {
-        max-width: 70%;
-        min-width: 50%;
-        height: 80vh;
+        width: 60%;
+        height: 70vh;
+    }
+
+    .close-contact-form {
+        right: 15%;
     }
 
     .footer-img {
