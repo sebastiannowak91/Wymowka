@@ -846,7 +846,6 @@ padding-top: 3.5em;
     .go-right-go-up,
     article {
         width: 1100px;
-        /* margin: 0 auto; */
     }
 }
 
@@ -863,7 +862,7 @@ padding-top: 3.5em;
     }
 
     .hero {
-        height: 75vh;
+        height: 60vh;
     }
 
     .extra-space {
@@ -877,7 +876,7 @@ padding-top: 3.5em;
     .main-arrow {
         left: 16.5%;
         height: 10rem;
-        bottom: 10em;
+        bottom: 20em;
     }
 
     nav {
@@ -939,9 +938,12 @@ padding-top: 3.5em;
     }
 
     .leave-a-message {
-        max-width: 70%;
-        min-width: 50%;
-        height: 80vh;
+        width: 60%;
+        height: 70vh;
+    }
+
+    .close-contact-form {
+        right: 15%;
     }
 
     .footer-img {
@@ -951,6 +953,25 @@ padding-top: 3.5em;
 
 @media only screen and (max-width: 680px) {
     
+    .extra-space {
+        display: block;
+    }
+
+    .arrow-space {
+        background-color: #9df6dc;
+    }
+
+    .hero {
+        height: 100vh;
+        box-shadow: 0 0 7px #75b2a0;
+    }
+    
+    .main-arrow {
+        left: 16.5%;
+        height: 7rem;
+        bottom: 10em;
+    }
+
     nav {
         grid-template-columns: repeat(1, auto);
         grid-template-rows: repeat(1);
@@ -958,6 +979,11 @@ padding-top: 3.5em;
 
     nav button img {
         width: 12rem;
+    }
+
+    .for-who-img1,
+    .for-who-img2 {
+        display: none;
     }
 
     .how-much-img {
