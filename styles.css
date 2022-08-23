@@ -984,7 +984,7 @@ padding-top: 3.5em;
     .go-right-go-up {
         grid-template-columns: repeat(1, auto);
         grid-template-rows: repeat(2, auto);
-        justify-content: center;
+        justify-content: end;
     }
 
     .certificates-collection img {
