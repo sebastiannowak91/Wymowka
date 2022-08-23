@@ -634,6 +634,7 @@ article img {
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.5;
+    text-decoration: none;
 }
 
 .contact a,
@@ -684,10 +685,6 @@ article img {
     transition: .7s;
 }
 
-.contact i {
-    margin-right: .5em;
-}
-
 .contact-form {
     position: fixed;
     display: none;
@@ -709,12 +706,13 @@ article img {
 .leave-a-message {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     border-radius: 5%;
     background-color: #F5FEFC;
     border: .3rem solid #9df6dc;
-    height: auto;
+    height: 90vh;
     width: 50%;
-    padding: 2em 0 0 2em;
+    padding: 2em 1em 0 2em;
 }
 
 .leave-a-message h5 {
@@ -735,7 +733,8 @@ article img {
 }
 
 .contact-me {
-    width: 20em;
+    max-width: 20em;
+    min-width: fit-content;
 }
 
 .send-btn {
@@ -743,23 +742,22 @@ article img {
     border: none;
     box-shadow: 0 0 7px #75b2a0;
     border-radius: 5px;
-    padding: .75em;
-    margin: 0 0 2em 36.5em;
-    width: 7rem;
+    padding: 1em;
+    width: fit-content;
+    margin-bottom: 2em;
     cursor: pointer;
     font-size: .72rem;
-    justify-content: flex-end;
+    transition: 1s;
 
 }
 
 .send-btn:hover {
     transform: scale(1.2);
     filter: brightness(110%);
-    transition: 1s;
 }
 
 .message {
-    width: 32rem;
+    width: unset;
     height: 12rem;
 }
 
@@ -768,6 +766,7 @@ article img {
     color: black;
     right: 19%;
     top: 3%;
+    transition: 1s;
 }
 
 .form-feedback {
@@ -865,18 +864,19 @@ padding-top: 3.5em;
     .menu li:hover {
         transform: none;
     }
+
+    .hero {
+        height: 75vh;
+    }
     
     .cover-photo img {
         width: 100%;
     }
 
-    .arrow-space {
-        background-color: #9df6dc;
-    }
-
     .main-arrow {
-        left: 17%;
+        left: 16.5%;
         height: 10rem;
+        bottom: 10em;
     }
 
     nav {
