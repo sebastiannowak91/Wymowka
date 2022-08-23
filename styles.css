@@ -765,7 +765,7 @@ article img {
 .close-contact-form {
     background-color: #9df6dc;
     color: black;
-    right: 19%;
+    right: 15%;
     top: 3%;
     transition: 1s;
 }
@@ -864,10 +864,6 @@ padding-top: 3.5em;
     .hero {
         height: 60vh;
     }
-/* 
-    .extra-space {
-        height: 10%;
-    } */
     
     .cover-photo img {
         width: 100%;
@@ -875,8 +871,8 @@ padding-top: 3.5em;
 
     .main-arrow {
         left: 16.5%;
-        height: 10rem;
-        top: 25em;
+        width: 1.2rem;
+        top: 27em;
     }
 
     nav {
@@ -940,10 +936,11 @@ padding-top: 3.5em;
     .leave-a-message {
         width: 60%;
         height: auto;
+        max-height: 90%;
     }
 
     .close-contact-form {
-        right: 15%;
+        right: 10%;
     }
 
     .footer-img {
@@ -952,10 +949,6 @@ padding-top: 3.5em;
 }
 
 @media only screen and (max-width: 680px) {
-    
-    /* .extra-space {
-        display: block;
-    } */
 
     .arrow-space {
         background-color: #9df6dc;
