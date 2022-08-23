@@ -862,7 +862,7 @@ padding-top: 3.5em;
     }
 
     .hero {
-        height: 50vh;
+        height: 60vh;
     }
 /* 
     .extra-space {
@@ -876,7 +876,7 @@ padding-top: 3.5em;
     .main-arrow {
         left: 16.5%;
         height: 10rem;
-        top: 10em;
+        top: 25em;
     }
 
     nav {
@@ -939,6 +939,7 @@ padding-top: 3.5em;
 
     .leave-a-message {
         width: 60%;
+        height: auto;
     }
 
     .close-contact-form {
@@ -968,7 +969,7 @@ padding-top: 3.5em;
     .main-arrow {
         left: 16.5%;
         height: 7rem;
-        top: 35em;
+        top: 25em;
     }
 
     nav {
@@ -984,6 +985,11 @@ padding-top: 3.5em;
         grid-template-columns: repeat(1, auto);
         grid-template-rows: repeat(2, auto);
         justify-content: center;
+    }
+
+    .certificates-collection img {
+        width: 80%;
+        height: auto;
     }
 
     .what-photo1 {
@@ -1003,9 +1009,25 @@ padding-top: 3.5em;
         display: none;
     }
 
-    .how-much ul {
-        margin-right: 1em;
+    .how-much-details ul {
+        margin: 0 0 3em 0;
+        padding: 0;
     }
+
+    footer {
+        padding-top: 2.5em;
+    }
+        
+    .footer-img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .company-name .subtitle {
+        font-size: 1rem;
+    }
+
+    
 }
 
 
