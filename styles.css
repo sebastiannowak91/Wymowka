@@ -918,6 +918,7 @@ padding-top: 3.5em;
     
     .certificates-collection img {
         height: 75%;
+        width: auto;
     }
 
     .next-crtf {
@@ -961,13 +962,14 @@ padding-top: 3.5em;
     
     .main-arrow {
         left: 16.5%;
-        height: 7rem;
-        top: 25em;
+        width: 1rem;
+        top: 23em;
     }
 
     nav {
         grid-template-columns: repeat(1, auto);
         grid-template-rows: repeat(1);
+        margin-top: 5em;
     }
 
     nav button img {
@@ -981,8 +983,12 @@ padding-top: 3.5em;
     }
 
     .certificates-collection img {
-        width: 80%;
+        width: 60%;
         height: auto;
+    }
+
+    .who img {
+        margin-bottom: 1.5em;
     }
 
     .what-photo1 {
@@ -1017,9 +1023,8 @@ padding-top: 3.5em;
     }
 
     .company-name .subtitle {
-        font-size: 1rem;
+        font-size: .9rem;
     }
-
     
 }
 
