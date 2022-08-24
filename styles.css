@@ -620,11 +620,6 @@ article img {
     margin: 0 1.3em 1.3em 0;
 }
 
-.contact-details {
-    padding-top: 4em;
-
-}
-
 .contact ul {
     padding-bottom: 1.5em;
     padding-left: 0;
@@ -936,9 +931,8 @@ padding-top: 3.5em;
     }
 
     .leave-a-message {
-        width: 60%;
-        height: auto;
-        max-height: 90%;
+        width: 70%;
+        height: 70%;
     }
 
     .close-contact-form {
@@ -963,7 +957,7 @@ padding-top: 3.5em;
     
     .main-arrow {
         left: 16.4%;
-        width: .8rem;
+        width: .6rem;
         top: 23em;
     }
 
@@ -980,7 +974,7 @@ padding-top: 3.5em;
 
     article {
         width: 98%;
-        margin: 2em .1% 2em .1%;
+        margin: 2em 1% 2em 1%;
     }
 
     .go-right-go-up {
@@ -996,21 +990,23 @@ padding-top: 3.5em;
 
     .next-crtf {
         left: 65%;
-        top: 90%;
+        top: 85%;
     }
     
     .prev-crtf {
         right: 65%;
-        top: 90%;
+        top: 85%;
     }
     
     .close-crtf {
         top: 1%;
         left: 80%;
     }
-
+    
     .who img {
-        margin-bottom: 1.5em;
+        /* margin-bottom: 1.5em;
+        margin-right: 1.5em; */
+        float: none;
     }
 
     .what-photo1 {
@@ -1024,6 +1020,10 @@ padding-top: 3.5em;
 
     .to-read-article-img {
         display: none;
+    }
+
+    .contact img {
+        float: none;
     }
 
     .how-much-img {
