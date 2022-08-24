@@ -630,10 +630,11 @@ article img {
     padding-left: 0;
 }
 
-.contact-details button {
-    font-size: 1rem;
+.contact-details button,
+.contact-details a {
+    font-size: 1.1rem;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.7;
     text-decoration: none;
     color: black;
 }
@@ -949,6 +950,7 @@ padding-top: 3.5em;
         margin-bottom: -2em;
     }
 }
+
 
 @media only screen and (max-width: 680px) {
 
