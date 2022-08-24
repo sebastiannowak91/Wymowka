@@ -163,6 +163,10 @@ nav button img {
 }
 
 #how-much-img {
+    border-left: .1rem outset black;
+}
+
+#contact-img {
     border-bottom: .1rem outset black;
 }
 
@@ -172,6 +176,7 @@ nav button img {
 
 .to-read-img {
     background-color: #C29DF6;
+    border-top: .1rem outset black;
 }
 
 
@@ -625,10 +630,11 @@ article img {
     padding-left: 0;
 }
 
-.contact-details button {
-    font-size: 1rem;
+.contact-details button,
+.contact-details a {
+    font-size: 1.1rem;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.7;
     text-decoration: none;
     color: black;
 }
@@ -791,7 +797,6 @@ padding-top: 3.5em;
 .footer-cover {
     display: flex;
     justify-content: center;
- 
 }
 
 .footer-img {
@@ -799,7 +804,8 @@ padding-top: 3.5em;
     height: 10%;
     border-radius: 50%;
     margin-bottom: -4.5em;
-    border-top: 1px outset #75b2a0;
+    /* border-top: 1px outset #75b2a0; */
+    border-top: 1px outset black;
 }
 
 .copyrights {
@@ -944,6 +950,7 @@ padding-top: 3.5em;
         margin-bottom: -2em;
     }
 }
+
 
 @media only screen and (max-width: 680px) {
 
