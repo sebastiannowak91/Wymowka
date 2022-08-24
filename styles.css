@@ -852,9 +852,10 @@ padding-top: 3.5em;
 
 
 @media only screen and (max-width: 1100px) {
-    
+
     .menu {
         padding-right: 1em;
+        transform: none;
     }
 
     .menu li:hover {
@@ -870,7 +871,7 @@ padding-top: 3.5em;
     }
 
     .main-arrow {
-        left: 16.5%;
+        left: 16.8%;
         width: 1.2rem;
         top: 27em;
     }
@@ -961,8 +962,8 @@ padding-top: 3.5em;
     }
     
     .main-arrow {
-        left: 16.5%;
-        width: 1rem;
+        left: 16.4%;
+        width: .8rem;
         top: 23em;
     }
 
@@ -970,10 +971,16 @@ padding-top: 3.5em;
         grid-template-columns: repeat(1, auto);
         grid-template-rows: repeat(1);
         margin-top: 5em;
+        width: 100%;
     }
 
     nav button img {
         width: 12rem;
+    }
+
+    article {
+        width: 98%;
+        margin: 2em .1% 2em .1%;
     }
 
     .go-right-go-up {
@@ -983,8 +990,23 @@ padding-top: 3.5em;
     }
 
     .certificates-collection img {
-        width: 60%;
+        width: 70%;
         height: auto;
+    }
+
+    .next-crtf {
+        left: 65%;
+        top: 90%;
+    }
+    
+    .prev-crtf {
+        right: 65%;
+        top: 90%;
+    }
+    
+    .close-crtf {
+        top: 1%;
+        left: 80%;
     }
 
     .who img {
