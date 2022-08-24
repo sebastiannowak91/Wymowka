@@ -836,6 +836,7 @@ padding-top: 3.5em;
 @media only screen and (min-width: 1400px) {
 
     nav,
+    .cover-photo-img,
     .overline,
     .overline-on,
     .go-right-go-up,
@@ -956,8 +957,8 @@ padding-top: 3.5em;
     }
     
     .main-arrow {
-        left: 16.4%;
-        width: .6rem;
+        left: 17%;
+        width: .5rem;
         top: 23em;
     }
 
