@@ -1,6 +1,6 @@
 import wait from './helpers.js';
 import { tabButtons } from './script.js';
-import navigate from './navigate.js';
+// import navigate from './navigate.js';
 
 const tabs = document.querySelector('.tabs');
 // const tabButtons = Array.from(tabs.querySelectorAll('[role="tab"]'));
@@ -104,32 +104,32 @@ function applyEventListeners() {
     goLeftBtn.addEventListener("click", () => navigate('back'));
 };
 
-// async function navigate(direction) {
-//     tabPanel = tabPanels.indexOf(currentTabPanel);
-//     const prevTabPanel = tabPanels[tabPanel - 1];
-//     const nextTabPanel = tabPanels[tabPanel + 1];
+async function navigate(direction) {
+    tabPanel = tabPanels.indexOf(currentTabPanel);
+    const prevTabPanel = tabPanels[tabPanel - 1];
+    const nextTabPanel = tabPanels[tabPanel + 1];
 
-//     tabButton = tabButtons.indexOf(currentTabButton);
-//     const prevTabButton = tabButtons[tabButton - 1];
-//     const nextTabButton = tabButtons[tabButton + 1];
+    tabButton = tabButtons.indexOf(currentTabButton);
+    const prevTabButton = tabButtons[tabButton - 1];
+    const nextTabButton = tabButtons[tabButton + 1];
 
-//     closeWhatsOpen();
-//     await wait(10);
-//     if (direction === 'back') {
-//         currentTabPanel = prevTabPanel;
-//         currentTabButton = prevTabButton;
-//     } else {
-//         currentTabPanel = nextTabPanel;
-//         currentTabButton = nextTabButton;
-//     }
-//     currentTabPanel.hidden = false;
-//     currentTabButton.setAttribute('aria-selected', true);
-//     currentTabButton.setAttribute('open', true);
-//     down();
-//     showArticle();
-//     showNavigationButtons();
-//     colorIt();
-// };
+    closeWhatsOpen();
+    await wait(10);
+    if (direction === 'back') {
+        currentTabPanel = prevTabPanel;
+        currentTabButton = prevTabButton;
+    } else {
+        currentTabPanel = nextTabPanel;
+        currentTabButton = nextTabButton;
+    }
+    currentTabPanel.hidden = false;
+    currentTabButton.setAttribute('aria-selected', true);
+    currentTabButton.setAttribute('open', true);
+    down();
+    showArticle();
+    showNavigationButtons();
+    colorIt();
+};
 
 async function close() {
     up();
