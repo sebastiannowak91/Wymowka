@@ -8,6 +8,7 @@ let tabPanel;
 let currentTabPanel;
 let tabButton;
 let currentTabButton;
+const whoArticle = tabs.querySelector(".who");
 
 
 export function handleTabClick(event) {
@@ -28,6 +29,7 @@ function closeWhatsOpen() {
     tabPanels.forEach(tabPanel => {
         tabPanel.classList.remove('show-article')
         tabPanel.hidden = true
+        // tabPanel.setAttribute('hidden', true);
     });
     tabButtons.forEach(tabButton => {
         tabButton.setAttribute('aria-selected', false);
@@ -44,6 +46,7 @@ function findMatchingTabpanel(event) {
     const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
     currentTabPanel = tabPanel;
     tabPanel.hidden = false;
+    // tabPanel.setAttribute('hidden', false);
     const tabButton = tabButtons.find(tabButton => tabButton.id === tabPanel.getAttribute('aria-labelledby'));
     currentTabButton = tabButton;
 };
@@ -102,7 +105,7 @@ function applyEventListeners() {
     goLeftBtn.addEventListener("click", () => navigate('back'));
 };
 
-function navigate(direction) {
+async function navigate(direction) {
     tabPanel = tabPanels.indexOf(currentTabPanel);
     const prevTabPanel = tabPanels[tabPanel - 1];
     const nextTabPanel = tabPanels[tabPanel + 1];
@@ -112,19 +115,25 @@ function navigate(direction) {
     const nextTabButton = tabButtons[tabButton + 1];
 
     closeWhatsOpen();
+    await wait(10);
     if (direction === 'back') {
         currentTabPanel = prevTabPanel;
-        currentTabPanel.hidden = false;
+        // currentTabPanel.hidden = false;
+        // currentTabPanel.setAttribute('hidden', false);
         currentTabButton = prevTabButton;
-        currentTabButton.setAttribute('aria-selected', true);
-        currentTabButton.setAttribute('open', true);
+        // currentTabButton.setAttribute('aria-selected', true);
+        // currentTabButton.setAttribute('open', true);
     } else {
         currentTabPanel = nextTabPanel;
-        currentTabPanel.hidden = false;
+        // currentTabPanel.setAttribute('hidden', false);
+        // currentTabPanel.hidden = false;
         currentTabButton = nextTabButton;
-        currentTabButton.setAttribute('aria-selected', true);
-        currentTabButton.setAttribute('open', true);
+        // currentTabButton.setAttribute('aria-selected', true);
+        // currentTabButton.setAttribute('open', true);
     }
+    currentTabPanel.hidden = false;
+    currentTabButton.setAttribute('aria-selected', true);
+    currentTabButton.setAttribute('open', true);
     down();
     showArticle();
     showNavigationButtons();
