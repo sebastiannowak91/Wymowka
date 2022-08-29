@@ -5,7 +5,7 @@ import { applyContactFormEventListeners } from './contact-form.js';
 
 //ARTICLES//
 const tabs = document.querySelector('.tabs');
-const tabButtons = Array.from(tabs.querySelectorAll('[role="tab"]'));
+export const tabButtons = Array.from(tabs.querySelectorAll('[role="tab"]'));
 
 tabButtons.forEach(tabButton => tabButton.addEventListener('click', handleTabClick));
 

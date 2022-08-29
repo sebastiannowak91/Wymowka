@@ -1,28 +1,32 @@
-import { tabPanels, tabPanel, currentTabPanel } from './tabs.js';
+import { tabPanels, tabPanel, currentTabPanel, tabButton, currentTabButton, closeWhatsOpen, down, showArticle, showNavigationButtons, colorIt, findMatchingTabpanel } from './tabs.js';
+import { tabButtons } from './script.js'; 
+import wait from './helpers.js';
 
-export function navigate(direction) {
+async function navigate(direction) {
     tabPanel = tabPanels.indexOf(currentTabPanel);
-    const prevTabPanel = tabPanels[tabPanel - 1];
-    const nextTabPanel = tabPanels[tabPanel + 1];
+    let prevTabPanel = tabPanels[tabPanel - 1];
+    let nextTabPanel = tabPanels[tabPanel + 1];
 
     tabButton = tabButtons.indexOf(currentTabButton);
-    const prevTabButton = tabButtons[tabButton - 1];
-    const nextTabButton = tabButtons[tabButton + 1];
+    let prevTabButton = tabButtons[tabButton - 1];
+    let nextTabButton = tabButtons[tabButton + 1];
 
     closeWhatsOpen();
+    await wait(10);
     if (direction === 'back') {
         currentTabPanel = prevTabPanel;
-        currentTabPanel.hidden = false;
-        // currentTabPanel.setAttribute('hidden', false);
         currentTabButton = prevTabButton;
-        currentTabButton.setAttribute('aria-selected', true);
-        currentTabButton.setAttribute('open', true);
     } else {
         currentTabPanel = nextTabPanel;
-        // currentTabPanel.setAttribute('hidden', false);
-        currentTabPanel.hidden = false;
         currentTabButton = nextTabButton;
-        currentTabButton.setAttribute('aria-selected', true);
-        currentTabButton.setAttribute('open', true);
     }
+    currentTabPanel.hidden = false;
+    currentTabButton.setAttribute('aria-selected', true);
+    currentTabButton.setAttribute('open', true);
+    down();
+    showArticle();
+    showNavigationButtons();
+    colorIt();
 };
+
+export default navigate;
