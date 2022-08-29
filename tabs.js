@@ -1,14 +1,15 @@
 import wait from './helpers.js';
+import { tabButtons } from './script.js';
+import navigate from './navigate.js';
 
 const tabs = document.querySelector('.tabs');
-const tabButtons = Array.from(tabs.querySelectorAll('[role="tab"]'));
-const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
+// const tabButtons = Array.from(tabs.querySelectorAll('[role="tab"]'));
+export const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 const overline = tabs.querySelector(".overline");
-let tabPanel;
-let currentTabPanel;
-let tabButton;
-let currentTabButton;
-const whoArticle = tabs.querySelector(".who");
+export let tabPanel;
+export let currentTabPanel;
+export let tabButton;
+export let currentTabButton;
 
 
 export function handleTabClick(event) {
@@ -25,11 +26,10 @@ export function handleTabClick(event) {
     };
 };
 
-function closeWhatsOpen() {
+export function closeWhatsOpen() {
     tabPanels.forEach(tabPanel => {
         tabPanel.classList.remove('show-article')
         tabPanel.hidden = true
-        // tabPanel.setAttribute('hidden', true);
     });
     tabButtons.forEach(tabButton => {
         tabButton.setAttribute('aria-selected', false);
@@ -39,36 +39,35 @@ function closeWhatsOpen() {
     overline.classList.remove("overline-off");
 };
 
-function findMatchingTabpanel(event) {
+export function findMatchingTabpanel(event) {
     event.currentTarget.setAttribute('aria-selected', true);
     event.currentTarget.setAttribute('open', true);
-    const {id} = event.currentTarget;
-    const tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
+    let {id} = event.currentTarget;
+    let tabPanel = tabPanels.find(tabPanel => tabPanel.getAttribute('aria-labelledby') === id);
     currentTabPanel = tabPanel;
     tabPanel.hidden = false;
-    // tabPanel.setAttribute('hidden', false);
-    const tabButton = tabButtons.find(tabButton => tabButton.id === tabPanel.getAttribute('aria-labelledby'));
+    let tabButton = tabButtons.find(tabButton => tabButton.id === tabPanel.getAttribute('aria-labelledby'));
     currentTabButton = tabButton;
 };
 
-function down() {
+export function down() {
     document.getElementById("jump-down-here").scrollIntoView({behavior: 'smooth'});
 };
 
-async function showArticle() {
+export async function showArticle() {
     await wait(100);
     currentTabPanel.classList.add('show-article');
     overline.classList.add("overline-on");
 };
 
-function colorIt() {
-    const tabButton = tabButtons.find(tabButton => tabButton.hasAttribute('open'));
-    const nextTabButton = tabButton.nextElementSibling;
-    const prevTabButton = tabButton.previousElementSibling;
+export function colorIt() {
+    let tabButton = tabButtons.find(tabButton => tabButton.hasAttribute('open'));
+    let nextTabButton = tabButton.nextElementSibling;
+    let prevTabButton = tabButton.previousElementSibling;
     
-    const color = tabButton.getAttribute('data-color');
-    const nextColor = nextTabButton? nextTabButton.getAttribute('data-color') : null;
-    const prevColor = prevTabButton ? prevTabButton.getAttribute('data-color') : null;
+    let color = tabButton.getAttribute('data-color');
+    let nextColor = nextTabButton? nextTabButton.getAttribute('data-color') : null;
+    let prevColor = prevTabButton ? prevTabButton.getAttribute('data-color') : null;
 
     const arrowUp = tabs.querySelector(".fa-chevron-circle-up");
     const arrowRight = tabs.querySelector(".fa-chevron-circle-right");
@@ -86,7 +85,7 @@ const backUp = tabs.querySelector(".go-up");
 const goRightBtn = tabs.querySelector(".go-right");
 const goLeftBtn = tabs.querySelector(".go-left");
 
-function showNavigationButtons() {
+export function showNavigationButtons() {
     navigation.classList.add('show');
     if (tabPanels.indexOf(currentTabPanel) !== 0 && tabPanels.indexOf(currentTabPanel) !== tabPanels.length -1 ) { 
         navigationBtns.forEach(navigationBtn => navigationBtn.style.display = "flex");
@@ -105,40 +104,32 @@ function applyEventListeners() {
     goLeftBtn.addEventListener("click", () => navigate('back'));
 };
 
-async function navigate(direction) {
-    tabPanel = tabPanels.indexOf(currentTabPanel);
-    const prevTabPanel = tabPanels[tabPanel - 1];
-    const nextTabPanel = tabPanels[tabPanel + 1];
+// async function navigate(direction) {
+//     tabPanel = tabPanels.indexOf(currentTabPanel);
+//     const prevTabPanel = tabPanels[tabPanel - 1];
+//     const nextTabPanel = tabPanels[tabPanel + 1];
 
-    tabButton = tabButtons.indexOf(currentTabButton);
-    const prevTabButton = tabButtons[tabButton - 1];
-    const nextTabButton = tabButtons[tabButton + 1];
+//     tabButton = tabButtons.indexOf(currentTabButton);
+//     const prevTabButton = tabButtons[tabButton - 1];
+//     const nextTabButton = tabButtons[tabButton + 1];
 
-    closeWhatsOpen();
-    await wait(10);
-    if (direction === 'back') {
-        currentTabPanel = prevTabPanel;
-        // currentTabPanel.hidden = false;
-        // currentTabPanel.setAttribute('hidden', false);
-        currentTabButton = prevTabButton;
-        // currentTabButton.setAttribute('aria-selected', true);
-        // currentTabButton.setAttribute('open', true);
-    } else {
-        currentTabPanel = nextTabPanel;
-        // currentTabPanel.setAttribute('hidden', false);
-        // currentTabPanel.hidden = false;
-        currentTabButton = nextTabButton;
-        // currentTabButton.setAttribute('aria-selected', true);
-        // currentTabButton.setAttribute('open', true);
-    }
-    currentTabPanel.hidden = false;
-    currentTabButton.setAttribute('aria-selected', true);
-    currentTabButton.setAttribute('open', true);
-    down();
-    showArticle();
-    showNavigationButtons();
-    colorIt();
-};
+//     closeWhatsOpen();
+//     await wait(10);
+//     if (direction === 'back') {
+//         currentTabPanel = prevTabPanel;
+//         currentTabButton = prevTabButton;
+//     } else {
+//         currentTabPanel = nextTabPanel;
+//         currentTabButton = nextTabButton;
+//     }
+//     currentTabPanel.hidden = false;
+//     currentTabButton.setAttribute('aria-selected', true);
+//     currentTabButton.setAttribute('open', true);
+//     down();
+//     showArticle();
+//     showNavigationButtons();
+//     colorIt();
+// };
 
 async function close() {
     up();
