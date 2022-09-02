@@ -11,7 +11,6 @@ export let currentTabPanel;
 export let tabButton;
 export let currentTabButton;
 
-
 export function handleTabClick(event) {
     if (event.currentTarget.hasAttribute('open')) {
         close();
