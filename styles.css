@@ -245,7 +245,7 @@ button[aria-selected="true"] {
 
 /*ARTICLE*/
 
-article {
+.article {
     width: 80%;
     margin: 2em 10% 5em 10%;
     justify-content: center;
@@ -270,7 +270,7 @@ article {
     transition-duration: .7s;
 }
 
-article p {
+.article p {
     margin: 1em 0 0 0;
     font-size: 1.1rem;
 }
@@ -288,18 +288,18 @@ h3 {
     margin: 0;
 }
 
-article li {
+.article li {
     font-size: 1.1rem;
     margin: 0;
     display: flex;
 }
 
-article i {
+.article i {
     margin: .1em 1em 0 0;
     font-size: 1.1rem;
 }
 
-article img {
+.article img {
     border-radius: 50%;
     shape-outside: circle();
     box-shadow: 0 0 10px black;
@@ -515,7 +515,7 @@ article img {
 .what-photo2 {
     float: right;
     width: 14rem;
-    margin: 2em .5em 1em 0em;
+    margin: 11em .5em 2em 2em;
     border-top: .1rem solid black;
 }
 
