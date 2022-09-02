@@ -178,14 +178,6 @@ nav button img {
     border-top: .1rem outset black;
 }
 
-
-/* nav button {
-    margin: 1em 0 0 0;
-    font-size: 1.7rem;
-    font-weight: bold;
-    color: black;
-} */
-
 nav button:hover {
     cursor: pointer;
     transform: scale(1.2);
