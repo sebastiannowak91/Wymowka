@@ -63,6 +63,7 @@ header {
 .cover-photo img {
     width: 80%;
     height: 100%;
+    border: 2px solid red;
 }
 
 .main-arrow {
@@ -129,6 +130,7 @@ nav {
     grid-template-rows: repeat(2);
     grid-row-gap: 2em;
     justify-content: space-between;
+    border: 2px solid red;
 
 }
 
@@ -143,6 +145,7 @@ nav button {
     font-weight: bold;
     color: black;
     transition: 1.5s;
+    border: 2px solid black;
 }
 
 nav button img {
@@ -254,6 +257,7 @@ button[aria-selected="true"] {
     opacity: 0;
     transition-timing-function: ease-in;
     flex-shrink: 0;
+    border: 2px solid red;
 }
 
 .show-article {
@@ -312,6 +316,7 @@ h3 {
     display: none;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(2, auto);
+    border: 2px solid red;
 }
 
 .go-left-btn {
