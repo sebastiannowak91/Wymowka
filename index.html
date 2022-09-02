@@ -47,27 +47,33 @@
             <nav role="tablist">
                 <button role="tab" aria-selected="false" id="who" data-color="#ff96e3" class="figure">
                     <img id="who-img" class="photo" src="images/main-page/who.png" alt="Kim jestem?"/>
-                    <p>Kto?</p>
+                    <!-- <p>Kto?</p> -->
+                    Kto?
                 </button>
                 <button role="tab" aria-selected="false" id="what" data-color="#62d2f5" class="figure">
                     <img id="what-img" class="photo" src="./images/main-page/what.png" alt="Czym się zajmuję?"/>
-                    <p>Co robi?</p>
+                    <!-- <p>Co robi?</p> -->
+                    Co robi?
                 </button>
                 <button role="tab" aria-selected="false" id="for-who" data-color="#fff993" class="figure">
                     <img id="for-who-img" class="photo" src="./images/main-page/for-who.png" alt="Z kim pracuję?"/>
-                    <p>Dla kogo?</p>
+                    <!-- <p>Dla kogo?</p> -->
+                    Dla kogo?
                 </button>
                 <button role="tab" aria-selected="false" id="to-read" data-color="#C29DF6" class="figure">
                     <img id="to-read-img" class="photo to-read-img" src="./images/main-page/to-read.png" alt="Do poczytania" />
-                    <p>Do poczytania</p>
+                    <!-- <p>Do poczytania</p> -->
+                    Do poczytania
                 </button>
                 <button role="tab" aria-selected="false" id="how-much" data-color ="#F6A89D" class="figure">
                     <img id="how-much-img" class="photo how-much-photo" src="./images/main-page/howmuch.jpg" alt="Cennik" />
-                    <p>Cennik</p>
+                    <!-- <p>Cennik</p> -->
+                    Cennik
                 </button>
                 <button role="tab" aria-selected="false" id="contact" data-color="#79fd92" class="figure">
                     <img id="contact-img" class="photo" src="./images/main-page/contact.png" alt="Kontakt"/>
-                    <p>Kontakt</p>
+                    <!-- <p>Kontakt</p> -->
+                    Kontakt
                 </button>
             </nav>
             <span id="jump-down-here" class="jump-down-here"></span>
@@ -100,8 +106,8 @@
                     </ul>
                     <dialog class="certificates-collection">
                             <img aria-labelledby="dyslalia" class="certificate" src="./images/certificates/dyslalia.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia" hidden/>
-                            <img aria-labelledby="terapia-reki" class="certificate" src="./images/certificates/terapia reki-2.png" alt="Imienny dyplom potwierdzający ukończenie szkolenia" hidden/>
-                            <img aria-labelledby="numicon" class="certificate" src="./images/certificates/system numicon-2.png" alt="Imienny dyplom potwierdzający ukończenie szkolenia" hidden/>
+                            <img aria-labelledby="terapia-reki" class="certificate" src="./images/certificates/terapiareki-2.png" alt="Imienny dyplom potwierdzający ukończenie szkolenia" hidden/>
+                            <img aria-labelledby="numicon" class="certificate" src="./images/certificates/systemnumicon-2.png" alt="Imienny dyplom potwierdzający ukończenie szkolenia" hidden/>
                             <img aria-labelledby="metodakrakowska" class="certificate" src="./images/certificates/metodakrakowska.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia" hidden/>
                             <img aria-labelledby="praca" class="certificate" src="./images/certificates/PracaZDzieckiemAutystycznym.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia" hidden/>
                             <img aria-labelledby="alalia" class="certificate" src="./images/certificates/Alalia.jpeg" alt="Imienny dyplom potwierdzający ukończenie szkolenia" hidden/>
@@ -220,7 +226,7 @@
                 <article role="tabpanel" aria-labelledby="contact" class="article contact" hidden>
                     <img class="contant-img" src="./images/tabpanels/contact.jpg" alt="Kasia przy drzwiach gabinetu Wymówka"/>
                     <h2 class="sr-only">Kontakt</h2>
-                    <section class="contact-details">
+                    <div class="contact-details">
                         <p class="subtitle">mgr Katarzyna Biernacka</p>
                         <p>Ponieważ prowadzę zajęcia od rana do późnych godzin popołudniowych, nie zawsze mogę odebrać telefon. Jeśli nie odbieram, proszę spróbować ponownie później, najlepiej po godzinie 18. Można też wysłać sms z prośbą o kontakt (na pewno oddzwonię) albo skontaktować się ze mną poprzez maila czy formularz kontaktowy.</p>
                         <address>
@@ -239,8 +245,8 @@
                                 </li>
                             </ul>
                         </address> 
-                    </section>
-                    <section class="location"></section>
+                    </div>
+                    <div class="location">
                         <p class="subtitle">Gabinet logopedyczno-terapeutyczny wy<span>MÓW</span>ka</p>
                         <p>Gabinet znajduje się na II piętrze, w budynku jest winda. Okolica objęta jest strefą płatnego parkowania, podstrefa C.</p>
                         <address>
@@ -251,14 +257,14 @@
                                 </li>
                             </ul>
                         </address>
-                    </section>
-                    <section class="map">
+                    </div>
+                    <div class="map">
                         <p class="subtitle">Sprawdź, jak dojechać</p>
-                        <div class="mapouter" aria-label="Mapa">
+                        <div class="mapouter" aria-labelledby="Mapa">
                             <iframe width="390" height="290" id="gmap_canvas" src="https://maps.google.com/maps?q=Skrzyneckiego%2017,%20Krak%C3%B3w&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
                         </div>
-                    </section>    
-                    <section class="contact-form">
+                    </div>    
+                    <div class="contact-form">
                         <button class="close-contact-form"><i class="fas fa-times"></i></button>
                         <form class="leave-a-message">
                             <h5>Imię i nazwisko<span>*</span></h5>
@@ -270,9 +276,9 @@
                             <h5>Wiadomość<span>*</span></h5>
                             <input type="text" class="message must-be" placeholder="Wpisz treść wiadomości"/>
                             <p class="form-feedback"></p>   
-                            <input type="submit" class="send-btn" placeholder="Wyślij"/>
+                            <input type="submit" class="send-btn"/>
                         </form>    
-                    </section>
+                    </div>
                 </article>
             </div>
             <div class="go-right-go-up">
@@ -286,7 +292,7 @@
             </div>
         </div>
         <div class="footer-cover">
-            <img class="footer-img" src="images/main-page/footer-cover.png">
+            <img class="footer-img" src="images/main-page/footer-cover.png" alt="Stopka">
         </div>
         </div>
         <footer id="footer">
