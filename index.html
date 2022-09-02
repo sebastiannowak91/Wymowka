@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+        <meta name="viewport">
         <meta charset="UTF-8">
         <title>WYMÓWKA</title>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500&display=swap" rel="stylesheet">
@@ -9,7 +10,6 @@
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <div class="wrapper">
         <header id="header">
             <a  href="#tabs" rel=”noopener” aria-label="Nawigacja">
             <svg class="main-arrow" viewBox="0 0 16 195" fill="none">
@@ -255,7 +255,7 @@
                     </div>
                     <div class="map">
                         <p class="subtitle">Sprawdź, jak dojechać</p>
-                        <div class="mapouter" aria-label="mapouter">
+                        <div class="mapouter">
                             <iframe width="390" height="290" id="gmap_canvas" src="https://maps.google.com/maps?q=Skrzyneckiego%2017,%20Krak%C3%B3w&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
                         </div>
                     </div>    
@@ -289,7 +289,6 @@
         <div class="footer-cover">
             <img class="footer-img" src="images/main-page/footer-cover.png" alt="Stopka">
         </div>
-        </div>
         <footer id="footer">
             <div class="company-name">
                 <p class="subtitle">mgr Katarzyna Biernacka</p>
@@ -299,6 +298,6 @@
                 <p>Wszystkie prawa zastrzeżone</p>
             </div>
         </footer>
+        <script src="./scripts/script.js" type="module"></script>
     </body>
-    <script src="./scripts/script.js" type="module"></script>
 </html>
