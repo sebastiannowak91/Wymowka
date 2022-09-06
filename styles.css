@@ -38,6 +38,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 1px solid red;
 }
 
 .extra-space {
@@ -769,8 +770,8 @@ padding-top: 3.5em;
     height: 10%;
     border-radius: 50%;
     margin-bottom: -4.5em;
-    border-top: 1px outset #75b2a0;
-    /* border-top: 1px outset black; */
+    /* border-top: 1px outset #75b2a0; */
+    border-top: 1px outset black;
 }
 
 .copyrights {
@@ -817,7 +818,7 @@ padding-top: 3.5em;
         margin-left: auto;
     }
 
-    /* .main-arrow {
+    .main-arrow {
         left: 8em;
         bottom: 2em;
     }
@@ -825,9 +826,112 @@ padding-top: 3.5em;
     .menu {
         right: 8em;
         top: 2em;
-    } */
+    }
 }
 
+@media only screen and (max-width: 680px) {
+
+    .arrow-space {
+        background-color: #9df6dc;
+    }
+
+    .hero {
+        height: 100vh;
+        box-shadow: 0 0 7px #75b2a0;
+    }
+    
+    .main-arrow {
+        left: 17%;
+        width: .5rem;
+        top: 23em;
+    }
+
+    nav {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(1);
+        margin-top: 5em;
+        width: 100%;
+    }
+
+    nav button img {
+        width: 12rem;
+    }
+
+    article {
+        width: 98%;
+        margin: 2em 1% 2em 1%;
+    }
+
+    .go-right-go-up {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(2, auto);
+        justify-content: end;
+    }
+
+    .certificates-collection img {
+        width: 70%;
+        height: auto;
+    }
+
+    .next-crtf {
+        left: 65%;
+        top: 85%;
+    }
+    
+    .prev-crtf {
+        right: 65%;
+        top: 85%;
+    }
+    
+    .close-crtf {
+        top: 1%;
+        left: 80%;
+    }
+    
+    .who img {
+        float: none;
+    }
+
+    .what-photo1 {
+        display: none;
+    }
+
+    .for-who-img1,
+    .for-who-img2 {
+        display: none;
+    }
+
+    .to-read-article-img {
+        display: none;
+    }
+
+    .contact img {
+        float: none;
+    }
+
+    .how-much-img {
+        display: none;
+    }
+
+    .how-much-details ul {
+        margin: 0 0 3em 0;
+        padding: 0;
+    }
+
+    footer {
+        padding-top: 2.5em;
+    }
+        
+    .footer-img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .company-name .subtitle {
+        font-size: .9rem;
+    }
+    
+}
 
 
 @media only screen and (max-width: 1100px) {
@@ -926,113 +1030,6 @@ padding-top: 3.5em;
     .footer-img {
         margin-bottom: -2em;
     }
-}
-
-
-@media only screen and (max-width: 680px) {
-
-    .arrow-space {
-        background-color: #9df6dc;
-    }
-
-    .hero {
-        height: 100vh;
-        box-shadow: 0 0 7px #75b2a0;
-    }
-    
-    .main-arrow {
-        left: 17%;
-        width: .5rem;
-        top: 23em;
-    }
-
-    nav {
-        grid-template-columns: repeat(1, auto);
-        grid-template-rows: repeat(1);
-        margin-top: 5em;
-        width: 100%;
-    }
-
-    nav button img {
-        width: 12rem;
-    }
-
-    article {
-        width: 98%;
-        margin: 2em 1% 2em 1%;
-    }
-
-    .go-right-go-up {
-        grid-template-columns: repeat(1, auto);
-        grid-template-rows: repeat(2, auto);
-        justify-content: end;
-    }
-
-    .certificates-collection img {
-        width: 70%;
-        height: auto;
-    }
-
-    .next-crtf {
-        left: 65%;
-        top: 85%;
-    }
-    
-    .prev-crtf {
-        right: 65%;
-        top: 85%;
-    }
-    
-    .close-crtf {
-        top: 1%;
-        left: 80%;
-    }
-    
-    .who img {
-        /* margin-bottom: 1.5em;
-        margin-right: 1.5em; */
-        float: none;
-    }
-
-    .what-photo1 {
-        display: none;
-    }
-
-    .for-who-img1,
-    .for-who-img2 {
-        display: none;
-    }
-
-    .to-read-article-img {
-        display: none;
-    }
-
-    .contact img {
-        float: none;
-    }
-
-    .how-much-img {
-        display: none;
-    }
-
-    .how-much-details ul {
-        margin: 0 0 3em 0;
-        padding: 0;
-    }
-
-    footer {
-        padding-top: 2.5em;
-    }
-        
-    .footer-img {
-        width: 3rem;
-        height: 3rem;
-    }
-
-    .company-name .subtitle {
-        font-size: .9rem;
-    }
-    
 }
 
 
