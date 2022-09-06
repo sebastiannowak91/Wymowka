@@ -817,7 +817,7 @@ padding-top: 3.5em;
         margin-left: auto;
     }
 
-    /* .main-arrow {
+    .main-arrow {
         left: 8em;
         bottom: 2em;
     }
@@ -825,7 +825,7 @@ padding-top: 3.5em;
     .menu {
         right: 8em;
         top: 2em;
-    } */
+    }
 }
 
 @media only screen and (max-width: 680px) {
