@@ -3,7 +3,6 @@ import { tabButtons } from './script.js';
 // import navigate from './navigate.js';
 
 const tabs = document.querySelector('.tabs');
-// const tabButtons = Array.from(tabs.querySelectorAll('[role="tab"]'));
 export const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 const overline = tabs.querySelector(".overline");
 export let tabPanel;
