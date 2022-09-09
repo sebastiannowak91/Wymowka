@@ -273,11 +273,6 @@ h3 {
     font-size: 1.1rem;
 }
 
-/* .article i {
-    margin: .1em 1em 0 0;
-    font-size: 1.1rem;
-} */
-
 .article img {
     border-radius: 50%;
     shape-outside: circle();
