@@ -265,10 +265,18 @@ h3 {
     display: flex;
 }
 
-.article i {
+.article li::before {
+    font-family: Font Awesome\ 5 Free;
+    content: "\f058";
+    font-weight: 900;
     margin: .1em 1em 0 0;
     font-size: 1.1rem;
 }
+
+/* .article i {
+    margin: .1em 1em 0 0;
+    font-size: 1.1rem;
+} */
 
 .article img {
     border-radius: 50%;
@@ -344,13 +352,9 @@ h3 {
     margin: 0 1.3em 1.3em 0;
 }
 
-.who i {
+.who li::before {
     color: #ff96e3;
 }
-
-/* .who .fa-chevron-circle-right {
-    color:#62d2f5;
-} */
 
 .who .fa-search-plus {
     margin: 0 .3em 0 0;
@@ -407,9 +411,6 @@ h3 {
     display: none;
 }
 
-/* .prev-crtf,
-.next-crtf,
-.close-crtf, */
 .crtf-nav-btns,
 .close-contact-form {
     position: fixed;
@@ -466,7 +467,8 @@ h3 {
 }
 
 /*ARTICLE WHAT*/
-.what i {
+
+.what li::before{
     color: #62d2f5;
 }
 
@@ -489,12 +491,9 @@ h3 {
 }
 
 /*ARTICLE FOR-WHO*/
-.for-who i {
-    color: #fff993;
-}
 
-.for-who .fa-chevron-circle-right {
-    color: #79fd92;
+.for-who li::before {
+    color: #fff993;
 }
 
 .for-who-img1 {
@@ -573,7 +572,7 @@ h3 {
     padding: 0;
 }
 
-.how-much i {
+.how-much-details li::before {
     color: #F6A89D;
 }
 
@@ -588,6 +587,15 @@ h3 {
 .contact ul {
     padding-bottom: 1.5em;
     padding-left: 0;
+}
+
+.contact li::before {
+    display: none;
+}
+
+.contact i {
+    margin: .1em 1em 0 0;
+    font-size: 1.1rem;
 }
 
 .contact-details button,
