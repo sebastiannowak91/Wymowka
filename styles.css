@@ -30,6 +30,7 @@ a {
 /*HEADER*/
 header {
     width: inherit;
+    position: relative;
 }
 
 .hero {
@@ -826,7 +827,7 @@ padding-top: 3.5em;
     }
 
     .menu {
-        right: 8em;
+        right: 5em;
         top: 2em;
     }
 }
@@ -844,7 +845,7 @@ padding-top: 3.5em;
     }
 
     .hero {
-        height: 60vh;
+        min-height: 60vh;
     }
     
     .cover-photo img {
@@ -854,7 +855,7 @@ padding-top: 3.5em;
     .main-arrow {
         left: 16.8%;
         width: 1.2rem;
-        top: 29em;
+        /* top: 29em; */
     }
 
     nav {
@@ -943,8 +944,8 @@ padding-top: 3.5em;
     
     .main-arrow {
         left: 17%;
-        width: .5rem;
-        top: 23em;
+        width: .7rem;
+        /* top: 23em; */
     }
 
     nav {
