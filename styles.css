@@ -846,6 +846,11 @@ padding-top: 3.5em;
 
     .hero {
         min-height: 60vh;
+        max-height: 70vh;
+    }
+
+    .extra-space {
+        height: 0;
     }
     
     .cover-photo img {
@@ -938,10 +943,16 @@ padding-top: 3.5em;
     }
 
     .hero {
+        
         height: 100vh;
+        min-height: 100vh;
         box-shadow: 0 0 7px #75b2a0;
     }
     
+    .extra-space {
+        height: 100%;
+    }
+
     .main-arrow {
         left: 17%;
         width: .7rem;
