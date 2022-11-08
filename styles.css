@@ -844,7 +844,7 @@ padding-top: 3.5em;
         height: 100vh;
         min-height: 100vh;
         box-shadow: 0 0 7px #75b2a0;
-        border: 2px solid blue;
+        border: 2px solid red;
     }
     
     .extra-space {
