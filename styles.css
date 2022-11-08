@@ -829,6 +829,7 @@ padding-top: 3.5em;
     .hero {
         min-height: 50vh;
         max-height: 60vh;
+        border: 2px solid red;
         
     }
     
