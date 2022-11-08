@@ -787,24 +787,6 @@ padding-top: 3.5em;
     display: none;
 }
 
-@keyframes dropDown {
-    from {
-        transform: translateY(-20em);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes moveArrow {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-8em);
-    }
-}
-
 
 
 
@@ -944,7 +926,7 @@ padding-top: 3.5em;
         height: 100vh;
         min-height: 100vh;
         box-shadow: 0 0 7px #75b2a0;
-        border: 2px solid red;
+        border: 2px solid yellow;
     }
     
     .extra-space {
@@ -1042,4 +1024,23 @@ padding-top: 3.5em;
         font-size: .9rem;
     }
     
+}
+
+
+@keyframes dropDown {
+    from {
+        transform: translateY(-20em);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-8em);
+    }
 }
