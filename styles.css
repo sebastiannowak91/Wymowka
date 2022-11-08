@@ -844,11 +844,7 @@ padding-top: 3.5em;
         height: 100vh;
         min-height: 100vh;
         box-shadow: 0 0 7px #75b2a0;
-<<<<<<< HEAD
         border: 2px solid red;
-=======
-        border: 2px solid blue;
->>>>>>> 989762e0c5c44d24a5658ffb64fd374ed0475d6b
     }
     
     .extra-space {
@@ -946,7 +942,6 @@ padding-top: 3.5em;
         font-size: .9rem;
     }
     
-<<<<<<< HEAD
 }
 
 
@@ -1048,6 +1043,4 @@ padding-top: 3.5em;
     .footer-img {
         margin-bottom: -2em;
     }
-=======
->>>>>>> 989762e0c5c44d24a5658ffb64fd374ed0475d6b
 }
