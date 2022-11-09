@@ -942,6 +942,16 @@ padding-top: 3.5em;
         padding-right: .5em;
     }
 
+    .menu li {
+        height: 2.5rem;
+        width: 2.5rem;
+        margin-top: .7em;
+    }
+    
+    .menu i {
+        font-size: 1.2rem;
+    }
+
     nav {
         grid-template-columns: repeat(1, auto);
         grid-template-rows: repeat(1);
