@@ -939,12 +939,14 @@ padding-top: 3.5em;
     }
 
     .menu {
-        padding-right: .5em;
+        padding: 0 .5em 0 0;
+        right: 1em;
+        top: 2em;
     }
 
     .menu li {
-        height: 2.5rem;
-        width: 2.5rem;
+        height: 2rem;
+        width: 2rem;
         margin-top: .7em;
     }
     
@@ -1022,6 +1024,11 @@ padding-top: 3.5em;
     .how-much-details ul {
         margin: 0 0 3em 0;
         padding: 0;
+    }
+
+    .leave-a-message {
+        width: 80%;
+        overflow-x: scroll;
     }
 
     footer {
