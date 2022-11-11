@@ -685,7 +685,8 @@ h3 {
     margin: 0 0 .5em 0;
 }
 
-.leave-a-message input {
+.leave-a-message input,
+.leave-a-message button {
     font-family: 'Comfortaa', 'Arial', sans-serif;
 }
 
@@ -710,9 +711,9 @@ h3 {
     border-radius: 5px;
     padding: 1em;
     width: fit-content;
-    margin-bottom: 2em;
+    margin: 2em 0 2em 0;
     cursor: pointer;
-    font-size: .72rem;
+    font-size: 1rem;
     transition: 1s;
 
 }
@@ -740,9 +741,10 @@ h3 {
     padding: 0;
 }
 
-.form-feedback {
+.form-feedback,
+.form-feedback2 {
     display: flex;
-    margin: 0 0 2em 0;
+    margin: 2em;
     padding: 0;
     font-size: .6rem;
     color: red;
