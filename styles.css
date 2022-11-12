@@ -197,7 +197,7 @@ button[aria-selected="true"] {
     border-bottom-style: solid;
     filter: brightness(100%);
     transition-property: opacity, filter, width;
-    transition-timing-function: ease-out;
+    transition-timing-function: ease-in-out;
     position: relative;
 }
 
@@ -210,7 +210,7 @@ button[aria-selected="true"] {
 }
 
 .overline-off {
-    transition-property: width;
+    transition-property: opacity, filter, width;
     width: 0;
     filter: brightness(90%);
     transition-duration: 1s;

@@ -42,15 +42,6 @@ function sendMessage(event) {
     }
 };
 
-// function sendMessage(event) {
-//     event.preventDefault();
-//     areMustBeFilled();
-// };
-
-// function areMustBeFilled() {
-//     mustBe.forEach(mustBe => mustBe.value === "") ? feedback.textContent = "Proszę uzupełnić wszystkie pola oznaczone *" : console.log('wszystko wupełnione'); 
-// };
-
 function isEmailOK() {
     const pattern = /(([a-z0-9_-]){1,}\.?)(([a-z0-9]){1,})@(([a-z0-9]){1,}\.){1,}([a-z]){2,}/i;
     if (pattern.test(email.value) === false) {
