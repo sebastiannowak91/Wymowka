@@ -191,29 +191,27 @@ button[aria-selected="true"] {
     display: flex;
     opacity: 0;
     width: 0;
-    margin: 0 0 0 10%;
+    /* margin: 0 0 0 10%; */
     padding: 1em 0 0 0;
     border-bottom: .2rem;
     border-bottom-style: solid;
     filter: brightness(100%);
-    transition-property: opacity, filter, width;
-    transition-timing-function: ease-in-out;
+    /* transition-property: opacity, filter, width;
+    transition-timing-function: ease-in-out; */
     position: relative;
 }
 
 .overline-on {
-    transition-property: opacity, filter, width;
+    /* transition-property: opacity, filter, width; */
     filter: brightness(100%);
     opacity: 1;
     width: 80%;
-    transition-duration: 1s;
+    animation: drawOverline .7s ease-in-out forwards;
 }
 
 .overline-off {
-    transition-property: opacity, filter, width;
+    /* transition-property: opacity, filter, width; */
     width: 0;
-    filter: brightness(90%);
-    transition-duration: 1s;
 }
 
 /*ARTICLE*/
@@ -814,6 +812,10 @@ padding-top: 3.5em;
         right: 5em;
         top: 2em;
     }
+
+    .overline-on {
+        animation: drawOverlineForBigScreens .7s ease-in-out forwards;
+    }
 }
 
 
@@ -869,6 +871,10 @@ padding-top: 3.5em;
     .overline {
         width: 90%;
         margin: 0 7% 0 3%; 
+    }
+
+    .overline-on {
+        animation: drawOverlineForTablets .7s ease-in-out forwards;
     }
 
     .article,
@@ -1065,5 +1071,32 @@ padding-top: 3.5em;
     }
     to {
         transform: translateY(-8em);
+    }
+}
+
+@keyframes drawOverline {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes drawOverlineForBigScreens {
+    from {
+        width: 0;
+    }
+    to {
+        width: 1200px;
+    }
+}
+
+@keyframes drawOverlineForTablets {
+    from {
+        width: 0;
+    }
+    to {
+        width: 90%;
     }
 }
